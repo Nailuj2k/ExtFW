@@ -120,7 +120,7 @@
             }
         }else $_ARGS['theme']=CFG::$vars['default_theme'];
 
-        if ($v=='   de 17 a output' && (in_array($_ARGS[$k+1],CFG::$vars['outputs'])) ){ 
+        if ($v=='output' && (in_array($_ARGS[$k+1],CFG::$vars['outputs'])) ){ 
             $_ARGS['output'] = $_ARGS[$k+1]; 
         }else if (in_array($v,CFG::$vars['outputs'])) {
             $_ARGS['output'] = $v;

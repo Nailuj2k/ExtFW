@@ -122,8 +122,8 @@ Las URLs se mapean automáticamente sin configuración adicional:
 | `$_ARGS[1]`, `[2]`... | Parámetros secuenciales |
 | `$_ARGS['clave']` | Parámetros con nombre |
 | `/theme/nombre` | Cambio de tema |
-| `/<lang>` | Cambio de idioma |
-| `/<output>` | Cambio de formato de salida |
+| Cualquier segmento igual a un código de idioma válido (`es`, `en`, etc.) | Cambio de idioma |
+| Cualquier segmento igual a un output válido (`json`, `pdf`, `raw`, etc.) | Cambio de formato de salida |
 
 ---
 
@@ -199,7 +199,7 @@ include(SCRIPT_DIR_CLASSES.'/scaffold/ajax.php');
 
 ## Formatos de salida
 
-El mismo módulo puede servir en múltiples formatos añadiendo `/output/{tipo}` a la URL:
+El mismo módulo puede servir en múltiples formatos. No hace falta usar `/output/{tipo}`: basta con que la URL contenga cualquier segmento que coincida con un output válido.
 
 `html` · `json` · `pdf` · `csv` · `ajax` · `api` · `sse` · `txt` · `raw` · `file` · `qrcode`
 
@@ -284,6 +284,5 @@ Las instalaciones cliente pueden actualizarse desde **Panel de Control > Actuali
 - Paneles de administración con CRUD generado automáticamente
 - Backends API con soporte JSON y Server-Sent Events
 - Proyectos blockchain / criptomonedas (wallet, timestamping, nostr)
-
 
 
