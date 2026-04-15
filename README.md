@@ -2,6 +2,8 @@
 
 **ExtFW** es un framework PHP modular y listo para producción, diseñado para el desarrollo rápido de aplicaciones web. Basado en el principio KISS, prioriza la productividad y una arquitectura clara sobre sistemas de enrutamiento complejos.
 
+Demo: https://queesbitcoin.net
+
 > © 2010–2026 Nailuj2k — Todos los derechos reservados.
 
 ---
@@ -17,7 +19,7 @@
 - **Gestión de paquetes y versiones** — Generación de ZIPs y actualizaciones desde panel de control
 - **Sistema Karma** — Gamificación integrada (puntos, valoraciones)
 - **Seguridad** — HTTPS forzado, rate limiting, PHPIDS, cabeceras HTTP, sanitización de entradas
-
+- **Tor** - Soporte para Tor
 ---
 
 ## Requisitos del sistema
