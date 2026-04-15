@@ -255,7 +255,6 @@ class Login extends DbConnection {
                         if($user_data['AUTH_PROVIDER']!==$data['auth_provider']||!$user_data['AUTH_ID']||!$user_data['AUTH_PICTURE']){
                           //Vars::debug_var("UPDATE ".TB_USER." SET AUTH_PROVIDER='".$data['auth_provider']."',AUTH_ID='".$data['auth_id']."',AUTH_PICTURE='".$data['auth_picture']."' WHERE ".USER_EMAIL." = '".$user_data[USER_EMAIL]."'" );
                             Login::sqlExec("UPDATE ".TB_USER." SET AUTH_PROVIDER='".$data['auth_provider']."',AUTH_ID='".$data['auth_id']."',AUTH_PICTURE='".$data['auth_picture']."' WHERE ".USER_EMAIL." = '".$user_data[USER_EMAIL]."'" );
-                          //UPDATE CLI_USER SET AUTH_PROVIDER='google',AUTH_ID='115624255229917523968',AUTH_PICTURE='https://lh3.googleusercontent.com/a-/AOh14GgG3n77DJBzyzvcMaCzCoajOi0XJappHkEiTNWKdQ=s96-c' WHERE user_email = 'julian.torres.sanchez@gmail.com'
                         }
                         $_SESSION['auth_provider']  = $data['auth_provider'];
                         $_SESSION['auth_id']  = $data['auth_id'];

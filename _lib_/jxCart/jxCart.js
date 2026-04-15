@@ -424,25 +424,25 @@
           });
 
 
-try {
-    localStorage.setItem(namespace + "_items", JSON.stringify(items));
-} catch(e) {
-     console.log('ERRoR::',e.name);
-     if(e.name == "NS_ERROR_FILE_CORRUPTED") {
-//       console.log("Sorry, it looks like your browser storage has been corrupted. Please clear your storage by going to Tools -> Clear Recent History -> Cookies and set time range to 'Everything'. This will remove the corrupted browser storage across all sites.");
-        
-    //    setTimeout(function(){
-    //        document.write("Sorry, it looks like your browser storage has been corrupted. Please clear your storage by going to Tools -> Clear Recent History -> Cookies and set time range to 'Everything'. This will remove the corrupted browser storage across all sites.");
-  //      },2000);
-   //     location.href='products/repair';
-//localStorage.clear();
-//sessionStorage.clear(); 
-// Add msg to a jxCart property that can be show anytime for user warning if localstorage being corrupt. // by juliantorres@extralab 20200518
-    }
-}
-
-
-
+            try {
+                localStorage.setItem(namespace + "_items", JSON.stringify(items));
+            } catch(e) {
+                console.log('ERRoR::',e.name);
+                if(e.name == "NS_ERROR_FILE_CORRUPTED") {
+                    // console.log("Sorry, it looks like your browser storage has been corrupted. Please clear your storage
+                    //  by going to Tools -> Clear Recent History -> Cookies and set time range to 'Everything'. This will 
+                    // remove the corrupted browser storage across all sites.");
+                    // setTimeout(function(){
+                    //    document.write("Sorry, it looks like your browser storage has been corrupted. Please clear your 
+                    // storage by going to Tools -> Clear Recent History -> Cookies and set time range to 'Everything'. This
+                    //  will remove the corrupted browser storage across all sites.");
+                    // },2000);
+                    // location.href='products/repair';
+                    // localStorage.clear();
+                    // sessionStorage.clear(); 
+                    // Add msg to a jxCart property that can be show anytime for user warning if localstorage being corrupt. // by Nailuj2k 20200518
+                }
+            }
 
           jxCart.trigger('afterSave');
         },

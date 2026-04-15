@@ -1,7 +1,7 @@
 <?php    
 
 
-    // https://tienda.extralab.net/control_panel/ajax/update/instal/custom_module/qr
+    // https://[HOST_URL]]/control_panel/ajax/update/instal/custom_module/qr
 
     if (OUTPUT=='ajax'){
 

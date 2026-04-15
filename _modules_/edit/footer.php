@@ -942,7 +942,7 @@
             $('#top-filename').html(file);
             if (id in files ) $('#'+id).show();     //SPLIT
                          else $('#'+split_active).append(`<div id="${id}" class="audio-viewer checkerboard"><audio><source src="${file}" type="audio/mp3"></audio><i style="cursor:pointer;" class="fa fa-play"></i><div class="id3"></div><img class="cover"></div>`).show();                   
-            jsmediatags.read('https://tienda.extralab.net'+file, {  // console.log('TAG FROM','https://tienda.extralab.net'+file)
+            jsmediatags.read('https://[HOST_URL]'+file, {  
                 onSuccess: function(tag) {                          // https://github.com/aadsm/jsmediatags?tab=readme-ov-file
                     var tags = tag.tags;                            // console.log(tag);
                     let img ='';

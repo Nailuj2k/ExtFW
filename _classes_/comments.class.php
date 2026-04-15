@@ -2077,10 +2077,10 @@ class Comments extends DbConnection{
                         "post_id": "11",
 
                         "parent_id": "0",
-                        "comment_text": "Bla bla bla bla",
+                        "comment_text": "Milk and alcohol",
                         "user_id": 1,
-                        "user_name": "Julián Torres",
-                        "user_email": "julian.torres.sanchez@gmail.com",
+                        "user_name": "Ian Dury",
+                        "user_email": "iandury@blockheads.com",
                         "status": 2,
                         "ip": "147.84.197.236",
                         "created_at": "2025-11-20 12:39:55",

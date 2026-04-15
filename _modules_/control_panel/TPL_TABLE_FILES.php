@@ -1179,8 +1179,7 @@ class filesEvents extends defaultTableEventsTags implements iEvents{
                                         $( "#btn-cover-save" ).show();
                                     })            // $cover.attr('src',  url); //+'?ver=3');   // .... jQuery             
 
-                                    // BOOK.COVER.URL blob:https://tienda.extralab.net/cdd8ae07-63c5-46e0-94d6-96f1f69e72f9  
-                    
+                                   
                                 } else  if(validISBN13(meta.identifier)){
                                     console.log('META.IDENTIFIER', meta.identifier);
                                     console.log('BOOK.COVER.SRC', 'https://pictures.abebooks.com/isbn/'+meta.identifier+'-<?=$_SESSION['lang']?>.jpg');

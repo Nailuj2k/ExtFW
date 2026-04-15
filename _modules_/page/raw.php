@@ -1,8 +1,6 @@
 <?php
 
 
-$test = $_ARGS[5]==='test';
-
 $writeWebhookLog = function (string $prefix, string $content = '') { //use ($logDir) {
     
     $timestamp = date('Y-m-d H:i:s');
@@ -31,34 +29,7 @@ if (!$valid_callabck) {
     $writeWebhookLog('webhook_BEGIN');
 }
 
-if ($test)
-
-
-
-    $payload = '{
-  "manuallyMarked": false,
-  "overPaid": false,
-  "deliveryId": "P8qq8u7djLNDp5vGmchVfM",
-  "webhookId": "PGtW6yWDPkGrZvNVJ4fcBi",
-  "originalDeliveryId": "P8qq8u7djLNDp5vGmchVfM",
-  "isRedelivery": false,
-  "type": "InvoiceSettled",
-  "timestamp": 1766765766,
-  "storeId": "A4SX3uwfaEoBp4T8yS2jhSH3LPN8utLnqSB55rzRHZHm",
-  "invoiceId": "Cpg9Ggj5nnfmqEtD8D2FRQ",
-  "metadata": {
-    "userId": 1,
-    "webhook": "https://tienda.extralab.net/page/checkout/bitcoin/callback/raw/",
-    "authorId": 4,
-    "moduleId": "2",
-    "articleId": "12",
-    "amountSats": 100
-  }
-}';
-
-else
-
-    $payload = file_get_contents("php://input");
+$payload = file_get_contents("php://input");
 
 
 if (!is_string($payload) || trim($payload) === '') {
@@ -71,17 +42,7 @@ $writeWebhookLog('webhook_RAW_payload', $payload);
 
 $cfg_btc = Table::asArrayValues("SELECT V,K from CFG_CFG WHERE K LIKE 'btcpay.%'",'K','V');  
 $secret  = $cfg_btc['btcpay.secret'] ?? '';
-if($test){
-    
-    $headers['Content-Length'] = 570;
-    $headers['Btcpay-Sig'] = 'sha256=a15e1b1f59cfca4eb4463f6d4547dd6492ade02d190fb849cd94a31589fb7597';
-    $headers['Content-Type'] = 'application/json';
-    $headers['Cookie'] = 'session_extfw_gydxe=9tf11s8hn0fobcr9fre5of1cd5';
-    $headers['User-Agent'] = 'BTCPayServer/2.3.0';
-    $headers['Host'] = 'queesbitcoin.net';
-
-}else
-    $headers = function_exists('getallheaders') ? getallheaders() : [];
+$headers = function_exists('getallheaders') ? getallheaders() : [];
 
 $writeWebhookLog('webhook_RAW_headers', print_r($headers, true));
 
@@ -101,14 +62,6 @@ if ($btcpay_webhook) {
     $signatureHeader = $forwardSig;
     $sigName = 'X-Forward-Sig';
 }
-if($test){
-
-    echo "<pre>Signature missing ($sigName)\n\nHeaders: " . print_r($headers, true) . "\n\n" . $payload . "</pre>";
-
-    echo '['.$signatureHeader.']';
-    echo '['.$sigName.']';
-}
-
 
 if (trim($signatureHeader) === '') {
     http_response_code(400);

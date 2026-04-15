@@ -86,7 +86,7 @@
                     $result['img']   = $data[1];
 
 
-                    $result['url'] = 'https://tienda.extralab.net/_modules_/docs/image.png?v='.time();
+                    $result['url'] = 'https://domain.net/_modules_/docs/image.png?v='.time();
          */
 
 

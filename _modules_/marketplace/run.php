@@ -30,7 +30,7 @@
                     
                     <enhanced-select id="select-repo" placeholder="Selecciona o escribe una opción">
                         <option value="default_repo" selected><?=str_replace('https://','',CFG::$vars['repo']['url'])?></option>
-                        <option value="tienda">tienda.extralab.net</option>
+                        <option value="noxtr">noxtr.net</option>
                     </enhanced-select>
                     
                     <enhanced-select id="select-module" placeholder="Selecciona o escribe una opción">

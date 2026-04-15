@@ -155,7 +155,7 @@ if ($option=='list'){  // echo select values
     }
 
 }else if ( $option=='setvar' && $_ARGS['type'] && $_ARGS['key'] /*&& $_ARGS['value']*/){
-   // https://tienda.extralab.net/control_panel/ajax/op=setvar/type=session/key=userid/value=1  
+   // /control_panel/ajax/op=setvar/type=session/key=userid/value=1  
 
     $result = array();
     $result['error'] = 0;
@@ -172,7 +172,7 @@ if ($option=='list'){  // echo select values
     //Vars::debug_var($_COOKIE);
 
 }else if ($option=='getvar' && $_ARGS['type'] && $_ARGS['key'] ){
-    // https://tienda.extralab.net/control_panel/ajax/op=getvar/type=session/key=userid
+    // /control_panel/ajax/op=getvar/type=session/key=userid
 
     $result = array();
     $result['error'] = 0;
@@ -196,7 +196,7 @@ if ($option=='list'){  // echo select values
   //$tabla->sql_query("UPDATE AD_MAP_LOGIN_TFNO SET TELEFONO = '666666' WHERE ID=1");  //972804
 
 }else if ($option=='show' && $table_name){
-  //https://tienda.extralab.net/control_panel/ajax/op=show/table=CLI_ORDERS/
+   // /control_panel/ajax/op=show/table=CLI_ORDERS/
 
     // error_reporting(E_ALL);
     //ini_set('display_errors', 1);
@@ -364,7 +364,7 @@ if ($option=='list'){  // echo select values
         $tabla->update($post);
     }
 }else if ($option=='updatefield' && $table_name && $_ARGS['col'] && $_ARGS['key'] && $_ARGS['field'] ){ //&& $_ARGS['value'] ){  //update_field
-    //https://tienda.extralab.net/control_panel/ajax/op=updatefield/table=CLI_USER/key=11/col=user_id/field=username/value=achosi
+    // /control_panel/ajax/op=updatefield/table=CLI_USER/key=11/col=user_id/field=username/value=achosi
 
     $result = array();
     $result['error']=0;
@@ -383,8 +383,8 @@ if ($option=='list'){  // echo select values
     echo json_encode($result);   
 
 }else if ($option=='getfield' && $table_name && $_ARGS['field'] && $_ARGS['key']){ //} && $_ARGS['value'] ){ //&& $_ARGS['value'] ){  //update_field
-    //https://tienda.extralab.net/control_panel/ajax/op=getfield/table=CLI_USER/field=user_email/key=user_id/value=1
-    //https://tienda.extralab.net/control_panel/ajax/op=getfield/table=CLI_USER/field=user_url_avatar/key=user_id/value=13
+    // /control_panel/ajax/op=getfield/table=CLI_USER/field=user_email/key=user_id/value=1
+    // /control_panel/ajax/op=getfield/table=CLI_USER/field=user_url_avatar/key=user_id/value=13
 
     $result = array();
     $result['error'] = 0;

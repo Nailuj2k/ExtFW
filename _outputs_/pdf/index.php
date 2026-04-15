@@ -9,8 +9,7 @@
 
     /****
 
-    //PDF::$pdf_watermark = './media/page/files/6/1658349746_hotel_arcos_viejo_02.jpg'; //
-    //PDF::$pdf_watermark = 'https://example.com/media/works/images/2/.big_a4.jpg';
+      //PDF::$pdf_watermark = 'https://example.com/media/works/images/2/.big_a4.jpg';
     //PDF::$pdf_watermark = 'https://example.com/media/slider/images/11.jpg';
 
     PDF::$pdf_filename = $pdf_filename?$pdf_filename:($_ARGS[3]?$_ARGS[3].'.pdf':time().'.pdf');

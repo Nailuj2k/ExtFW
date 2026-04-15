@@ -105,12 +105,10 @@
         }else{
           // $verify = json_decode(file_get_contents($url));
            if ($captcha) {
-              
-                //$to = "soporte@extralab.net"; // CHANGE THIS TO YOUR OWN!
-                
+           
 
-LOG::$messages['CFG.smtp'] = print_r(CFG::$vars['smtp'],true);
-LOG::$messages['CFG.modules.MODULE'] = print_r(CFG::$vars['modules'][MODULE],true);
+                LOG::$messages['CFG.smtp'] = print_r(CFG::$vars['smtp'],true);
+                LOG::$messages['CFG.modules.MODULE'] = print_r(CFG::$vars['modules'][MODULE],true);
 
               //$subject  = t('CONTACT_FORM');
               //$message  = 'Empresa: ' . $_POST['empresa'] . "<br>";
@@ -134,7 +132,7 @@ LOG::$messages['CFG.modules.MODULE'] = print_r(CFG::$vars['modules'][MODULE],tru
                 $m->Port       = CFG::$vars['smtp']['port'];          //465;                   // set the SMTP port for the GMAIL server
                 $m->SMTPSecure = 'tls';
 
-                $m->Username   = CFG::$vars['smtp']['user'];      //'soporte@extralab.net';               // GMAIL username
+                $m->Username   = CFG::$vars['smtp']['user'];      //      // GMAIL username
                 $m->Password   = CFG::$vars['smtp']['password'];  //Crypt::md5_decrypt(CFG::$vars['smtp']['password'], CFG::$vars['prefix'].$dbpasswd);
 
                 $m->MsgHTML(str_replace(['\n','\r'], ['<br />',''], $message));     
@@ -148,7 +146,6 @@ LOG::$messages['CFG.modules.MODULE'] = print_r(CFG::$vars['modules'][MODULE],tru
                 else
                     $m->addReplyTo(CFG::$vars['smtp']['from_email'],CFG::$vars['smtp']['from_name']);
 
-                //  $m->AddBCC('soporte@extralab.net','Soporte');
                 //  $m->filename = $uploaded_file;
 
                 $m->AddAddress(CFG::$vars['modules'][MODULE]['email'],CFG::$vars['modules'][MODULE]['name']);               

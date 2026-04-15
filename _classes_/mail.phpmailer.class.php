@@ -42,7 +42,7 @@ class Mailer extends PHPMailer {
       $this->Host       = CFG::$vars['smtp']['server'];        //"smtp.gmail.com";      // sets GMAIL as the SMTP server
       $this->Port       = CFG::$vars['smtp']['port'];          //465;                   // set the SMTP port for the GMAIL server
       if(!CFG::$vars['smtp']['anonymous']){
-        $this->Username   = CFG::$vars['smtp']['user'];      //'soporte@extralab.net';               // GMAIL username
+        $this->Username   = CFG::$vars['smtp']['user'];      //             // GMAIL username
         $this->Password = CFG::$vars['smtp']['password'];  //Crypt::md5_decrypt(CFG::$vars['smtp']['password'], CFG::$vars['prefix'].$dbpasswd);
       }
     //  $this->From($from_email); //$_POST['efrom'], $_POST['efrom']);

@@ -44,21 +44,6 @@
             require_once './_modules_/login/google.php';
             // authenticate code from Google OAuth Flow
             if (isset($_REQUEST['code'])) {
-                //$client->authenticate($_GET['code']);
-                //  if ($client->getAccessToken()) {
-                //$google_token = $client->getAccessToken();
-                // GET
-                // https://tienda.extralab.net/login/auth/google?code=4%2F0AX4XfWjum5H58yyyhX0qtepJEA6vp6GEnJQLYJKvMcZMiVR-U84NCPoA6U1wGt-oNMNKCA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none#
-                ////////////  https://www.webslesson.info/2019/09/how-to-make-login-with-google-account-using-php.html
-                /////// https://www.webslesson.info/search/label/php
-                /////// https://www.webslesson.info/2021/01/build-real-time-chat-application-in-php-mysql-using-websocket.html
-                /////// https://es.linux-console.net/?p=53
-                /*
-                https://phppot.com/php/php-google-oauth-login/
-                https://www.codexworld.com/login-with-google-api-using-php/
-                https://www.codexworld.com/demos/login-with-google-api-using-php/index.php
-                https://code.tutsplus.com/tutorials/how-to-authenticate-users-with-twitter-oauth-20--cms-25713
-                */
                 /***********OKIS***/
                 $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
                 ?>
@@ -215,15 +200,9 @@
                 message_mail('Registro de usuario',
                              $msg,
                              CFG::$vars['smtp']['from_email'],
-                             'julian.torres.sanchez@gmail.com');
+                             'invitame_a_guisky@gmail.com');
                 */
 
         }else  include(SCRIPT_DIR_MODULE.'/run.php'); 
 
     }
-
-
-/***********
-https://medium.com/javascript-scene/passwordless-authentication-with-react-and-auth0-c4cb003c7cde#.6bt9m8ug2
-https://medium.com/@ninjudd/passwords-are-obsolete-9ed56d483eb#.ix14f913z
-***********/

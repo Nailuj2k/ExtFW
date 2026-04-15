@@ -10,9 +10,6 @@
 
     if       ($_ARGS['op']=='getfile'){
 
-        // TEST
-        //$_ARGS['file']  ='/home/tienda/domains/tienda.extralab.net/private_html/_modules_/inventario/ubicaciones.csv';
-
         $_ARGS['file'] = $_ARGS['file']=='htaccess' ? '.htaccess' : $_ARGS['file'];
 
         $file = /*SCRIPT_DIR_MODULE.'/'.*/$_ARGS['file']; //.'.'.$_ARGS['ext'];
@@ -88,8 +85,6 @@
 
         //$filename = $_SERVER['DOCUMENT_ROOT'].'/_js_/image_editor/demo/1733768353.jpg';
         
-       // [/home/tienda/domains/tienda.extralab.net/private_html/home/tienda/domains/tienda.extralab.net/private_html/_bak_/aaaaaaaaaaaaaaa.html]
-
         if (file_exists($filename)){
            
             if (stristr($filename,'_bak_')===false){
@@ -373,8 +368,6 @@
                         $ajax_result['msg']    = 'No se pudo guardar copia de seguridad de el archivo '.$_ARGS['file'].' en '.$bak_file;  
                     }
                  
-                    //No se pudo guardar copia de seguridad de el archivo /home/tienda/domains/tienda.extralab.net/private_html/index.php 
-                    // en /home/tienda/domains/tienda.extralab.net/private_html/_bak_/202505201031/index.php     
                 }
                  
             }else{
@@ -422,7 +415,7 @@
         define('OLLAMA_MODEL'   , CFG::$vars['ai']['ollama'  ]['model'] ?? 'gpt-oss:20b-cloud'); 
         define('OLLAMA_API_KEY' , CFG::$vars['ai']['ollama'  ]['api_key'] ?? '052715d1d1e94f6e859b6b3e31a88fe9.1uxCp2CMs78Vlh15CCinrgdI') ;
         // Test calling directly:
-        // https://tienda.extralab.net/edit/ajax/op=ai/service=claude/token=<TOKEN_FROM_SESSION>/question=hello
+        // https://domain.net/edit/ajax/op=ai/service=claude/token=<TOKEN_FROM_SESSION>/question=hello
 
        include(SCRIPT_DIR_MODULE.'/ai/AiServiceInterface.php');
 

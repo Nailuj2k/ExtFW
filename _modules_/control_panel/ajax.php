@@ -1,20 +1,6 @@
 <?php
 
 
-//   
-// find ./public -type f -exec du -h {} + | sort -rh | head -n 100
-    
-//    $version = explode('.', PHP_VERSION);
-//    if ($version[0] >= '7'){
-//       if(file_exists('./vendor/autoload.php')) 
-//            include('INCLUDE_composer.php');
-//    }
-
-    if (!$_SESSION['userid'] || $_SESSION['userid']>20 ) 
-        if (isset($_ARGS[3])||($_POST))
-            if ($_ARGS['2']!='op=list')
-                log2mail($_ARGS,'_ARGS');
-
     if       ( Root()          && $_ARGS['op']=='save_cfg'        ){
 
         $result = array();

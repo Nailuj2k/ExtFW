@@ -4,30 +4,14 @@
 $extfw_file = 'extfw_base';
 $extfw_installer = 'extfw_installer';
 $extfw_update = 'extfw_update';
-$extfw_installer_version = '20260410';
+$extfw_installer_version = '20260414';
 $host_extfw = 'https://software.extralab.net/';
-$extfw_version = file_get_contents( 'https://tienda.extralab.net/version/html');
+$extfw_version = file_get_contents( 'https://software.extralab.net/version/html');
 $php_ver = phpversion();
 $php_os = php_uname('s').' '.php_uname('r'); //PHP_OS.' '.PHP_OS_FAMILY; // https://stackoverflow.com/questions/21129737/how-do-i-interpret-the-output-of-php-uname
 $server = $_SERVER['SERVER_SOFTWARE']; //print_r($_SERVER,true);  //['SERVER_SOFTWARE'];
-/*
-Ubuntu:
-Linux-4.9.184-linuxkit-x86_64-with-Ubuntu-18.04-bionic
-
-Debian:
-Linux-4.14.117-grsec-grsec+-x86_64-with-debian-buster-sid
-Linux hlaweba8 4.19.0-14-amd64 #1 SMP Debian 4.19.171-2 (2021-01-30) x86_64 // Buster HLA
-
-Centos:
-Linux-3.10.0-957.1.3.el7.x86_64-x86_64-with-centos-7.6.1810-Core
-Linux 3.10.0-957.10.1.el7.x86_64  // Centos Extralab
-
-Mac OS X:
-Darwin-17.7.0-x86_64-i386-64bit
 
 
-
-*/
 $advanced = isset($_GET['mode']) && $_GET['mode']=='advanced';
 
 Class INSTALLER {

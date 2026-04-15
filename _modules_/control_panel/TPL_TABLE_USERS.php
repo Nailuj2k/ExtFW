@@ -1138,7 +1138,7 @@ class userEvents extends defaultTableEvents implements iEvents{
         }
         $m->body = str_replace("\n",'<br />',$args['message']); //'Se ha realizado un nuevo pedido'
         $log_sql = 'INSERT INTO '.TB_LOG.' (TYPE,ID_USER,EVENT_DATE,EMAIL,SUBJECT,MESSAGE) VALUES(\''.$type.'\','.$userid.','.$owner->sql_currentdate().',\''.$email.'\',\''.Str::escape($m->Subject).'\',\''.Str::escape($m->body).'\')';
-        $m->AddBCC('julian.torres.sanchez@gmail.com','Store MSG');
+        //$m->AddBCC('debug@email.com','Debug Email');
         $okis = $m->Send();
         //$type->values    = array('0'=>'unknown','1'=>'msg_to_user','2'=>'msg_from_user' );
         if($okis){

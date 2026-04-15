@@ -154,7 +154,7 @@ function log_url(){
   /////////////////////}
 }
 
-
+/*
 function log2mail($var,$name){
     if (CFG::$vars['debug']){
         if($_POST && CFG::$vars['site']['debug']['email']){
@@ -189,7 +189,7 @@ function log2mail($var,$name){
         }
     }
 }
-
+*/
 /*******
 function get_ip() {
     $ip_real =              $_SERVER["HTTP_X_FORWARDED_FOR"];
@@ -408,7 +408,7 @@ function upload_file($ftp_server,$ftp_user_name,$ftp_user_pass,$source_file,$des
 function message_mail($subject,$message,$frommail = false,$tomail = false){
 
     if(!$frommail) $frommail = CFG::$vars['site']['from_email'];
-    if(!$tomail)   $tomail = 'soporte@extralab.net';
+    if(!$tomail)   return false; 
 
     $m = new Mailer();
     $m->SetFrom( $frommail, $frommail);
