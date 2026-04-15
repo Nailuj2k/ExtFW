@@ -1,0 +1,13 @@
+.datatable-rows{width:950px !important;}
+.datatable-rows{border-collapse: separate !important;}
+
+.datatable-rows th,
+.datatable-rows td{ font-size:.8em; color:#333; height:16px;}
+.datatable-rows th{ background-size: contain; }
+
+.datatable-rows tr{height: 21px; }
+
+.datatable-rows th,
+.datatable-rows td{ padding:2px 3px 0px 3px;font-size:.8em; color:#333;height:16px; border-bottom: 1px solid black;}
+
+

@@ -1,0 +1,43 @@
+
+
+<!-- page.html -->
+
+<h2>{TITLE}</h2>
+<p>{TEXT}</p>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Type</th>
+    <th>Title</th>
+    <th>Repo</th>
+    <th></th>
+    <th>Link</th>
+    <th>Fecha</th>
+  </tr>
+<!-- BEGIN item -->
+  <tr>
+    <td>{id}</td>
+    <td>{type}</td>
+    <td>{title}</td>
+    <td>{repo}</td>
+    <td title="{link}"><img src="{URL}/media/MKP/files/{id}/.tn_{icon}"></td>
+    <td><a class="open_ajax" data-href="{link}" data-width="500px" data-height="250px" title="Instalar {title}">{INSTALL}</a></td>
+    <td>{fecha}</td>
+  </tr>
+<!-- END item -->
+</table>
+
+<br /><br /><br /><br />
+
+<style>
+table {border-collapse:collapse;margin:20px 0;} 
+table th,
+table td{border:1px solid silver;padding:4px 8px;font-size:12px;text-align:left;}
+table th{font-weight:700;background-color:#f0f0f0;}
+table th:first-child{text-align:right;}
+table td:first-child{font-family:Monospace;text-align:right;}
+table td img{max-width:50px;max-height:50px;}
+table td a{color:var(--blue);cursor:pointer;}
+</style>
+

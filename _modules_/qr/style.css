@@ -1,0 +1,9 @@
+.cell_TO_URL {
+
+/*  max-width: 200px; */      /* limita el ancho (ajústalo a lo que necesites) */
+  white-space: nowrap;    /* evita que el texto se parta en varias líneas */
+  overflow: hidden;       /* oculta el texto que se sale del ancho */
+  text-overflow: ellipsis;/* muestra puntos suspensivos al final */
+
+
+}

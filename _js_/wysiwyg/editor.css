@@ -1,0 +1,99 @@
+    .wysiwyg-wrapper {
+        border: 1px solid #ccc;
+        padding: 5px;
+        position: relative;
+        background-color:white;
+    }
+    .wysiwyg-toolbar {
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+    }
+    .table-popup button,
+    .wysiwyg-toolbar button {
+        position: relative;
+        vertical-align:top;
+        height:24px;
+        border:1px solid #bbb;
+        border-radius:2px;
+        background-repeat : no-repeat;
+        background-position : center;
+        display : inline-block;
+        min-width : 24px;
+        height : 24px;
+        cursor:pointer;
+        float: unset;
+        margin: 0;
+    }
+    .wysiwyg-toolbar button.active {
+        background-color: #ddd;
+    }
+    .wysiwyg-editor {
+        outline: none;
+        position: absolute;
+        top: 38px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        overflow: auto;
+        /*****************************min-height: 200px;**************/
+    }
+
+    .wysiwyg-editor pre {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        padding: 10px;
+        overflow-x: auto;
+        font-family: monospace;
+    }
+    
+    .wysiwyg-editor img {
+        max-width:100%;
+    }
+    .wysiwyg-editor b {
+        font-weight: 600 !important; /* o 600 */
+    }
+    /* Opcional: estilos para el popup de tablas */
+    .table-popup button {
+        font-size: 12px;
+    }
+    /* Opcional: estilos para el dropdown de formato */
+    .format-dropdown div:hover {
+        background-color: #eee;
+    }
+
+
+
+
+
+
+
+
+.wysiwyg-toolbar .btn-icon::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  /* Color de fondo que será visible a través de la máscara */
+  background-color: #000; /* Color por defecto */
+}
+
+.wysiwyg-toolbar .btn-icon.btn-table::before { mask-image: url(/_images_/feather/table.svg);}
+.wysiwyg-toolbar .btn-icon.btn-image::before { mask-image: url(/_images_/feather/image.svg);}
+.wysiwyg-toolbar .btn-icon.btn-code::before { mask-image: url(/_images_/feather/code.svg);}
+.wysiwyg-toolbar .btn-icon.btn-link::before { mask-image: url(/_images_/feather/link.svg);}
+.wysiwyg-toolbar .btn-icon.btn-maximize::before { mask-image: url(/_images_/feather/maximize.svg);}
+.wysiwyg-toolbar .btn-icon.btn-minimize::before { mask-image: url(/_images_/feather/minimize.svg);}
+.wysiwyg-toolbar .btn-icon.btn-info::before { mask-image: url(/_images_/feather/info.svg);}
+
+/* Cambiar solo el color de fondo del pseudo-elemento */
+.wysiwyg-toolbar .btn-icon.btn-green::before { background-color: var(--green);}
+.wysiwyg-toolbar .btn-icon.btn-blue::before {  background-color: var(--blue);}
+.wysiwyg-toolbar .btn-icon.btn-red::before {  background-color: var(--red);}

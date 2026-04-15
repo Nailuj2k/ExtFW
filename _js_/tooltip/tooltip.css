@@ -1,0 +1,34 @@
+        .tooltip-container {
+            position: fixed;
+            background: #333;
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            white-space: nowrap;
+            max-width: 300px;
+        }
+        
+        .tooltip-container::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+        }
+        
+        .tooltip-container.position-top::after { bottom: -10px; border-top-color: inherit; }
+        .tooltip-container.position-bottom::after { top: -10px; border-bottom-color: inherit; }
+        .tooltip-container.show { opacity: 1; }
+        
+        .tooltip-container.theme-default {background: #333333; color: #fff; border-color: #333;}
+        .tooltip-container.theme-light   {background: #ffffff; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border: 1px solid #ddd; border-color: #fff;}
+        .tooltip-container.theme-light::after {filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));}
+        .tooltip-container.theme-primary {background: #007bff; color: #fff; border-color: #007bff;}
+        .tooltip-container.theme-success {background: #28a745; color: #fff; border-color: #28a745;}
+        .tooltip-container.theme-danger  {background: #dc3545; color: #fff; border-color: #dc3545;}
+        .tooltip-container.theme-tomato  {background: #ff6347; color: yellow; border-color: #ff6347;} /* thanks to tippy.js :). */

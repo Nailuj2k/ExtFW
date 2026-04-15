@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+html {
+    box-sizing: border-box;
+    /*
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --error: #a4000f;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --font-family-sans-serif: "Ubuntu",Montserrat,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,"Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --font-family-monospace: Inconsolata,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --font-weight-default:300;
+    --font-size-default:14px;
+    --link:#1e71a2;
+    --link-hover:#e8576c;
+    --background-color:#fff;
+}
+
+.ubuntu-light          {  font-family: "Ubuntu", serif;  font-weight: 300;  font-style: normal;}
+.ubuntu-regular        {  font-family: "Ubuntu", serif;  font-weight: 400;  font-style: normal;}
+.ubuntu-medium         {  font-family: "Ubuntu", serif;  font-weight: 500;  font-style: normal;}
+.ubuntu-bold           {  font-family: "Ubuntu", serif;  font-weight: 700;  font-style: normal;}
+.ubuntu-light-italic   {  font-family: "Ubuntu", serif;  font-weight: 300;  font-style: italic;}
+.ubuntu-regular-italic {  font-family: "Ubuntu", serif;  font-weight: 400;  font-style: italic;}
+.ubuntu-medium-italic  {  font-family: "Ubuntu", serif;  font-weight: 500;  font-style: italic;}
+.ubuntu-bold-italic    {  font-family: "Ubuntu", serif;  font-weight: 700;  font-style: italic;}
+
+/*** Configuration **/
+/*
+@media (min-width: 900px) {
+    :root{--margin-lr:40px;}
+}
+@media (max-width: 900px) {
+    :root{--margin-lr:20px;}
+}
+*/
+body {
+    min-height: 100vh;
+    font-family: var(--font-family-sans-serif);
+    font-size: var(--font-size-default);
+    font-weight: 300;
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+    grid-template-columns: 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    color: #222;
+    background-color: #efefef;
+    max-width: 950px;
+    margin: 50px auto;   
+    background: linear-gradient(rgb(255 255 255 / 93%), rgb(255 255 255 / 88%)),
+                     url(/media/page/files/1/7c9d1bf73d14050777fedb0cd973c5a33ceab569.jpg);   
+    box-shadow: 1px 1px 8px 1px #77777750;     
+}
+
+.body-control_panel{max-width: fit-content;}
+
+@media (max-width: 768px) {
+    body{ margin:0;}
+}
+
+h1,h2,h3,h4,h5,h6,b,strong{
+    font-family: Ubuntu,serif; 
+    font-weight: 700;
+    font-style: italic;
+}
+
+a{cursor:pointer;}
+
+p {
+  hyphenate-limit-chars: 7;
+  hyphens: auto;
+  text-align: justify;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+
+header {
+    grid-area: header;
+    background-color: #f2a900;
+    padding: 1rem 2rem;
+    /*text-align: center;*/
+    border-bottom: 1px solid #ece2e2;
+}
+header .logo{/*position:absolute;*/
+
+display: block;
+    /* border: 1em groove #33ccff; */
+    /*
+    font-size: 20px;
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    background: url(/media/images/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;*/
+}
+
+header .logo img{height:80px;filter: drop-shadow(1px 1px 3px #00000066);}
+header .logo a{display:grid;}
+
+/*
+nav.main-nav {
+    grid-area: main-nav;
+    padding: 0.5rem;
+    text-align: right;
+    background-color:#f4f4f4;
+    border-bottom: 1px solid #ddd;
+}
+*/
+
+aside {
+    grid-area: aside;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-left: 1px solid #f1e5e5;
+}
+
+main {
+    grid-area: main;
+    /*padding: 2rem;*/
+    background-color: var(--light);
+    position: relative;
+}
+
+.page-content img{max-width:100%;}
+
+footer {
+    grid-area: footer;
+    background-color: var(--light);
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+footer p{text-align: center;}
+footer .logo img{height:90px;filter: drop-shadow(1px 1px 3px #00000066);}
+footer .copy-link {text-decoration: none;font-size:0.8em;color:inherit;margin-left:50px;}
+footer .copy-link img {height:18px;}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto auto;
+    }
+
+    aside {
+        border-right: none;
+        border-top: 1px solid #ddd;
+    }
+}
+
+.menu-simple ul{list-style-type:none;margin:0;padding:0}
+.menu-simple ul li{display:inline-block;padding: 4px 10px 4px 0;position:relative;}
+.menu-simple ul li a{text-decoration: none;}
+.menu-simple ul li li::before {content: "* "}
+.menu-simple>ul>li:first-child{padding-left: 0px;}
+.menu-simple ul li>ul{display:none;}
+.menu-simple ul li:hover>ul{position:absolute;display:block;z-index:5;top:20px;left:0px;border:1px solid #b5b5b5;padding:10px;background-color:white;min-width:140px;}
+.menu-simple ul li:hover>ul li{display:block;}        
+
+
+/* Menus */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .menu {
+    display: flex;
+    /*gap: 20px;*/
+    padding:0;
+}
+
+.navbar .menu, 
+.navbar .menu ul{
+    list-style: none;
+}
+
+.navbar .menu li {
+    position: relative;
+}
+
+.navbar .menu a {
+    display: block;
+    font-family:Ubuntu;font-weight: bold;font-style: italic;
+    text-decoration: none;
+    color: rgb(15, 15, 15);
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .menu a:hover {
+    background-color: #7b7676;
+    border-radius: 3px;
+}
+
+/* Estilos para los submenús */
+.navbar .submenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    max-height: 0; /* Altura inicial del submenú */
+   /* overflow: hidden; *//* Ocultar contenido mientras se anima */
+
+   /**
+    transition: max-height 0.3s ease, opacity 0.3s ease; 
+    opacity: 0; 
+  **/
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* Evita interacción mientras está cerrado */
+
+    background-color: #444; /* Fondo más oscuro para diferenciar */
+    border-radius: 3px;
+}
+
+.navbar .submenu.active {
+    max-height: 500px; /* Altura máxima visible */
+    padding:0;
+    opacity: 1; /* Opacidad final */
+    transform: translateY(0);
+    pointer-events: auto; /* Permite la interacción cuando está visible */
+}
+
+.navbar .submenu li {
+  
+}
+
+.navbar .submenu a {
+    padding: 10px 15px; /* Padding para los enlaces del submenú */
+    min-width:150px;
+}
+
+.navbar .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.navbar .hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar .hamburger::before,
+.navbar .hamburger::after {
+    content: '';
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.navbar .hamburger::before {
+    top: -8px;
+}
+
+.navbar .hamburger::after {
+    top: 8px;
+}
+
+.navbar .menu-toggle.active .hamburger {
+    background-color: transparent; /* Ocultar la línea central */
+}
+
+.navbar .menu-toggle.active .hamburger::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.navbar .menu-toggle.active .hamburger::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.navbar .submenu .submenu {
+     background-color: #555; /* Fondo más oscuro para diferenciar */
+     margin-left: 20px;
+     margin-top: -8px;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar .menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 103px;
+        left: 0;
+        z-index: 1000;
+        overflow: hidden; /* Ocultar contenido mientras se anima */
+        max-height: 0; /* Altura inicial del menú */
+        transition: max-height 0.3s ease, opacity 0.3s ease; /* Animación suave */
+        /*
+        transform: translateY(-100%); /
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        */
+        opacity: 0; /* Opacidad inicial */
+    }
+
+    .navbar .menu li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar .menu a {
+        border-bottom: 1px solid #555;
+        color:#efefef;
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+    }
+
+    .navbar .menu.active {
+        /* display: flex;*/
+        max-height: 500px; /* Altura máxima visible */
+        /*transform: translateY(0);*/ /* Mover el menú a su posición normal */
+        opacity: 1; /* Opacidad final */        
+    }
+    .navbar .submenu{position: relative;}
+    .navbar .submenu li{
+        /*padding-left: 20px; *//* Mayor padding en dispositivos móviles */
+    }
+
+    /* Posicionar el submenú de primer nivel debajo del elemento padre */
+    .navbar .has-childs > .submenu {
+        left: 0;
+        top: 100%;
+    }
+
+    /* Posicionar el submenú anidado (segundo nivel) a la derecha del padre */
+    .navbar .has-childs .has-childs > .submenu {
+        /*left: 100%;*/
+        top: 0;
+    }
+    .navbar .submenu .submenu {
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+}
+
+.inner-page{padding:2rem;}
+
+
+
+.grayscale  
+            {
+                filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+                filter: gray; /* IE6-9 */
+                -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+                -webkit-transition: all .6s ease; /* Fade to color for Chrome and Safari */
+                -webkit-backface-visibility: hidden; /* Fix for transition flickering */
+            }
+.grayscale:hover
+            {
+                filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+                -webkit-filter: grayscale(0%);
+            }
+
+
+
+@media screen and (min-width: 600px) {
+::-webkit-scrollbar              {  width: 4px;  height: 4px;}
+::-webkit-scrollbar-button       {  display:none; }
+::-webkit-scrollbar-thumb        {  background: #babac0;  border: 0px none #ffffff;  border-radius: 50px; border-top:12px solid #f2f2f4; border-bottom:12px solid #f2f2f4;}
+::-webkit-scrollbar-thumb:hover  {  /*background: #b3b3b9;*/}
+::-webkit-scrollbar-thumb:active {  /*background: #b3b3b9;*/}
+::-webkit-scrollbar-track        {  background: #f2f2f4;  border: 0px none #ffffff;  border-radius: 50px;}
+::-webkit-scrollbar-track:hover  {  /*background: #eaeaec;*/}
+::-webkit-scrollbar-track:active {  /*background: #eaeaec;*/}
+::-webkit-scrollbar-corner       {  background: transparent;}
+}
+@media screen and (max-width: 600px) {
+}
+
+
+
+
+#top{display:block;opacity:0.15;top:0px;left:0px;color:white;position:fixed;padding:0px 16px;width:100%;border-radius:0;background-color:rgb(186 186 192 / 34%);backdrop-filter:saturate(250%) blur(20px);-webkit-backdrop-filter:saturate(250%) blur(20px);z-index:7;height:24px;border-bottom: 1px solid #d8b6a0;}
+#top:hover{opacity:0.95;}
+#top input{border:1px solid #f8f8f8;}
+#top #top-links{position:absolute;top:0px;right:6px;}
+#top #top-links a{color:#282d26;display:inline-block;margin:4px 6px 0 6px;text-transform:uppercase;font-size:10px;font-family: Montserrat;text-decoration: none;;}
+#top:after{margin-left:-50%;left:50%;content:"";display:block;position:absolute;top:100%;width:100%;height:1px;z-index:1;background-color:rgba(255,255,255,0.15);}
+#top .inner{line-height:18px;}
+#top .top-inner{justify-content:space-between;align-items:right;margin-left:auto;margin-right:auto;width:100%;max-width:980px;text-align:right;}
+#top #search {border: 1px solid gray; display: none; background-color: white;}
+#top #search i {display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #777; margin-left: 6px;margin-right: 3px;}
+#top #search input {border: 1px solid #f8f8f8;outline:none;}
+
+
+.inner.contact {padding:2rem !important;}
+
+.float-left{float:left;margin: 10px 10px 5px 0;}
+.float-right{float:right;margin: 10px 0 5px 10px;}
+.float-center{display:block;float:none;margin: 10px auto 5px auto;}
+
+
+
+
+
+
+.cita {
+  margin: 1.0em 0;
+  padding: 0;
+  position: relative;
+}
+
+.cita blockquote {
+  margin: 0;
+  padding: 0.5em 1.5em 0.5em 2em;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  /*border-left: 4px solid #6c5ce7;*/
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-size: 1.1em;
+  color: #2d3436;
+  position: relative;
+}
+
+.cita blockquote::before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    left:0;
+    top: -0.1em;
+    content: "\f10d";
+    font-size: 45px;
+    color: rgba(0, 0, 0, 0.1);
+    font-style: normal;
+
+
+}
+
+.cita figcaption {
+  padding: 0.6em 1.5em;
+  text-align: right;
+  font-size: 0.9em;
+  color: #636e72;
+}
+
+.cita figcaption::before {
+  content: '— ';
+}
+
+        .dialogue {
+            background-color: #fff;
+            padding: 15px;
+            
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .dialogue:nth-child(odd){   border-left: 4px solid var(--blue);   }
+        .dialogue:nth-child(even){    border-left: 4px solid var(--pink);  }
+
+        .speaker {
+            font-weight: bold;
+            color: #2980b9;
+            display: block;
+            margin-bottom: 5px;
+            font-family:Ubuntu,Montserrat,Montserrat-Bold;
+            font-weight:bold;
+            font-style: italic;
+        }
+        .signature {
+            font-style: italic;
+            text-align: right;
+            margin-top: 20px;
+        }
+
+
+

@@ -1,0 +1,30 @@
+form .btn{display:inline-block;min-width:176px;}
+.btn{/**/box-sizing:border-box;/**/display:inline-block;padding:5px 12px;/**   border-width:3px;
+border-style: solid;**/color:#fff;font-family:'Montserrat', sans-serif;font-size:1em;background-color:#0089c7;border:3px solid #0089c7;-webkit-transition:all 0.5s ease 0s;-moz-transition:all 0.5s ease 0s;-o-transition:all 0.5s ease 0s;transition:all 0.5s ease 0s;cursor:pointer;white-space:nowrap;}
+.btn.btn-primary{border-color:#0089c7;}
+.btn.btn-secondary{border-color:#800080;background-color:#800080;}
+.btn.btn-danger{border-color:#FF0000;background-color:#FF0000;}
+.NObtn.btn-link{border-color:red;background-color:white;}
+.btn.btn-link{background-color:transparent;color:#2077a2;border-width:0 0 2px 0;border-style:solid;padding:8px 12px;}
+.btn.btn-link-o{border-color:#3a84de;background-color:#3a84de;}
+.btn.btn-ok{border-color:#02ca5c;background-color:#02ca5c;}
+.btn.btn-reset{border-color:#8A9597;background-color:#8A9597;}
+.btn.btn-success{border-color:#44A9BF;background-color:#44A9BF;}
+.btn.btn-warning{border-color:#fcbe03;background-color:#fcbe03;}
+.btn.btn-info{border-color:#15bde1;background-color:#15bde1;}
+.btn.btn-light{border-color:#99deff;background-color:#99deff;}
+.btn.btn-dark{border-color:#2e455c;background-color:#2e455c;}
+.btn.disabled{border-color:#cacaca;background-color:#cacaca;cursor:none;}
+
+.btn .fa{color:inherit}
+
+.btn-link.active{border-color:#0089c7;color:black;font-weight:500;}
+.btn.btn-small{font-size:0.8em;padding:2px 4px;}
+.btn.btn-large{font-size:1.2em;padding:9px 14px;}
+.btn:hover{/* background-color: #fff;*//**  color: #ffebc6;**/border-color:transparent;/* border: 1px solid rgba(255,255,255,1);;*//*#b6a785; */border-color:rgba(255,255,255,0.7);}
+.btn-secondary:hover{border-color:#8196c2;}
+.btn-ok:hover{border-color:#918f94;}
+.btn-reset:hover{color:#d74470;}
+.btn.btn-link:hover{border-color:#e7504b;}
+.btn.disabled,
+.btn:disabled{background-color:#dddddd;border-color:#acacac;cursor:not-allowed;color:black;}

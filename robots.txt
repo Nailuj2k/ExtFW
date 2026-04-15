@@ -1,0 +1,63 @@
+#
+# robots.txt
+#
+# This file is to prevent the crawling and indexing of certain parts
+# of your site by web crawlers and spiders run by sites like Yahoo!
+# and Google. By telling these "robots" where not to go on your site,
+# you save bandwidth and server resources.
+#
+# This file will be ignored unless it is at the root of your host:
+# Used:    http://example.com/robots.txt
+# Ignored: http://example.com/site/robots.txt
+#
+# For more information about the robots.txt standard, see:
+# http://www.robotstxt.org/robotstxt.html
+#
+# For syntax checking, see:
+# http://www.robotstxt.org/checker.html
+
+User-agent: *
+Crawl-delay: 10
+# Directories
+Disallow: /_classes_/
+Disallow: /_includes_/
+Disallow: /_modules_/
+Disallow: /_themes_/
+Disallow: /_outputs_/
+Disallow: /_i18n_/
+Disallow: /_images_/
+Disallow: /_js_/
+Disallow: /_lib_/
+Disallow: /_plugins_/
+Disallow: /_bak_/
+Disallow: /vendor/
+Disallow: /media/
+# Files
+Disallow: /README.md
+Disallow: /configuration.php
+# Paths (clean URLs)
+Disallow: /login
+Disallow: /login/profile
+Disallow: /login/register
+Disallow: /login/changepassword
+Disallow: /login/logout
+Disallow: /control_panel
+Disallow: /acl
+Disallow: /install
+Disallow: /erp
+Disallow: /alerts
+Disallow: /links
+Disallow: /dbadmin
+Disallow: /edit
+Disallow: /marketplace
+Disallow: /qr
+Disallow: /newsletter
+Disallow: /shop/checkout
+Disallow: /shop/admin
+Disallow: /_template_
+
+User-agent: Yandex
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /

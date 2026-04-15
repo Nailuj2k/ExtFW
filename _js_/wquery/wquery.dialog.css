@@ -1,0 +1,919 @@
+.wq-dialog-overlay {
+    --dialog-overlay-background: rgba(0, 0, 0, 0.6);
+    --dialog-background: #fff; /* Color de fondo del diálogo */
+    --dialog-border:unset; /*2px solid black;*/
+    --dialog-border-radius: 8px;/* 0px;*/
+    --dialog-titlebar-background: #0e7cca;/* #007bff; */
+    --dialog-titlebar-color: #fff;
+    --dialog-titlebar-padding: 5px 10px; /*3px 10px 5px 10px;*/
+  }
+  
+  .wq-dialog-overlay.black {
+    --dialog-overlay-background:rgba(0, 0, 0, 0.6);
+    --dialog-background: #fff; /* Color de fondo del diálogo */
+    --dialog-border:2px solid black;
+    --dialog-border-radius: 0px;
+    --dialog-titlebar-background: black;
+    --dialog-titlebar-color: #fff;
+    --dialog-titlebar-padding: 3px 10px 5px 10px;
+  }
+    
+  .wq-dialog-overlay.pink {
+    --dialog-overlay-background: rgba(240, 0, 0, 0.6);
+    --dialog-background: #fff; /* Color de fondo del diálogo */
+    --dialog-border:4px solid #dc3545;
+    --dialog-border-radius: 8px;
+    --dialog-titlebar-background: #dc3545;
+    --dialog-titlebar-color: #fff;
+    --dialog-titlebar-padding: 3px 10px 5px 10px;
+  }
+
+  .wq-dialog-overlay.blank {
+    --dialog-overlay-background: #92979d80;
+    --dialog-background: #fff; /* Color de fondo del diálogo */
+    --dialog-border:unset;
+    --dialog-border-radius: 0px;
+    --dialog-titlebar-background: #e1f5fdc2;
+    --dialog-titlebar-color: #fff;
+    --dialog-titlebar-padding: 3px 10px 5px 10px;
+  }
+  
+  .wq-dialog-overlay.blur {
+    --dialog-overlay-background: transparent;
+    --dialog-background: transparent; /* Color de fondo del diálogo */
+    --dialog-border:unset;
+    --dialog-border-radius: 0px;
+    --dialog-titlebar-background: transparent;
+    --dialog-titlebar-color: black;
+    --dialog-titlebar-padding: 3px 10px 5px 10px;
+  }
+  
+  /* Estilo del overlay (fondo oscuro) */
+  .wq-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    overflow: hidden;
+    min-height: -webkit-fill-available;
+    box-sizing: border-box;
+    
+    /*
+    background-color: var( --dialog-overlay-background);
+    backdrop-filter: blur(7px); 
+    */
+    
+    }
+
+    .wq-dialog-overlay:not(.blur).background {
+        background-color: var( --dialog-overlay-background);
+        backdrop-filter: blur(7px); 
+    }
+
+    /* Estilo del contenedor del diálogo */
+    .wq-dialog-content {
+      background-color: var(--dialog-background);/* #fff;*/
+      border: var(--dialog-border);/*none;*/
+      border-radius: var(--dialog-border-radius);/*8px;*/
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      animation: fadeIn 0.3s ease-in-out; /* Animación de entrada */
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      max-width: 100%;
+      max-height: 100%;
+      overflow: auto;
+    }
+    
+    .wq-dialog-overlay.blank .wq-dialog-content .wq-dialog-titlebar {
+        height: 30px;
+    }
+    .wq-dialog-overlay.blur .wq-dialog-content .wq-dialog-titlebar button ,
+    .wq-dialog-overlay.blank .wq-dialog-content .wq-dialog-titlebar button {
+        margin-top: 2px; 
+        filter: invert(39%) sepia(77%) saturate(3955%) hue-rotate(57deg) brightness(70%) contrast(101%);
+     }
+    .wq-dialog-overlay.blank .wq-dialog-content .wq-dialog-footer    {display:none;}
+    .wq-dialog-overlay.blank .wq-dialog-content .wq-dialog-body     {padding:20px;}
+
+    /* Animación de entrada */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    /* Barra de título más compacta */
+    .wq-dialog-titlebar {
+      color: var(--dialog-titlebar-color); /*#fff*/
+      background-color: var(--dialog-titlebar-background);/* #007bff;*/
+      padding: var(--dialog-titlebar-padding); /*5px 10px;*/ /* Altura reducida */
+      font-size: 14px;
+      /*display: flex;******************************/
+      /*justify-content: space-between;********************/
+      align-items: center;
+      cursor: move;
+      z-index: 1; 
+    }
+    
+    .wq-dialog-titlebar .icon-titlebar{height:22px;width:22px;margin:-6px 0px -6px 0;border-radius: 50%; outline: 1px solid white;}
+    .wq-dialog-titlebar .icon-favicon{height:22px;position:absolute;top: 4px;}
+  
+    /* Título del diálogo */
+    .wq-dialog-title {
+      margin: 0;
+      flex-grow: 1;
+    }
+  
+  
+    /* Cuerpo del diálogo */
+    .wq-dialog-body {
+     /* padding: 20px;**********************/
+      overflow-y: auto;
+      flex: 1; /* Ocupa el espacio restante */
+      font-size: 14px;
+      color: #333;
+      align-content: center;
+    }
+    
+   .wq-dialog-pdf .wq-dialog-body {
+      overflow: hidden;
+   }
+   
+    /* Barra inferior para botones */
+    .wq-dialog-footer-bottom {
+      padding: 10px;
+      /*background-color: #f1f1f1;************/
+      text-align: right;
+      border-top: 1px solid #ddd;
+    }
+    
+    /* Botones del footer */
+    .wq-dialog-footer-bottom button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: background-color 0.2s;
+    }
+    
+    .wq-dialog-footer-bottom button:hover {
+      background-color: #0056b3;
+    }
+    
+    /* Estilo para el estado maximizado */
+    .wq-dialog-maximized {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 100% !important;
+      max-height: 100% !important;    
+      border-radius: 0 !important;
+      margin: 0;
+    }
+  
+    .wq-dialog-overlay.show .wq-dialog-content {
+      opacity: 1;
+      transform: scale(1);
+      min-height: 150px;
+    }
+  
+      /* Botones de la barra de título */
+      .wq-dialog-titlebar button {
+          border: none;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+          margin-left: 5px;
+          padding: 5px;
+          border-radius: 4px;
+          transition: background-color 0.2s;
+           width: 20px; /* Tamaño del botón */
+          height: 20px; }
+        
+        .wq-dialog-titlebar button:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Botón de cerrar */
+        .wq-dialog-close {
+          position: absolute;
+          /*top: 5px;*/
+          right: 10px;
+          width: 20px; /* Tamaño del botón */
+          height: 20px;
+          background: url('/_images_/feather_white/x.svg') no-repeat center center;
+          background-size: contain; /* Ajusta el tamaño del icono */
+      
+          border: none;
+          cursor: pointer;
+          padding: 0;
+        }
+        
+        /* Botón de maximizar/restaurar */
+        .wq-dialog-maximize {
+          position: absolute;
+          right: 40px; /* Separado del botón de cerrar */
+          background: url('/_images_/feather_white/maximize.svg') no-repeat center center;
+          background-size: contain; /* Ajusta el tamaño del icono */
+        }
+        
+        /* Botón de minimizar (si lo necesitas en el futuro) */
+        .wq-dialog-minimize {
+          position: absolute;
+          right: 40px; /* Separado del botón de maximizar */
+          background: url('/_images_/feather_white/minimize.svg') no-repeat center center;
+          background-size: contain; /* Ajusta el tamaño del icono */
+        }
+  
+  
+    /* Estilo para el diálogo de imagen */
+    .wq-dialog-image .wq-dialog-content {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 0;
+      border: none;
+      max-width: 1100px;
+    }
+    
+    .wq-dialog-form:not(.notify)   .wq-dialog-body {
+        /*padding: 30px 30px 80px 30px;*/
+        padding: 30px 0px 80px 0px;
+        /*****************/min-height: 470px;/*********/
+        align-content: normal;
+    }
+  
+    .wq-dialog-form   .wq-dialog-body p{
+      margin: 0px;
+    }
+  
+    .wq-dialog-image   .wq-dialog-body {
+      padding: 0px;
+      align-content: center;
+    }
+  
+  
+    .wq-dialog-video   .wq-dialog-content {
+        width: unset;
+        height: unset;
+        min-height: unset;
+        /*VIDEO 
+        aspect-ratio: 16 / 9;
+        width: 80%;
+       */
+    }
+  
+    .wq-dialog-video   .wq-dialog-body {
+      /*VIDEO align-content: center;*/
+      overflow: hidden;
+      display:inline-block; /*VIDEO*/
+    }
+
+    .wq-dialog-video  .wq-dialog-titlebar,
+    .wq-dialog-video  .wq-dialog-footer{display:none;position:absolute;top:0;left:0;right:0}
+    
+    .wq-dialog-video .wq-dialog-content:hover .wq-dialog-titlebar
+    /*, .wq-dialog-video .wq-dialog-content:hover .wq-dialog-footer*/{display:block;background-color: #007bff70;backdrop-filter: blur(7px);}
+  
+    .wq-dialog-default  .wq-dialog-body,
+    .wq-dialog-txt      .wq-dialog-body {
+       /***************/ margin-bottom: 54px;/********************/
+       /*background-color: darkgrey;*/
+     }
+
+    .wq-dialog-overlay.blank .wq-dialog-body    {margin-bottom: 0px;}
+  
+    .wq-dialog-image   .wq-dialog-body img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block; /* Asegurarse de que la imagen sea un bloque */
+      object-fit: cover; /* Ajustar la imagen al contenedor */
+      object-position: center; /* Centrar la imagen */
+      width: 100%;
+      height: 100%;
+    }
+  
+   .wq-dialog-image .wq-dialog-maximized  .wq-dialog-body  img{
+      max-width: unset;
+      max-height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+    }
+  
+    .wq-dialog-image .wq-dialog-titlebar {
+      opacity: 0;/* Ocultar la barra de título para el diálogo de imagen */
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #00000050;
+      text-align: center;
+      transition: all 0.3s ease; /* Transición suave */
+    }
+    .wq-dialog-image .wq-dialog-content:hover .wq-dialog-titlebar {
+        opacity: 1;
+        transition: opacity 1s linear;
+     }    
+
+   /* .wq-dialog-image*/ .wq-dialog-footer.wq-dialog-footer-bottom{
+        position: absolute;
+        bottom: 0;
+        left:0;
+        right:0;
+        background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente */
+        border-top:none;
+        align-content: center;
+    }        
+    .wq-dialog-overlay.blur .wq-dialog-footer.wq-dialog-footer-bottom{
+        background-color: rgba(0, 0, 0, 0.05); /* Fondo semitransparente */
+    } 
+    .wq-dialog-image .wq-dialog-footer{
+        opacity: 0;
+        transition: all 0.3s ease; /* Transición suave */
+    }
+
+    .wq-dialog-image .wq-dialog-content:hover  .wq-dialog-footer{
+        opacity: 1;
+        transition: opacity 1s linear;
+    }
+
+    .wq-dialog-image .wq-dialog-footer-middle.wq-dialog-footer{
+        opacity: 1;
+    }   
+
+    .wq-dialog-pdf .wq-dialog-content {
+      width: 80%;
+      height: 80%;
+      max-width: 1100px;
+    }
+    
+    .wq-dialog-pdf   .wq-dialog-body {
+      padding: 0px;
+    }
+    /*
+    .wq-dialog-default  .wq-dialog-body p,
+    .wq-dialog-txt      .wq-dialog-body p,
+    */
+   /* .wq-dialog-body div,*/
+    .wq-dialog-body p.txt{
+      white-space: pre-wrap;
+      font-family: 'IM Fell English','Palatino Linotype', 'Bookman Old Style', 'Book Antiqua', 'Hoefler Text', 'Times New Roman', 'Times', 'serif';
+      /*Monaco, 'Cascadia Code', sans-serif;*/
+      /*font-weight: lighter;*/
+      hyphenate-limit-chars: 67;
+      hyphens: auto;
+      text-align: justify;
+      text-wrap: pretty;
+      font-size: 1.3em;
+      line-height:0.8em;
+      /*margin-bottom: 45px;*/
+      
+    }
+  
+  
+  /* Estilo para el diálogo de pantalla completa */
+  
+  .dialog-fullscreen .wq-dialog-content {
+      width: 100%;
+      height: 100%;
+      max-width:100%;
+      max-height: 100%;
+      background-color: #0000008f
+  }
+  
+  .dialog-fullscreen  .wq-dialog-titlebar {
+    display: none; /* Ocultar la barra de título para el diálogo de imagen */
+  }
+  
+  .dialog-fullscreen .wq-dialog-body>* {
+    /*
+    width: 100%;
+    height: 100%;
+    */
+    max-width:100%;
+    max-height: 100%;
+    /*
+    width: fit-content;
+    height: -webkit-fill-available;
+    */
+    margin:auto;
+  }
+  
+  
+  /*.dialog-fullscreen.*//*.wq-dialog-default .wq-dialog-body>*,*/
+  /*.dialog-fullscreen.*/.wq-dialog-epub .wq-dialog-body>p,
+  /*.dialog-fullscreen.*/.wq-dialog-txt .wq-dialog-body>p.txt {
+      margin: 0 auto 0px auto;
+      width: fit-content;
+      padding: 30px 30px 90px 30px;
+  }
+  
+  /*.dialog-fullscreen.*/.wq-dialog-default .wq-dialog-body>form{
+      margin: 0 auto 0px auto;
+      width: 100%;
+      padding: 30px 0px 0px 0px;  
+  }
+
+/*.dialog-fullscreen.*//*.wq-dialog-default .wq-dialog-body>div,*/
+                        .wq-dialog-txt .wq-dialog-content ,
+  /*.dialog-fullscreen.*/.wq-dialog-txt .wq-dialog-body>p.txt {
+        background-color: antiquewhite;
+  }
+  
+  .dialog-fullscreen .wq-dialog-footer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color:transparent;
+       /* z-index: 1;*/
+  }
+  
+  /* Navigation buttons */
+  
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-close,
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-prev, 
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-next {
+    position: absolute;
+    color: white;
+    font-size: 60px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 15px;
+    /*border-radius: 50%;*/
+    line-height: 1em;
+    width: 60px; /* Tamaño del botón */
+    height: 60px;
+    border: none;
+  }
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-close{
+      top: 20px;
+      right: 20px;
+      background: url('/_images_/feather_white/x.svg') no-repeat center center;
+      background-size: contain; /* Ajusta el tamaño del icono */
+    }
+  
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-prev{
+    background: url('/_images_/feather_white/arrow-left.svg') no-repeat center center;
+    background-size: contain; /* Ajusta el tamaño del icono */
+  }
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-next {
+    background: url('/_images_/feather_white/arrow-right.svg') no-repeat center center;
+    background-size: contain; /* Ajusta el tamaño del icono */
+  }
+  
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-prev, 
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-next {
+      top: 50%;
+      transform: translateY(-50%);
+  }
+  
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-prev {
+    left: 20px;
+  }
+  
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-next {
+    right: 20px;
+  }
+  
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-prev:hover, 
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-next:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-close:hover,
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-prev:hover, 
+  /*.dialog-fullscreen*/.wq-dialog-footer-middle.wq-dialog-footer .btn-next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+
+    .wq-dialog-overlay.blur {
+
+    }
+
+
+
+    .wq-dialog-overlay.blur .wq-dialog-content {
+        margin: 0px auto;
+        backdrop-filter: blur(20px);
+        box-sizing: border-box;
+        max-width: 766px;
+        min-width: 300px;
+        width: 43vw;
+        word-break: break-word;
+        background: rgba(237, 237, 237, 0.34);
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(255, 255, 255, 0.3);
+        border-image: initial;
+        border-radius: 5px;
+        overflow: hidden;
+       /* padding: 9.62963vh 7vw 7.40741vh;*/
+        z-index: 30;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+
+/*
+    .wq-dialog-overlay.notify         {position:fixed;min-height:auto;width:auto;bottom:auto;min-width:auto;padding:10px;}
+    .wq-dialog-overlay.notify.target  {top:0px;left:0px;right:0px;min-height:auto;bottom:auto;}
+    .wq-dialog-overlay.notify.stacked {top:10px;left:auto;right:10px;width:auto;bottom:auto;}
+*/
+
+    .wq-dialog-overlay.notify         {position:fixed;height:auto;min-height:auto;width:auto;min-width:auto;padding:10px;}
+
+    .wq-dialog-overlay.notify.stacked {top:10px;left:auto;right:10px;bottom:auto;}
+    .wq-dialog-overlay.notify.target  {top:0px;left:0px;right:0px;bottom:auto;opacity:0;padding:0;}
+    .wq-dialog-overlay.notify.target:first-child  {margin-top:20px;}
+
+
+    .wq-dialog-overlay.notify:not(.blur).background {background-color: unset;backdrop-filter:unset;}
+    .wq-dialog-overlay.notify .wq-dialog-content{/*background-color:var(--green);*/min-height:50px;border-radius: 5px;}
+    /*
+    .wq-dialog-overlay.notify.dialog-info     .wq-dialog-content{background-color:var(--green);}
+    .wq-dialog-overlay.notify.dialog-error    .wq-dialog-content{background-color:var(--red);}
+    */
+
+
+    .wq-dialog-overlay.notify.target .wq-dialog-content{width:100% !important;border-radius: 0px;overflow: hidden;}
+    .wq-dialog-overlay.notify .wq-dialog-content .wq-dialog-body{padding:10px 50px 10px 10px;color:white;min-width:240px;}
+    .wq-dialog-overlay.notify .wq-dialog-titlebar{position:absolute;top:5px;right:5px;padding:0;cursor:unset;background-color:unset;width:22px;height:22px;}
+    .wq-dialog-overlay.notify .wq-dialog-titlebar button{right:0;}
+    .wq-dialog-overlay.notify:hover .wq-dialog-titlebar button {border: 1px solid #ffffff33;}
+    .wq-dialog-overlay.notify .wq-dialog-titlebar .wq-dialog-title{display:none;}
+    .wq-dialog-overlay.notify .wq-dialog-maximize{display:none;}
+    .wq-dialog-overlay.notify .wq-dialog-footer{background-color:unset;}
+    .wq-dialog-overlay.notify .wq-dialog-countdown {position: absolute;left: 10px;padding-top: 5px;bottom: 2px;font-size: 8px;color: white;opacity:0.6;}
+
+    .wq-dialog-overlay.notify.dialog-error    .wq-dialog-content{background-color:#f45e74;/*var(--red);*/color:white;}
+    .wq-dialog-overlay.notify.dialog-danger   .wq-dialog-content{background-color:var(--red);color:white;}
+    .wq-dialog-overlay.notify.dialog-info     .wq-dialog-content{background-color:#23af66;/*var(--green);*/color:white;}
+    .wq-dialog-overlay.notify.dialog-alert    .wq-dialog-content{background-color:#fee432;/*var(--yellow);*/}
+    .wq-dialog-overlay.notify.dialog-warning  .wq-dialog-content{background-color:var(--orange);color:#484000;}
+    .wq-dialog-overlay.notify.dialog-success  .wq-dialog-content{background-color:var(--blue);color:white;}
+    
+    .wq-dialog-overlay.notify.dialog-alert    .wq-dialog-content .wq-dialog-body{color:#484000;}
+    .wq-dialog-overlay.notify.dialog-alert    .wq-dialog-countdown {color:#ff006a;}
+
+    .wq-dialog-overlay.notify .dialog-icon{position:absolute;top:4px; left:4px;font-size:46px;opacity:0.15;}
+
+   /* =================================================================
+   ANIMACIONES DE CIERRE DE DIÁLOGO - FIXED COMPLETELY
+   ================================================================= */
+
+    /* Transiciones base para el overlay y contenido */
+    .wq-dialog-overlay {
+        transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+    .wq-dialog-content {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* CRITICAL: Desactivar las transiciones base Y hacer que el overlay también se anime */
+    .wq-dialog-overlay.closing-zoom,
+    .wq-dialog-overlay.closing-slide-left,
+    .wq-dialog_overlay.closing-slide-right,
+    .wq-dialog-overlay.closing-slide-up,
+    .wq-dialog-overlay.closing-slide-down {
+        opacity: 0 !important;
+        backdrop-filter: blur(0px) !important;
+        transition: opacity 0.5s ease !important, backdrop-filter 0.5s ease !important;
+    }
+
+    /* Desactivar transiciones base del contenido para animaciones específicas */
+    .wq-dialog-overlay.closing-zoom .wq-dialog-content,
+    .wq-dialog-overlay.closing-slide-left .wq-dialog-content,
+    .wq-dialog-overlay.closing-slide-right .wq-dialog-content,
+    .wq-dialog-overlay.closing-slide-up .wq-dialog-content,
+    .wq-dialog-overlay.closing-slide-down .wq-dialog-content {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    /* Animación de cierre: Zoom Out */
+    .wq-dialog-overlay.closing-zoom .wq-dialog-content {
+        transform: scale(0) !important;
+        opacity: 0 !important;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important, 
+                    opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+
+    /* Animación de cierre: Deslizar hacia arriba */
+    .wq-dialog-overlay.closing-slide-up .wq-dialog-content {
+        transform: translateY(-100vh) !important;
+        opacity: 1 !important;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+
+    /* Animación de cierre: Deslizar hacia abajo */
+    .wq-dialog-overlay.closing-slide-down .wq-dialog-content {
+        transform: translateY(100vh) !important;
+        opacity: 1 !important;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+
+    /* Animación de cierre: Deslizar hacia la izquierda */
+    .wq-dialog-overlay.closing-slide-left .wq-dialog-content {
+        transform: translateX(-100vw) !important;
+        opacity: 1 !important;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+
+    /* Animación de cierre: Deslizar hacia la derecha */
+    .wq-dialog-overlay.closing-slide-right .wq-dialog-content {
+        transform: translateX(100vw) !important;
+        opacity: 1 !important;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+
+    /* Animación de cierre: Desvanecimiento - YA FUNCIONABA */
+    .wq-dialog-overlay.closing-fade {
+        opacity: 0 !important;
+        backdrop-filter: blur(0px) !important;
+        transition: opacity 0.4s ease !important, backdrop-filter 0.4s ease !important;
+    }
+
+    .wq-dialog-overlay.closing-fade .wq-dialog-content {
+        opacity: 0 !important;
+        transition: opacity 0.4s ease !important;
+    }
+
+    /* Animaciones keyframe - YA FUNCIONABAN */
+    .wq-dialog-overlay.closing-bounce {
+        opacity: 0 !important;
+        transition: opacity 0.6s ease !important;
+    }
+    .wq-dialog-overlay.closing-bounce .wq-dialog-content {
+        animation: bounceOut 0.6s ease-in !important;
+        transition: none !important;
+    }
+
+    .wq-dialog-overlay.closing-shake {
+        opacity: 0 !important;
+        transition: opacity 0.6s ease !important;
+    }
+    .wq-dialog-overlay.closing-shake .wq-dialog-content {
+        animation: shakeOut 0.6s ease-in !important;
+        transition: none !important;
+    }
+
+    /* =================================================================
+      ANIMACIONES DE APERTURA DE DIÁLOGO
+      ================================================================= */
+
+    /* Estados iniciales para animaciones de apertura */
+    .wq-dialog-overlay.opening-fade {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+
+    .wq-dialog-overlay.opening-fade .wq-dialog-content {
+        opacity: 0;
+    }
+
+    /* Animación de apertura: Zoom In */
+    .wq-dialog-overlay.opening-zoom .wq-dialog-content {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    /* Animación de apertura: Deslizar desde la izquierda */
+    .wq-dialog-overlay.opening-slide-left .wq-dialog-content {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+
+    /* Animación de apertura: Deslizar desde la derecha */
+    .wq-dialog-overlay.opening-slide-right .wq-dialog-content {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+
+    /* Animación de apertura: Deslizar desde arriba */
+    .wq-dialog-overlay.opening-slide-up .wq-dialog-content {
+        opacity: 1;
+        animation: slideUp 0.6s ease-out;
+    }
+
+    /* Animación de apertura: Deslizar desde abajo */
+    .wq-dialog-overlay.opening-slide-down .wq-dialog-content {
+        opacity: 1;
+        animation: slideDown 0.6s ease-out;
+    }
+
+    /* Animación de apertura personalizada: Bounce in */
+    .wq-dialog-overlay.opening-bounce .wq-dialog-content {
+        animation: bounceIn 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+        0%   { transform: translateY(100vh); }
+      /*  50%  { transform: translateY(70vh);  }
+        70%  { transform: translateY(30vh);  }*/
+        100% { transform: translateY(0vh);   }
+    }
+
+    @keyframes slideDown {
+        0%   { transform: translateY(-100vh); }
+      /*  50%  { transform: translateY(-70vh);  }
+        70%  { transform: translateY(-30vh);  }*/
+        100% { transform: translateY(0vh);   }
+    }
+
+    @keyframes bounceIn {
+        0%   { transform: scale(0);     opacity: 0;    }
+        50%  { transform: scale(1.1);   opacity: 1;    }
+        70%  { transform: scale(0.9);                  }
+        100% { transform: scale(1);     opacity: 1;    }
+    }
+
+    @keyframes bounceOut {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        25% {
+            transform: scale(0.95);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        75% {
+            transform: scale(0.95);
+            opacity: 0.5;
+        }
+        100% {
+            transform: scale(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes shakeOut {
+        0% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        10% {
+            transform: translateX(-10px);
+            opacity: 1;
+        }
+        20% {
+            transform: translateX(10px);
+            opacity: 1;
+        }
+        30% {
+            transform: translateX(-10px);
+            opacity: 1;
+        }
+        40% {
+            transform: translateX(10px);
+            opacity: 1;
+        }
+        50% {
+            transform: translateX(-5px);
+            opacity: 0.8;
+        }
+        60% {
+            transform: translateX(5px);
+            opacity: 0.6;
+        }
+        70% {
+            transform: translateX(0);
+            opacity: 0.4;
+        }
+        100% {
+            transform: scale(0);
+            opacity: 0;
+        }
+    }
+
+    /* Estados mostrados - remueve las animaciones de apertura */
+    .wq-dialog-overlay.show.opening-fade {
+        opacity: 1;
+        backdrop-filter: blur(7px);
+        transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+    .wq-dialog-overlay.show.opening-fade .wq-dialog-content {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    .wq-dialog-overlay.show.opening-zoom .wq-dialog-content {
+        transform: scale(1);
+        opacity: 1;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .wq-dialog-overlay.show.opening-slide-left .wq-dialog-content,
+    .wq-dialog-overlay.show.opening-slide-right .wq-dialog-content {
+        transform: translateX(0);
+        opacity: 1;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .wq-dialog-overlay.show.opening-slide-up .wq-dialog-content,
+    .wq-dialog-overlay.show.opening-slide-down .wq-dialog-content {
+        transform: translateY(0);
+        opacity: 1;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+
+   /* Scrollbar (ni puto caso hace el ijoputa: se sigen viendo gordos) */
+   @media screen and (min-width: 600px) {
+        .wq-dialog-overlay ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        /*
+        .wq-dialog-overlay ::-webkit-scrollbar {
+            width: 0px;
+            height: 4px;
+            transition: all 0.3s ease;
+        }
+        .wq-dialog-overlay .wq-dialog-content:hover ::-webkit-scrollbar {
+            width: 4px;
+        }
+        */
+    }
+
+    @media screen and (min-width: 600px) {
+        .wq-dialog-overlay ::-webkit-scrollbar-button {
+            display: none;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .wq-dialog-overlay ::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .wq-dialog-overlay ::-webkit-scrollbar-thumb {
+            background: #babac0;
+            border: 0px none #ffffff;
+            /*border-radius: 50px;
+            border-top: 12px solid #f2f2f4;
+            border-bottom: 12px solid #f2f2f4;*/
+            cursor:pointer;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .wq-dialog-overlay ::-webkit-scrollbar-track {
+            background: #9797975e;
+            border: 0px none #ffffff;
+            /*border-radius: 50px;*/
+        }
+    }
+
+
+    .wq-dialog-overlay.transparent-overlay:not(.blur).background{
+        background-color: unset;
+        backdrop-filter: unset;
+    }
+    .wq-dialog-overlay.transparent-overlay.blur.background{
+        background-color: unset;
+        backdrop-filter: unset;
+    }    
+
+
+    .open_file_pdf,
+    .open_file_epub,
+    .open_file_image,
+    .open_file_video,
+    .open_file_txt {
+        cursor: pointer;
+    }

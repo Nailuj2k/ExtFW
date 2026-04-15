@@ -1,0 +1,18 @@
+
+
+#T-CFG_ALERTS_FILES{position:initial;}
+
+.div_empty{display:none;}
+
+.datatable-rows#CFG_ALERTS .inactive td {  background-color:#efefef !important;color:#bebebe}
+.datatable-rows#CFG_ALERTS .inactive.active td{  background-color:#e7e4e6 !important;}
+/*
+.datatable-rows#CFG_ALERTS.active .inactive.active td{ background-color: #c1c5c6 !important;	border:1px solid #ccc; }
+.datatable-rows#CFG_ALERTS.active .inactive.active:hover td{ background-color: #939d9f !important;	border:1px solid #ccc; }
+*/
+.datatable-rows#CFG_ALERTS .pending td                    { background-color:#ffeaeb !important;font-style: italic;color:#663300}
+.datatable-rows#CFG_ALERTS .pending.active td             { background-color:#fdc8e3 !important;font-style: italic;}
+.datatable-rows#CFG_ALERTS.active .pending.active td      { background-color:#fcb4b6 !important;font-style: italic;}
+.datatable-rows#CFG_ALERTS.active .pending.active:hover td{ background-color:#fdc8e3 !important;font-style: italic; }
+
+

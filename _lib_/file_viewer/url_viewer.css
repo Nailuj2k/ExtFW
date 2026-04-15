@@ -1,0 +1,15 @@
+.extfw_ware_box#dialog-file-url{position:absolute;top:0px;left:0px;right:0px;bottom:0px;background-color:#fcfcfc;}
+.extfw_ware_box#dialog-file-url p{/*margin:20px;*/}
+.extfw_ware_box#dialog-file-url #dialog-file-html{ overflow: auto; position:absolute; top:22px;left:0px;right:0px;bottom:0px;border:0px solid red;padding:10px;max-width:100% !important;margin:0 auto;
+    background-color: antiquewhite !important;
+    border: 1px solid #550f22 !important;
+    background-image: url(/_lib_/epub/paper.jpg);
+    background-blend-mode: multiply;
+    background-repeat: repeat;
+    -moz-box-shadow: inset 0px 0px 20px rgb(120 120 74 / 57%);
+    -webkit-box-shadow: inset 0px 0px 20px rgb(120 120 74 / 57%);
+    box-shadow: inset 0px 0px 20px rgb(120 120 74 / 57%);
+}
+
+.extfw_ware_box#dialog-file-url #dialog-file-html img{ max-width: -webkit-fill-available;max-width: -moz-fill-available;max-width: fill-available;}
+

@@ -1,0 +1,14 @@
+
+
+
+/* 
+
+Examples to not display some elements
+
+
+#breadcrumb{display:none;}
+#footer{display:none;}
+
+*/
+
+form>*{display:block; margin-bottom:5px;width:200px;}

@@ -1,0 +1,200 @@
+    :root{--theme-color:#55707f; /**1a5bbdff */--border-width:1px;}
+    .inner-page{max-width: unset;margin: 0 auto;padding:0;}
+    #sql-editor {position: absolute;background-color: #ffffffce;top: 0px;right: 0px;bottom: 0px;left: 0px;height: 100%;
+                 border:var(--border-width) solid var(--theme-color);box-shadow: 2px 2px 10px rgba(0,0,0,0.3);z-index:2;backdrop-filter: blur(3px);}
+    #sql-editor.full {position:fixed;top: 40px;right: 20px;bottom: 20px;left: 20px;height:unset;z-index:1000;}
+    #col-left { background-color: #dfdfdf73;width:300px;height:100%;overflow: auto;}
+    #col-right{ width:calc(100% - 300px); position: absolute;top: 0;right: 0;bottom: 0;     border-left:var(--border-width) solid var(--theme-color)}
+    #col-right #row-top { width:auto;height:30%;}
+    #col-right #row-bottom {  width:auto;height:70%;}
+    #sql-editor-toolbar { height:29px;border-bottom:var(--border-width) solid var(--theme-color);text-align: right;padding-right:4px;position: relative;}
+    #sql-editor-toolbar #page,
+    #sql-editor-toolbar .btn {padding:4px 6px;margin: 2px -2px 0 0;border:1px solid var(--theme-color); border-radius: 2px;font-size:11px;position: relative;}
+    #sql-editor-toolbar .btn {background-color:  var(--theme-color);}
+    #sql-editor-toolbar #page{text-align: left;float:left;margin-left:2px;}
+    #sql-editor-query-result { height:calc(100% - 30px);overflow: auto;position: relative;}
+    #sql-editor-query-status { height:30px;border-top:var(--border-width) solid var(--theme-color);  padding-left:5px;  align-content: center;}
+    #sql-editor-query-editor{height:-webkit-fill-available;position: relative;}
+    #sql-editor-query-editor #sql{width:-webkit-fill-available;width:-moz-available;min-height:100px;font-family:var(--font-family-monospace);
+          height:-webkit-fill-available;position: absolute; bottom: 34px; top: 0;border:none;}
+    #tables { border-collapse: collapse;width: 100%;margin:0;}
+    #tables thead {position: absolute; padding: 0 6px 0 0px; background: #e1e1e1; box-shadow:0px 2px 4px #ccccccaa;}
+    #tables thead tr { border-bottom:1px solid #cdcdcd;}
+    #tables tbody { margin-top:22px;  overflow: auto; padding:4px;}
+    #tables thead,
+    #tables tbody { display: block;}
+    #tables tbody tr {table-layout: fixed; border-bottom:1px solid #efd1d1;}
+    #tables tr{display: table-row;}
+
+    #tables th,
+    #tables ntd { padding: 4px 6px; }
+
+    #tables th:first-child ,
+    #tables td:first-child { display: block; overflow: hidden;cursor:pointer;text-align:left;width: 244px; }
+    #tables th:last-child {width:50px;text-align:right; }
+    #tables td:last-child {width:50px;text-align:right;font-family:consolas,monospace;padding-right:10px;}
+    #tables tr:has(.selected) td{color:yellow;background-color:navy;}
+    #tables th:first-child .fa {border: none; float: right;margin: 0px 2px 0 0;cursor: pointer;background: var(--theme-color);border-radius: 2px;color: white;padding: 4px 8px 4px 6px;font-size: 12px;}
+
+    table{width:100%;}
+    .inner-page table.sebra {    margin: 0;}
+    .splitter {background-color: var(--theme-color);}
+    
+
+/* Standard Tables */
+
+.sebra  { /*margin: 1em 0;*/  border-collapse: collapse;/*  border: 0.1em solid #d6d6d6;  min-width:200px;max-height:400px;*/}
+.sebra caption {  /*text-align: left;  font-style: italic;  padding: 0.25em 0.5em 0.5em 0.5em;*/}
+.sebra th,
+.sebra td {border:1px solid #ccc;font-weight: 300;padding:4px 10px 2px 10px;/*  padding: 0.25em 0.5em 0.25em 1em;  vertical-align: text-top; */ text-align: left;/*  text-indent: -0.5em;*/}
+.sebra th {/*  vertical-align: bottom;*/  background-color: #9d9d9d;  color: #fff;}
+/* */
+/*
+.sebra tr:nth-child(even) th[scope=row] {  background-color: #f2f2f2;}
+.sebra tr:nth-child(odd) th[scope=row] {  background-color: #fff;}
+.sebra tr:nth-child(even) {  background-color: rgba(0, 0, 0, 0.05);}
+.sebra tr:nth-child(odd) {  background-color: rgba(255, 255, 255, 0.05);}
+*/
+
+.sebra tbody tr:nth-child(even) td{background-color:#F4F6F9;}
+.sebra tbody tr:nth-child(odd) td{background-color:#fefefe;}
+.sebra tbody tr.active:nth-child(even) td{background-color:#aae8ff;color:black;}
+.sebra tbody tr.active:nth-child(odd) td{background-color:#aae8ff;color:black;}
+
+
+.sebra th:first-child,
+.sebra td:first-child {border-left:none;}
+.sebra th:last-child,
+.sebra td:last-child {border-right:none;}
+
+
+.sebra td:nth-of-type(2) { /* font-style: italic;*/}
+.sebra th:nth-of-type(3),
+.sebra td:nth-of-type(3) {  /*text-align: right;*/}
+/* */
+/* Fixed Headers */
+.sebra th {  position: -webkit-sticky;  position: sticky;  top: 0;  z-index: 2;}
+.sebra th[scope=row] {position: -webkit-sticky;  position: sticky;  left: 0;  z-index: 1;}
+.sebra th[scope=row] {vertical-align:top;color:inherit;background-color:inherit;background:linear-gradient(90deg,transparent 0%,transparent calc(100% - .05em),#d6d6d6 calc(100% - .05em),#d6d6d6 100%);}
+.sebra:nth-of-type(2) th:not([scope=row]):first-child {left:0;z-index:3;background: linear-gradient(90deg, #666 0%, #666 calc(100% - .05em), #ccc calc(100% - .05em), #ccc 100%);}
+
+/* Strictly for making the scrolling happen. */
+
+.sebra th[scope=row] + td {min-width: 24em;}
+.sebra th[scope=row] { min-width: 20em;}
+
+#tables td:last-child:contains('0'){color:red !important;}
+
+
+#sql-editor-query-result #btn-csv {opacity:0.2;background-color:#ddd;position:absolute;right:0px;top:3px;padding:0;border:1px solid var(--teal);z-index:4;}
+#sql-editor-query-result #btn-csv img {height:19px;margin:0;}
+#sql-editor-query-result:hover #btn-csv{opacity:1;}
+
+
+.sebra td pre{
+    /*
+    max-height: 25px;
+    overflow: auto;
+    */
+}
+
+
+
+
+#tooltip{background-color: rgba(255, 255, 0, 0.89);border:1px solid var(--yellow); color:var(--theme-color);padding:4px 6px;border-radius:2px;font-size:11px;pointer-events:none;z-index:5;position:absolute;white-space:nowrap;display:none;}
+/*
+<div data-tippy-root>
+  <div class="tippy-box" data-placement="top">
+    <div class="tippy-backdrop"></div> <!-- animateFill: true -->
+    <div class="tippy-arrow"></div> <!-- arrow: true -->
+    <div class="tippy-content">
+      My content
+    </div>
+  </div>
+</div>
+*/
+.tippy-box[data-theme~='tomato'] { background-color: tomato; color: yellow; }
+.tippy-box[data-theme~='tomato'] .tippy-arrow{color:#ff6347;}
+
+.tippy-box[data-theme~='yellow'] { background: rgba(255, 255, 0, 0.89); color: var(--theme-color); border:1px solid var(--yellow);  }
+.tippy-box[data-theme~='yellow'] .tippy-arrow{color:  var(--yellow);}
+
+
+
+/*
+
+.inner-page table.sebra{-webkit-touch-callout:text;-webkit-user-select:text;-khtml-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;}
+.inner-page table.sebra{min-width:200px;border-collapse:collapse;background-color:white;margin:5px auto 5px auto;}
+.inner-page table.sebra.se-table-size-100{width:100%;}
+.inner-page table.sebra tr{}
+.inner-page table.sebra th{display:none;}
+.inner-page table.sebra td{display:block;}
+.inner-page table.sebra td:first-child{}
+.inner-page table.sebra td:last-child{}
+.XXinner-page table.sebra td:before{content:attr(data-th) ": ";text-align:right;font-weight:bold;min-width:200px !important;width:200px;display:inline-block;background-color:#e7e8e9;padding:4px 10px 0px 10px;margin-right:10px;}
+.inner-page table.sebra th,.inner-page table.sebra th div,.inner-page table.sebra td:before{color:#005177;}
+.inner-page table.sebra th>div{display:inline;font-weight:300;padding:0;margin:0;color:#005177;}
+@media (min-width: 600px){.inner-page table.sebra td:before{display:none;}
+}
+.inner-page table.sebra th,.inner-page table.sebra td{text-align:left;}
+@media (min-width: 600px){.inner-page table.sebra th,.inner-page table.sebra td{display:table-cell;}
+.inner-page table.sebra th:first-child,.inner-page table.sebra td:first-child{}
+.inner-page table.sebra th:last-child,.inner-page table.sebra td:last-child{}
+}
+.inner-page table.sebra{color:#777777;overflow:hidden;}
+.inner-page table.sebra tr{margin:0;padding:0;}
+.inner-page table.sebra th,.inner-page table.sebra td{}
+@media (max-width: 600px){.inner-page table.sebra{border-bottom:1px solid navy;}
+.inner-page table.sebra tr{border-bottom:1px solid navy;}
+.inner-page table.sebra td:first-child{border-top:1px solid navy;}
+.inner-page table.sebra td{border-bottom:1px solid #D0D7E9;border-left:1px solid navy;border-right:0px solid navy;}
+.inner-page table.sebra td:last-child{border-bottom-width:0px;}
+.inner-page table.sebra td:before{}
+.inner-page table.sebra tr.row-empty{display:none;}
+}
+@media (min-width: 600px){.inner-page table.sebra{}
+.inner-page table.sebra th,.inner-page table.sebra td{padding:4px 10px 2px 10px;border-right:1px solid #D0D7E9;}
+.inner-page table.sebra th{border-bottom:1px solid #D0D7E9;border-top: 1px solid #D0D7E9;border-left:0px solid #D0D7E9;height:18px;}
+.inner-page table.sebra td{border-bottom:1px solid #D0D7E9;border-left:0px solid #D0D7E9;height:16px;}
+}
+.inner-page table.sebra tbody tr:nth-child(odd) td{background-color:#fefefe;}
+.inner-page table.sebra tbody tr:nth-child(even) td{background-color:#F4F6F9;}
+.inner-page table.sebra tbody tr.active:nth-child(odd) td{background-color:#aae8ff;color:black;}
+.inner-page table.sebra tbody tr.active:nth-child(even) td{background-color:#aae8ff;color:black;}
+.inner-page table.sebra th,.inner-page table.sebra td{border-left:1px solid #dddddd;}
+
+#RESPONSIVE{}
+.inner-page table.sebra td a{font-size:inherit;cursor:pointer;}
+.inner-page table.sebra thead,
+.inner-page table.sebra th{background-color:#f1f1ed;font-weight: 500;}
+.inner-page table.sebra thead{background-color:#d9d9d9;}
+.inner-page table.sebra th.tb-title{text-align:left;color:#999999;padding:3px 0 3px 6px;border:0px;color:#aaaaaa;}
+.inner-page table.sebra td>div{position:relative;display:block;font-size:inherit;}
+.inner-page table.sebra td>div .labels{position:absolute;top:0px;right:0px;}
+
+*/
+
+
+/* css to hover column*/
+.sebra{--sebra-hover-bg:#68bfe72c;}
+
+.sebra td{transition:background-color 0.2s ease;}
+
+/* Highlight complete column when hovering any cell */
+/*.sebra :is(td):hover{background-color:#68bfe759 !important;}*/
+/*
+.sebra:has(:is(td):nth-child(1):hover) :is(td):nth-child(1),
+.sebra:has(:is(td):nth-child(2):hover) :is(td):nth-child(2),
+.sebra:has(:is(td):nth-child(3):hover) :is(td):nth-child(3),
+.sebra:has(:is(td):nth-child(4):hover) :is(td):nth-child(4),
+.sebra:has(:is(td):nth-child(5):hover) :is(td):nth-child(5),
+.sebra:has(:is(td):nth-child(6):hover) :is(td):nth-child(6),
+.sebra:has(:is(td):nth-child(7):hover) :is(td):nth-child(7),
+.sebra:has(:is(td):nth-child(8):hover) :is(td):nth-child(8),
+.sebra:has(:is(td):nth-child(9):hover) :is(td):nth-child(9),
+.sebra:has(:is(td):nth-child(10):hover) :is(td):nth-child(10),
+.sebra:has(:is(td):nth-child(11):hover) :is(td):nth-child(11),
+.sebra:has(:is(td):nth-child(12):hover) :is(td):nth-child(12){background-color:var(--sebra-hover-bg) !important;}
+*/
+#tables tr:hover td,
+.sebra tr:hover td{background-color:#68bfe759 !important;}

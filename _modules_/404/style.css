@@ -1,0 +1,17 @@
+#inner {
+  /*background-color:black;*/
+  /*color: white;*/
+  /*overflow: hidden;*/
+  max-width:600px;
+  /*height: 500px;*/
+  padding-top:30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+		  font-size: medium;
+}
+
+#inner p{margin:30px 0 10px 0;}
+#inner p:first-child{}
+

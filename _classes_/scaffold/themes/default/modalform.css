@@ -1,0 +1,72 @@
+
+.modalformOverlay{width:100%;height:100%;position:fixed;top:0;left:0;/*z-index:10;background:url('ie.png'); */z-index: 3;
+	background: -moz-linear-gradient(rgba(11,11,11,0.1), rgba(11,11,11,0.5)) repeat-x rgba(11,11,11,0.2);
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(11,11,11,0.1)), to(rgba(11,11,11,0.5))) repeat-x rgba(11,11,11,0.2);}
+
+.modalformBox{ /*background: #fff;*/
+  -webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.6); -moz-box-shadow: 0 3px 20px rgba(0,0,0,0.6);box-shadow: 0 3px 20px rgba(0,0,0,0.6);
+  background: -moz-linear-gradient(#fff, #ccc);
+  background: -webkit-gradient(linear, right bottom, right top, color-stop(1, rgb(255,255,255)), color-stop(0.57,rgb(230,230,230)));
+ /* text-shadow: 0 1px 0 #fff;*/
+}
+
+.modalformBox_small{  
+  /*width:700px !important; */max-width:800px !important; height:auto !important;  position: relative !important;margin:10% auto 10% auto; padding: 30px 30px 10px 30px;
+  -moz-border-radius: 7px; border-radius: 7px;   /*overflow:hidden;*/
+}
+
+.modalformBox_full{   
+   width: 100% !important;  
+   height: 100% !important;
+   position: fixed !important; 
+   margin:0 !important; 
+   top:0 !important;
+   left:0 !important; 
+   right:0 !important; 
+   bottom:0 !important; 
+   padding:0 !important;
+   -moz-border-radius: 7px; border-radius: 7px;  
+ }
+
+.modalformImage{ text-align: center;
+  max-width: 800px !important; height:auto !important;  position: relative !important;   margin:1% auto 1% auto; 
+}
+.modalformImage img{ text-align: center;
+  padding: 0px; margin-top: -25%;
+  -webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.6); -moz-box-shadow: 0 0px 20px rgba(0,0,0,0.6);box-shadow: 0 3px 20px rgba(0,0,0,0.6);
+  /*border: 1px solid #666;*/
+  background: -moz-linear-gradient(#fff, #ccc);
+  background: -webkit-gradient(linear, right bottom, right top, color-stop(1, rgb(255,255,255)), color-stop(0.57,rgb(230,230,230)));
+}
+
+.modalImg{text-align: center; margin: 0 !important; max-width:800px;}
+
+.modalformBox h1,
+.modalformBox h2,
+.modalformBox h3,
+.modalformBox h4 {margin:0 0 15px 0;padding:0px; font-family: Arial; font-weight: bolder; }
+.modalformBox .ajax_container{ min-height: 150px;}
+.modalformBox .dialog-buttons{ text-align: right;margin:10px 0;padding:0px;}
+.modalformBox .dialog-buttons .btn{ margin-left: 5px;}
+
+.modalformBox       .closelink{position: absolute;top: 10px; right:10px; color:silver; cursor:pointer; font-size: 19px; line-height:19px; text-decoration: none;display: inherit;}
+.modalformBox       .closelink:hover{color: #6666ff;}
+.modalformBox_small .fullslink{position: absolute;top: 10px; right:40px; color:silver; cursor:pointer; font-size: 19px; line-height:19px; text-decoration: none;display: inherit;}
+.modalformBox_small .fullslink:hover{color: #6666ff;}
+.modalformBox_full  .restslink{position: absolute;top: 10px; right:40px; color:silver; cursor:pointer; font-size: 19px; line-height:19px; text-decoration: none;display:inherit;}
+.modalformBox_full  .restslink:hover{color: #6666ff;}
+
+.modalformBox_full .ajax_container,
+.modalformBox_full h4{margin: 30px 30px 10px 30px;}
+.modalformBox_full .fullslink{display: none;}
+.modalformBox_small .restslink{display: none;}
+
+.modalformBox_small .about{color:silver;}
+.modalformBox_full .about{color:silver; position:absolute; left: 30px; bottom: 30px;}
+
+.modalformBox .bar {position:absolute;top:8px; left:8px; right:80px;height:22px; border:0px dotted #dbdbdb; /*background-color:#efefef;*/
+                      -moz-border-radius: 5px; border-radius: 5px;  cursor: hand; cursor: pointer;}
+.modalformBox .bar:hover{border:1px dotted #dbdbdb;}
+
+.ajax_container pre {max-height:600px;overflow:auto;}
+

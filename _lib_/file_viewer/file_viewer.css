@@ -1,0 +1,22 @@
+.extfw_ware_box{background-color:white;outline:2px solid black;min-width:400px;display:none;vertical-align:top;position:absolute;}
+.extfw_ware_box .title-bar{background-color:black;color:white;padding:2px 3px;}
+.extfw_ware_box td:first-child{cursor:pointer;}
+.extfw-ware-table {display:inline-block;/*width:300px;*/}
+
+.extfw-ware-table tr{}
+.extfw-ware-table tr.active {background-color:#dbeaff;}
+.extfw-ware-table th{}
+.extfw-ware-table th:first-child{}
+
+.extfw_ware_box .close-box{/*position:absolute;top:3px;right:3px;color:white;cursor:pointer;*/}
+
+.datatable-rows .labels {    z-index: 0;}
+
+
+.btn-link{display:block;float:right;margin:2px 4px;font-size:10px;}
+
+
+.extfw_ware_box #users-reload{/*position:absolute;top:3px;right:30px;color:white;cursor:pointer;*/}
+
+
+

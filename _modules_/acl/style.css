@@ -1,0 +1,74 @@
+
+
+.div_empty{display:none;}
+.datatable{vertical-align:top;}
+
+#div-areas{margin-left:0px;}
+
+#tab-areas_apps_users,
+#tab-areas_apps_groups{display:inline-block;}
+
+#tabs-AREAS {margin-left:0px;}
+#tabs-AREAS table{width:100%; }
+#tabs-AREAS td{ white-space: nowrap; overflow: hidden; max-width: 100px;text-overflow: clip;}
+
+#T-CFG_APPS                     {display:inline-block;width:275px;/*margin-left:0px;*/vertical-align:top;}
+#T-CFG_APPS_PERMS               {display:inline-block;width:745px;margin-left:-3px;}
+#T-CFG_AREAS_USERS              {display:inline-block;width:735px;}
+#T-CFG_AREAS                    {width:255px;}
+#T-CFG_AREAS_APPS               {display:inline-block;width:234px;margin-right: -3px;}    
+#T-CFG_AREAS_APPS_GROUPS        {display:inline-block;width:250px;margin-left: -1px;}              
+#T-CFG_AREAS_APPS_GROUPS_PERMS  {display:inline-block;width:280px;}        
+#T-CFG_AREAS_GROUPS             {display:inline-block;width:235px;/*margin-right: -1px;*/}
+#T-CFG_AREAS_GROUPS_USERS       {display:inline-block;width:530px;}
+
+#tab-AREAS-areas                {border-width: 1px 0 0 0;       padding-top: 10px;}
+#tab-AREAS-areas #div-AREAS_USR_APP_GRP    {margin:0px;position:relative;}
+#tab-AREAS-areas #div-AREAS_USR_APP_GRP #div-AREAS  {/*width:25%;*/margin-top:28px !important; padding-top:3px; border-top: 1px solid #d2d2d2; display:inline-block;background-color: white; }
+#tab-AREAS-areas #div-AREAS_USR_APP_GRP #tabs-AREA_USR_APP_GRP  {/*width:75%;*/border-left:0px !important; display:inline-block;vertical-align:top; margin: 0px 0 !important;}
+#tab-AREAS-areas #div-AREAS_USR_APP_GRP #tabs-AREA_USR_APP_GRP #tab-AREA_USRS,
+#tab-AREAS-areas #div-AREAS_USR_APP_GRP #tabs-AREA_USR_APP_GRP #tab-AREA_APPS,
+#tab-AREAS-areas #div-AREAS_USR_APP_GRP #tabs-AREA_USR_APP_GRP #tab-AREA_GRPS{margin-left: 0px;padding-top:4px;border-left:0px solid transparent;border-right:0px solid transparent;border-bottom:0px solid transparent;}
+
+td .avatar {
+    /* position: absolute; */
+    /* display: block; */
+    /* width: auto; */
+    height: 15px;
+    margin: 0px;
+}
+
+#tab-AREAS-apps{  padding-top: 10px;}
+#Ztab-AREAS-apps,
+#div-AREAS #tabs>.r-tabs-panel .r-tabs-panel{ padding:0 0px;}
+#tab-AREA_GRPS  .column.right ,
+#tab-AREA_APPS  .column.right {margin-left: -4px;}
+
+#button-users-groups {cursor:pointer;font-size:0.8em;color:#a5bdcb;display:none;}
+#button-users-groups b{color:#006c91;font-size:1.1em;}
+
+
+body {  background: #f8f9fa; }
+
+#content>.inner{margin-top:15px;}
+        .container { /*max-width: 1200px; margin: 0 auto 20px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); */}
+        .form-panel { background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #ddd; }
+        .params-panel { background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3; }
+        .selector-group { margin: 15px 10px; display: inline-block; vertical-align: top; }
+        .selector-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
+        .selector-group select { padding: 8px; width: 250px; border: 1px solid #ddd; border-radius: 4px;/* font-size: 14px;*/ }
+        
+        .container table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        .container th, .container td { padding: 4px 8px; text-align: left; border: 1px solid #ddd; }
+        .container th { background: #f0f0f0; font-weight: bold; }
+
+        .highlight { background: #fff3cd !important; }
+        .success { color: green; font-weight: bold; }
+        .fail { color: red; }
+        .section { margin: 30px 0; }
+        .section h2 { border-bottom: 2px solid #2196F3; padding-bottom: 5px; color: #1976D2; }
+        .section h3 { color: #424242; margin-top: 20px; }
+        .summary { background: #e8f5e8; padding: 15px; border-left: 4px solid #4caf50; margin-top: 30px; }
+        .loading { display: none; color: #666; font-style: italic; }
+
+        #vperms p{display: none;}

@@ -1,0 +1,12 @@
+
+.extfw_ware_box#dialog-file-txt{background-color:#fcfcfc;}
+
+.extfw_ware_box#dialog-file-txt.def_screen{position:fixed;top:0px;left:0px;right:0px;bottom:0px;max-width:650px;max-height:500px;margin:auto auto;}
+.extfw_ware_box#dialog-file-txt.fullscreen{position:fixed;top:30px;left:30px;right:30px;bottom:30px;}
+
+.extfw_ware_box#dialog-file-txt p{margin:20px;}
+.extfw_ware_box#dialog-file-txt #dialog-file-text{ overflow: auto; position:absolute; top:22px;left:0px;right:0px;bottom:0px;border:0px solid red;padding:10px;}
+
+.extfw_ware_box#dialog-file-json{display:none;position:fixed;z-index:11;min-height:300px;min-width:90%;top:55px;left:15px;right:15px;bottom:15px;background-color:#fcfcfc;}
+.extfw_ware_box#dialog-file-json p{margin:20px;}                                       
+.extfw_ware_box#dialog-file-json #dialog-file-text{ overflow: auto; position:absolute; top:22px;left:0px;right:0px;bottom:0px;border:0px solid red;padding:10px;}

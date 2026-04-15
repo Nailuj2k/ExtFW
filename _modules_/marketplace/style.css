@@ -1,0 +1,339 @@
+
+
+
+/* 
+
+Examples to not display some elements
+
+
+#breadcrumb{display:none;}
+#footer{display:none;}
+
+*/
+
+
+
+
+    #T-MKP_MARKETPLACE .shadow{box-shadow:4px 3px 8px #66666640;}
+
+    /* List rows */
+    #T-MKP_MARKETPLACE .mkp-list {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        position: relative;
+    }
+
+    #T-MKP_MARKETPLACE .mkp-item {
+        position: relative;
+        background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.02) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.02) 75%, rgba(0, 0, 0, 0.02)), linear-gradient(45deg, rgba(0, 0, 0, 0.02) 25%, transparent 25%, transparent 75%, rgba(0, 2, 0, 0.02) 75%, rgba(0, 0, 0, 0.02));
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 0; /* Quitamos el padding para que el iframe ocupe todo el espacio */
+        text-align: center;
+        height: 200px; /* Altura fija de cada item - aumentada para mostrar más contenido */
+        overflow: hidden; /* Ocultar contenido que se desborda */
+       /* transform: scale(0.1);*/
+        animation: zoom 0.5s ease forwards; 
+    }
+
+
+    #T-MKP_MARKETPLACE .mkp-item .cells{ position:relative;display:block;/*border:2px solid red;*/ width:100%;height:100%; transition: all 0.3s ease; ;
+                                         background-size: 100px 100px;background-repeat: no-repeat;background-position: bottom; mix-blend-mode: multiply;}
+    #T-MKP_MARKETPLACE .mkp-item:hover .cells{  transform:scale(1.04)  }
+
+    #T-MKP_MARKETPLACE .mkp-item .cell_NAME        {display:none;}
+    #T-MKP_MARKETPLACE .mkp-item .cell_TITLE       {display:block;font-size:2em;font-weight:bolder;}
+    #T-MKP_MARKETPLACE .mkp-item .cell_REPO        {display:none;}
+    #T-MKP_MARKETPLACE .mkp-item .cell_TYPE        {display:block;position:absolute;rotate:270deg;font-weight: 900;color: #cbc7c7;font-size: 30px;left: -10%;bottom: 30%;}
+    #T-MKP_MARKETPLACE .mkp-item .cell_DESCRIPTION {display:block;font-size:0.8em;}
+    #T-MKP_MARKETPLACE .mkp-item .cell_DATE        {display:none;}
+    #T-MKP_MARKETPLACE .mkp-item .cell_lAST_UPDATE {display:none;}
+    #T-MKP_MARKETPLACE .mkp-item .cell_ID_USER     {display:none;}
+    #T-MKP_MARKETPLACE .mkp-item .cell_STATE       {display:none;}
+
+    #T-MKP_MARKETPLACE .mkp-item .actions         {}
+    #T-MKP_MARKETPLACE .mkp-item .actions .edit   {}
+    #T-MKP_MARKETPLACE .mkp-item .actions .delete {}
+    #T-MKP_MARKETPLACE .mkp-item .actions .save   {display:none;}
+
+    #T-MKP_MARKETPLACE .row-empty{
+        background-color: #f0f0f042;
+        border: 1px solid #f0f0f042;
+        background: radial-gradient(at center, #ffffff, #cdcdcd);
+        opacity: 0.45;
+        height: 200px; 
+    }
+
+    #T-MKP_MARKETPLACE .actions{
+        z-index: 1;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+
+    #T-MKP_MARKETPLACE .actions a{
+        display:inline-block;
+        width:18px;
+    }
+
+    #T-MKP_MARKETPLACE .inner_footer{
+        position:relative;
+        display: block;
+        border: 0px solid #ddd;
+        border-radius:6px;
+        padding:2px 2px;
+        margin:10px 0;
+    }
+
+    #T-MKP_MARKETPLACE .inner_footer .search-form-input {
+        top: 2px;
+        left: 0px;
+        display: inline-block;
+        margin: 0;
+        padding: 0px;
+        width: 100px;
+        -webkit-transition: all 1s ease 0s;
+        -moz-transition: all 1s ease 0s;
+        -o-transition: all 1s ease 0s;
+        transition: all 1s ease 0s;
+        border: 1px solid #ddd;
+        border-radius:4px;
+        overflow:hidden;
+        box-shadow:4px 3px 8px #66666640;
+    }
+    #T-MKP_MARKETPLACE .inner_footer .search-form-input:hover,
+    #T-MKP_MARKETPLACE .inner_footer .search-form-input.search-active{width:220px;border:1px solid var(--red);}
+
+    #T-MKP_MARKETPLACE .inner_footer .search-form-input input {width:100%;height:28px;font-size:16px;border:none;}
+
+    #T-MKP_MARKETPLACE .pagination>ul{
+        border: 1px solid rgb(132 132 132 / 23%);
+        height: 30px;
+        border-radius: 4px;
+        box-shadow:4px 3px 8px #66666640;
+    }
+
+    #T-MKP_MARKETPLACE .pagination li:last-child a{
+      /*  margin-right: 10px;*/
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }   
+
+    @media (max-width: 600px) {
+
+        #T-MKP_MARKETPLACE .inner_footer {
+            height: 100px;
+            padding: 2px 0px;
+        }
+
+        #T-MKP_MARKETPLACE .row-empty{
+        display:none;
+        }
+
+        #T-MKP_MARKETPLACE .pagination li:has(.nav_info) {
+            display:none;
+        }
+        
+        #T-MKP_MARKETPLACE .pagination li:has(.add) a{
+            width: 24px;
+            text-wrap-mode: nowrap;
+            color: transparent;    
+            position:relative;
+        }
+
+        #T-MKP_MARKETPLACE .pagination li:has(.add) a:after{
+            position:absolute;
+            left: 0;
+            right: 0;
+            text-align:center;
+            content:'+';
+            font-size:16px; 
+            color:white;
+        }
+    
+        #T-MKP_MARKETPLACE .inner_footer .search-form-input{
+            display: block;
+            top:42px;
+        }
+        
+        #T-MKP_MARKETPLACE .pagination{
+        }
+
+        #T-MKP_MARKETPLACE .pagination ul{
+        width:100%;
+        }
+
+    }
+
+
+
+    @keyframes zoom {
+        to {
+            transform: scale(1)
+        }   
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bubblingG {
+	text-align: center;
+	width:100%;
+	height:150px;
+    align-content:center;
+}
+
+.bubblingG span {
+	display: inline-block;
+	vertical-align: middle;
+	width: 19px;
+	height: 19px;
+	margin: 47px auto;
+	background: #FFB637;
+	-moz-border-radius: 94px;
+	-moz-animation: bubblingG 1.6s infinite alternate;
+	-webkit-border-radius: 94px;
+	-webkit-animation: bubblingG 1.6s infinite alternate;
+	-ms-border-radius: 94px;
+	-ms-animation: bubblingG 1.6s infinite alternate;
+	-o-border-radius: 94px;
+	-o-animation: bubblingG 1.6s infinite alternate;
+	border-radius: 94px;
+	animation: bubblingG 1.6s infinite alternate;
+}
+
+#bubblingG_1 {
+	-moz-animation-delay: 0.96s;
+	-webkit-animation-delay: 0.96s;
+	-ms-animation-delay: 0.96s;
+	-o-animation-delay: 0.96s;
+	animation-delay: 0.96s;
+}
+
+#bubblingG_2 {
+	-moz-animation-delay: 0.48s;
+	-webkit-animation-delay: 0.48s;
+	-ms-animation-delay: 0.48s;
+	-o-animation-delay: 0.48s;
+	animation-delay: 0.48s;
+}
+
+#bubblingG_3 {
+	-moz-animation-delay: 0s;
+	-webkit-animation-delay: 0s;
+	-ms-animation-delay: 0s;
+	-o-animation-delay: 0s;
+	animation-delay: 0s;
+}
+
+@-moz-keyframes bubblingG {
+0% {
+	width: 19px;
+	height: 19px;
+	background-color:#FFB637;
+	-moz-transform: translateY(0);
+}
+
+100% {
+	width: 45px;
+	height: 45px;
+	background-color:#FFFFFF;
+	-moz-transform: translateY(-39px);
+}
+
+}
+
+@-webkit-keyframes bubblingG {
+0% {
+	width: 19px;
+	height: 19px;
+	background-color:#FFB637;
+	-webkit-transform: translateY(0);
+}
+
+100% {
+	width: 45px;
+	height: 45px;
+	background-color:#FFFFFF;
+	-webkit-transform: translateY(-39px);
+}
+
+}
+
+@-ms-keyframes bubblingG {
+0% {
+	width: 19px;
+	height: 19px;
+	background-color:#FFB637;
+	-ms-transform: translateY(0);
+}
+
+100% {
+	width: 45px;
+	height: 45px;
+	background-color:#FFFFFF;
+	-ms-transform: translateY(-39px);
+}
+
+}
+
+@-o-keyframes bubblingG {
+0% {
+	width: 19px;
+	height: 19px;
+	background-color:#FFB637;
+	-o-transform: translateY(0);
+}
+
+100% {
+	width: 45px;
+	height: 45px;
+	background-color:#FFFFFF;
+	-o-transform: translateY(-39px);
+}
+
+}
+
+@keyframes bubblingG {
+0% {
+	width: 19px;
+	height: 19px;
+	background-color:#FFB637;
+	transform: translateY(0);
+}
+
+100% {
+	width: 45px;
+	height: 45px;
+	background-color:#FFFFFF;
+	transform: translateY(-39px);
+}
+
+}
+
+
+select{
+    display:inline-flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 7px 8px;
+    gap: 4px;
+}
+.enhanced-select {width:250px;}

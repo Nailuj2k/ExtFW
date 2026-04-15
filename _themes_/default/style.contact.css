@@ -1,0 +1,12 @@
+/*.inner.contact{max-width:540px;}*/
+
+
+
+h1{line-height:1em;}
+h1,
+.contact-form-help,
+p.col,
+form,
+button{width:100%;max-width:540px;margin:20px auto;text-align:left;}
+
+button{text-align:center;}

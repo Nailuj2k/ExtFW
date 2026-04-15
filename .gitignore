@@ -1,0 +1,17 @@
+# Archivos ocultos
+.*
+!.gitignore
+!.htaccess
+!.github/
+!.github/**
+
+# Basura local
+.DS_Store
+.github-notes.md
+
+# Backups
+*.0.*
+*.bak
+
+# Bitcoin theme fonts
+/_themes_/bitcoin/fonts/*.woff2
