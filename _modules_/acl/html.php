@@ -118,7 +118,7 @@ foreach ($permisos as $perm) {
 
   <footer style="margin-top:2em; color:#888; font-size:0.9em;">ExtFW Framework &copy; 2026</footer>
 
-  <h2 style="margin-top:2em;">Caso concreto: cómo migrar de <code>$_ACL</code> a <code>AreasACL</code> (ejemplo: módulo <b>hulamm_ware</b>)</h2>
+  <h2 style="margin-top:2em;">Caso concreto: cómo migrar de <code>$_ACL</code> a <code>AreasACL</code> (ejemplo: módulo <b>dokument</b>)</h2>
   <p>Si tu módulo usa la clase <code>$_ACL</code> (ACL clásico por roles), puedes migrar a <code>AreasACL</code> para aprovechar la gestión avanzada de áreas, apps y permisos. Aquí tienes una guía de equivalencias y pasos:</p>
 
   <h3>Correspondencia de métodos</h3>
@@ -127,7 +127,7 @@ foreach ($permisos as $perm) {
     <tr>
       <td><code>$_ACL-&gt;hasPermission('perm')</code></td>
       <td><code>AreasACL::hasPermission('app', 'perm')</code></td>
-      <td>Debes indicar la <b>app</b> (ej: 'hulamm_ware') y el <b>permiso</b> (ej: 'doku_view').</td>
+      <td>Debes indicar la <b>app</b> (ej: 'dokument') y el <b>permiso</b> (ej: 'doku_view').</td>
     </tr>
     <tr>
       <td><code>$_ACL-&gt;userHasRoleName('Rol')</code></td>
@@ -160,16 +160,16 @@ foreach ($permisos as $perm) {
   <div class="block">
     <pre><code>// Antes (ACL clásico)
 if ($_ACL->userHasRoleName('Administradores')) {
-    $_ACL->addRole('HulammWare_Archivo');
-    $_ACL->updateUserRole(1,'HulammWare_Archivo',true);
+    $_ACL->addRole('Dokument_Archivo');
+    $_ACL->updateUserRole(1,'Dokument_Archivo',true);
     $_ACL->addPermission('doku_view');
     $_ACL->addRolePerm('Administradores','doku_view');
 }
 
 // Después (AreasACL)
 if (AreasACL::isAreaAdmin('area_admin')) { // o userInAreaGroup('area','Administradores')
-    AreasACL::addApp('HulammWare Archivo', 'hulamm_ware_archivo');
-    AreasACL::addAppPermission('hulamm_ware_archivo', 'Ver documento', 'doku_view');
+    AreasACL::addApp('Dokument Archivo', 'dokument_archivo');
+    AreasACL::addAppPermission('dokument_archivo', 'Ver documento', 'doku_view');
     // Asignar grupo a usuario y permiso a grupo: ver utilidades de setup
 }
     </code></pre>
@@ -186,8 +186,8 @@ if (AreasACL::isAreaAdmin('area_admin')) { // o userInAreaGroup('area','Administ
 
   <p>Para dudas o ejemplos más avanzados, consulta la documentación interna o contacta con el equipo ExtFW.</p>
 
-  <h2 style="margin-top:2em;">Ejemplo real: migración de permisos de <b>hulamm_ware</b> a AreasACL</h2>
-  <p>En el sistema, la aplicación <b>HulammWare</b> (<code>hulamm_ware</code>) tiene definidos estos permisos:</p>
+  <h2 style="margin-top:2em;">Ejemplo real: migración de permisos de <b>dokument</b> a AreasACL</h2>
+  <p>En el sistema, la aplicación <b>Dokument</b> (<code>dokument</code>) tiene definidos estos permisos:</p>
   <ul>
     <li><b>Añadir</b> (<code>doku_add</code>): Puede añadir documentos, pasar OCR y mover a procesados.</li>
     <li><b>Administrar</b> (<code>doku_admin</code>): Puede modificar y eliminar archivos procesados.</li>
@@ -198,18 +198,18 @@ if (AreasACL::isAreaAdmin('area_admin')) { // o userInAreaGroup('area','Administ
   <ol>
     <li><b>Verifica que la app y permisos existen en AreasACL:</b>
       <ul>
-        <li>App: <code>hulamm_ware</code></li>
+        <li>App: <code>dokument</code></li>
         <li>Permisos: <code>doku_add</code>, <code>doku_admin</code></li>
       </ul>
-      <pre><code>AreasACL::addApp('HulammWare', 'hulamm_ware');
-AreasACL::addAppPermission('hulamm_ware', 'Añadir', 'doku_add', 'Puede añadir documentos...');
-AreasACL::addAppPermission('hulamm_ware', 'Administrar', 'doku_admin', 'Puede modificar/eliminar archivos...');
+      <pre><code>AreasACL::addApp('Dokument', 'dokument');
+AreasACL::addAppPermission('dokument', 'Añadir', 'doku_add', 'Puede añadir documentos...');
+AreasACL::addAppPermission('dokument', 'Administrar', 'doku_admin', 'Puede modificar/eliminar archivos...');
 </code></pre>
     </li>
     <li><b>Asocia la app a cada área relevante:</b>
-      <pre><code>AreasACL::ensureAreaApp('archivo', 'hulamm_ware');
-AreasACL::ensureAreaApp('informatica', 'hulamm_ware');
-AreasACL::ensureAreaApp('mante', 'hulamm_ware');
+      <pre><code>AreasACL::ensureAreaApp('archivo', 'dokument');
+AreasACL::ensureAreaApp('informatica', 'dokument');
+AreasACL::ensureAreaApp('mante', 'dokument');
 </code></pre>
     </li>
     <li><b>Asigna permisos a grupos/usuarios según la lógica de tu módulo:</b>
@@ -221,8 +221,8 @@ AreasACL::ensureAreaApp('mante', 'hulamm_ware');
     </li>
     <li><b>Revisa el código:</b>
       <ul>
-        <li>Reemplaza <code>$_ACL->hasPermission('doku_add')</code> por <br><code>AreasACL::hasPermission('hulamm_ware','doku_add')</code></li>
-        <li>Reemplaza <code>$_ACL->hasPermission('doku_admin')</code> por <br><code>AreasACL::hasPermission('hulamm_ware','doku_admin')</code></li>
+        <li>Reemplaza <code>$_ACL->hasPermission('doku_add')</code> por <br><code>AreasACL::hasPermission('dokument','doku_add')</code></li>
+        <li>Reemplaza <code>$_ACL->hasPermission('doku_admin')</code> por <br><code>AreasACL::hasPermission('dokument','doku_admin')</code></li>
         <li>El permiso <b>doku_view</b> no existe: elimina o ignora comprobaciones a ese permiso.</li>
       </ul>
     </li>
@@ -242,32 +242,32 @@ AreasACL::ensureAreaApp('mante', 'hulamm_ware');
     <li>La gestión de usuarios y grupos por área permite granularidad superior al modelo clásico de roles.</li>
   </ul>
 
-  <h2 style="margin-top:2em;">Listado de ocurrencias de <code>$_ACL</code> en hulamm_ware y propuesta de migración</h2>
+  <h2 style="margin-top:2em;">Listado de ocurrencias de <code>$_ACL</code> en dokument y propuesta de migración</h2>
   <table>
     <tr><th>Archivo</th><th>Línea</th><th>Fragmento</th><th>Cambio propuesto</th></tr>
     <tr><td>init.php</td><td>7</td><td>// $_ACL->getRoleUsers($role_name);</td><td>Usar <code>AreasACL::getAreaGroupUsers('area','grupo')</code> o <code>AreasACL::getAreaAdmins('area')</code></td></tr>
     <tr><td>init.php</td><td>12</td><td>$_ACL->hasPermission('doku_view')</td><td><b>No migrar</b>: doku_view no existe en AreasACL. Eliminar o adaptar lógica.</td></tr>
-    <tr><td>init.php</td><td>13</td><td>$_ACL->hasPermission('doku_add')</td><td>Usar <code>AreasACL::hasPermission('hulamm_ware','doku_add')</code></td></tr>
-    <tr><td>init.php</td><td>14</td><td>$_ACL->hasPermission('doku_admin')</td><td>Usar <code>AreasACL::hasPermission('hulamm_ware','doku_admin')</code></td></tr>
-    <tr><td>init.php</td><td>24</td><td>$_ACL->userHasRoleName('HulammWare')</td><td>Usar <code>AreasACL::userInAreaGroup('area','grupo')</code> o <code>AreasACL::isAreaAdmin('area')</code></td></tr>
+    <tr><td>init.php</td><td>13</td><td>$_ACL->hasPermission('doku_add')</td><td>Usar <code>AreasACL::hasPermission('dokument','doku_add')</code></td></tr>
+    <tr><td>init.php</td><td>14</td><td>$_ACL->hasPermission('doku_admin')</td><td>Usar <code>AreasACL::hasPermission('dokument','doku_admin')</code></td></tr>
+    <tr><td>init.php</td><td>24</td><td>$_ACL->userHasRoleName('Dokument')</td><td>Usar <code>AreasACL::userInAreaGroup('area','grupo')</code> o <code>AreasACL::isAreaAdmin('area')</code></td></tr>
     <tr><td>ajax.php</td><td>525</td><td>$_ACL->getUsersWithPermissionName('doku_view')</td><td><b>No migrar</b>: doku_view no existe en AreasACL. Eliminar o adaptar lógica.</td></tr>
-    <tr><td>ajax.php</td><td>526</td><td>$_ACL->getUsersWithPermissionName('doku_add')</td><td>Usar <code>AreasACL::getUsersWithPermission('area','hulamm_ware','doku_add')</code></td></tr>
-    <tr><td>ajax.php</td><td>527</td><td>$_ACL->getUsersWithPermissionName('doku_admin')</td><td>Usar <code>AreasACL::getUsersWithPermission('area','hulamm_ware','doku_admin')</code></td></tr>
+    <tr><td>ajax.php</td><td>526</td><td>$_ACL->getUsersWithPermissionName('doku_add')</td><td>Usar <code>AreasACL::getUsersWithPermission('area','dokument','doku_add')</code></td></tr>
+    <tr><td>ajax.php</td><td>527</td><td>$_ACL->getUsersWithPermissionName('doku_admin')</td><td>Usar <code>AreasACL::getUsersWithPermission('area','dokument','doku_admin')</code></td></tr>
     <tr><td>ajax.php</td><td>553</td><td>$_ACL->getUserId(...)</td><td>Implementar función equivalente si es necesario</td></tr>
     <tr><td>ajax.php</td><td>555</td><td>$_ACL->addUserRole(...)</td><td>Asignar usuario a grupo de área según AreasACL</td></tr>
     <tr><td>after_init.php</td><td>7</td><td>// $_ACL->getRoleUsers($role_name);</td><td>Usar <code>AreasACL::getAreaGroupUsers('area','grupo')</code> o <code>AreasACL::getAreaAdmins('area')</code></td></tr>
     <tr><td>after_init.php</td><td>13</td><td>$_ACL->hasPermission('doku_view')</td><td><b>No migrar</b>: doku_view no existe en AreasACL. Eliminar o adaptar lógica.</td></tr>
-    <tr><td>after_init.php</td><td>14</td><td>$_ACL->hasPermission('doku_add')</td><td>Usar <code>AreasACL::hasPermission('hulamm_ware','doku_add')</code></td></tr>
-    <tr><td>after_init.php</td><td>15</td><td>$_ACL->hasPermission('doku_admin')</td><td>Usar <code>AreasACL::hasPermission('hulamm_ware','doku_admin')</code></td></tr>
+    <tr><td>after_init.php</td><td>14</td><td>$_ACL->hasPermission('doku_add')</td><td>Usar <code>AreasACL::hasPermission('dokument','doku_add')</code></td></tr>
+    <tr><td>after_init.php</td><td>15</td><td>$_ACL->hasPermission('doku_admin')</td><td>Usar <code>AreasACL::hasPermission('dokument','doku_admin')</code></td></tr>
     <tr><td>after_init.php</td><td>16</td><td>$_ACL->hasPermission('doku_download')</td><td><b>No migrar</b>: doku_download no existe en AreasACL. Eliminar o adaptar lógica.</td></tr>
-    <tr><td>after_init.php</td><td>26</td><td>$_ACL->userHasRoleName('HulammWare')</td><td>Usar <code>AreasACL::userInAreaGroup('area','grupo')</code> o <code>AreasACL::isAreaAdmin('area')</code></td></tr>
+    <tr><td>after_init.php</td><td>26</td><td>$_ACL->userHasRoleName('Dokument')</td><td>Usar <code>AreasACL::userInAreaGroup('area','grupo')</code> o <code>AreasACL::isAreaAdmin('area')</code></td></tr>
     <tr><td>INSTALL.php</td><td>3</td><td>$_ACL->userHasRoleName('Administradores')</td><td>Usar <code>AreasACL::isAreaAdmin('area')</code> o <code>AreasACL::userInAreaGroup('area','Administradores')</code></td></tr>
     <tr><td>INSTALL.php</td><td>5-6</td><td>$_ACL->addRole(...)</td><td>Gestionar como grupo de área en AreasACL</td></tr>
     <tr><td>INSTALL.php</td><td>8-9</td><td>$_ACL->updateUserRole(...)</td><td>Asignar usuario a grupo de área en AreasACL</td></tr>
     <tr><td>INSTALL.php</td><td>11</td><td>$_ACL->addPermission('doku_view')</td><td><b>No migrar</b>: doku_view no existe en AreasACL</td></tr>
-    <tr><td>INSTALL.php</td><td>12</td><td>$_ACL->addPermission('doku_add')</td><td>Usar <code>AreasACL::addAppPermission('hulamm_ware','Añadir','doku_add')</code></td></tr>
+    <tr><td>INSTALL.php</td><td>12</td><td>$_ACL->addPermission('doku_add')</td><td>Usar <code>AreasACL::addAppPermission('dokument','Añadir','doku_add')</code></td></tr>
     <tr><td>INSTALL.php</td><td>13</td><td>$_ACL->addPermission('doku_delete')</td><td><b>No migrar</b>: doku_delete no existe en AreasACL</td></tr>
-    <tr><td>INSTALL.php</td><td>14</td><td>$_ACL->addPermission('doku_admin')</td><td>Usar <code>AreasACL::addAppPermission('hulamm_ware','Administrar','doku_admin')</code></td></tr>
+    <tr><td>INSTALL.php</td><td>14</td><td>$_ACL->addPermission('doku_admin')</td><td>Usar <code>AreasACL::addAppPermission('dokument','Administrar','doku_admin')</code></td></tr>
     <tr><td>INSTALL.php</td><td>16</td><td>$_ACL->addRolePerm('Administradores','doku_view')</td><td><b>No migrar</b>: doku_view no existe en AreasACL</td></tr>
     <tr><td>INSTALL.php</td><td>17</td><td>$_ACL->addRolePerm('Administradores','doku_add')</td><td>Asignar permiso a grupo en área con AreasACL (CFG_AREAS_APPS_GROUPS_PERMS)</td></tr>
     <tr><td>INSTALL.php</td><td>18</td><td>$_ACL->addRolePerm('Administradores','doku_admin')</td><td>Asignar permiso a grupo en área con AreasACL (CFG_AREAS_APPS_GROUPS_PERMS)</td></tr>

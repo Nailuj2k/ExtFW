@@ -189,7 +189,7 @@ class PDF{   //new
     public static $pdf_filename = false;
     public static $pdf_savedir = false;
     public static $pdf_savefilename = false;
-    public static $pdf_watermark = false; //'https://tienda.extralab.net/media/works/images/2/.big_a4.jpg';
+    public static $pdf_watermark = false; //'https://example.com/image_bg.jpg';
     public static $pdf_watermark_opacity = '0.2';
     public static $pdf_watermark_style = 'z-index:-1000;background-size:cover;';
 
@@ -230,15 +230,6 @@ class PDF{   //new
         $pdf->pdf_savefilename = self::$pdf_savefilename ?? false;
 
 
-        /*
-        $_pdf_header = CFG::$vars['templates']['pdf']['header'] 
-                     ? CFG::$vars['templates']['pdf']['header'] 
-                     : '<table class="header"><tr>
-        <td align="left" style="width:35%;vertical-align:middle;"><img src="./_modules_/plan_contingencia/images/logo_hulamm.png" style="height:55px;width:auto;" /></td>
-        <td align="center" style="width:40%;" class="address"><b>Hospital Universitario Los Arcos del Mar Menor</b><br />Paraje Torre Octavio, s/n   30739 <br />Pozo Aledo –  San Javier (Murcia)</td>
-        <td align="right" style="width:25%;vertical-align:middle;"><img src="./_modules_/plan_contingencia/images/logo_sms.png" style="height:70px;width:auto;" /></td>
-        </tr></table>';
-        */
         $_pdf_header = CFG::$vars['templates']['pdf']['header'] 
                      ? CFG::$vars['templates']['pdf']['header'] 
                      : '<table class="header"><tr>
@@ -270,13 +261,6 @@ class PDF{   //new
 
         $_pdf_header  =  str_replace(array_keys($replace),array_values($replace),$_pdf_header);
         
-        /*
-        $pdf->setHeaderTemplate('<table class="header"><tr>
-        <td align="left" style="width:35%;vertical-align:middle;"><img src="./_modules_/plan_contingencia/images/logo_hulamm.png" style="height:55px;width:auto;" /></td>
-        <td align="center" style="width:40%;" class="address"><b>Hospital Universitario Los Arcos del Mar Menor</b><br />Paraje Torre Octavio, s/n   30739 <br />Pozo Aledo –  San Javier (Murcia)</td>
-        <td align="right" style="width:25%;vertical-align:middle;"><img src="./_modules_/plan_contingencia/images/logo_sms.png" style="height:70px;width:auto;" /></td>
-        </tr></table>')
-        */
         $pdf->setHeaderTemplate($_pdf_header)
             ->setFooterTemplate('<div style="text-align: center;/*background-color:orange;*/">Página <span class="page-number"></span><!-- de <span class="total-pages"></span>--></div>');
 

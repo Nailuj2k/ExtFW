@@ -157,7 +157,7 @@ ID_GROUP              ID_AREA_APP_PERM</code></pre>
 include_once SCRIPT_DIR_MODULE . '/areas_acl.class.php';
 
 $area = 'fac';        // AREAKEY
-$app  = 'hulamm_ware';// APPKEY
+$app  = 'dokument';   // APPKEY
 $perm = 'create_task';// PERMKEY definido en CFG_APPS_PERMS
 
 if (!AreasACL::userInArea($area)) {
@@ -175,7 +175,7 @@ if (!AreasACL::hasPermissionByArea($area, $app, $perm)) {
 
 <button type="button" class="copy-btn" data-target="doc-snip-listperms">Copiar</button>
 <pre><code id="doc-snip-listperms">// Listar permisos efectivos del usuario logado en un contexto
-$perms = AreasACL::getUserPermissions('fac', 'hulamm_ware');
+$perms = AreasACL::getUserPermissions('fac', 'dokument');
 foreach ($perms as $p) {
     echo $p['PERMKEY'], ' (', $p['SOURCE'], ")\n"; // SOURCE: area_admin | group_derived | default
 }
@@ -183,7 +183,7 @@ foreach ($perms as $p) {
 
 <button type="button" class="copy-btn" data-target="doc-snip-any">Copiar</button>
 <pre><code id="doc-snip-any">// Comprobación área-agnóstica (módulos que no manejan área)
-if (!AreasACL::hasPermission('hulamm_ware', 'view')) {
+if (!AreasACL::hasPermission('dokument', 'view')) {
     http_response_code(403);
     exit('Acceso denegado');
 }
@@ -191,7 +191,7 @@ if (!AreasACL::hasPermission('hulamm_ware', 'view')) {
 
 <button type="button" class="copy-btn" data-target="doc-snip-areas">Copiar</button>
 <pre><code id="doc-snip-areas">// Áreas donde el usuario tiene permiso para una app (útil para selector de contexto)
-$areasOK = AreasACL::getAreasWithPermission('hulamm_ware', 'edit');
+$areasOK = AreasACL::getAreasWithPermission('dokument', 'edit');
 </code></pre>
 
 <button type="button" class="copy-btn" data-target="doc-snip-admins">Copiar</button>

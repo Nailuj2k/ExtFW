@@ -6,7 +6,7 @@ class Paginator {
   public $total;
   public $num_items;
   public $page_num;
-  public $link;      // "javascript:load_page('hulamm_user',%s);"
+  public $link;     
   // optional
   public $id = 'id';
   public $parent_value = false;

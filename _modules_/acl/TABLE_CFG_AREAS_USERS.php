@@ -29,11 +29,6 @@ $user->source    = 'users';
 $user->values    = $tabla->toarray('usuarios', TB_USER ,'user_id','CONCAT(username,\' -  \',user_fullname)','',false);
 $user->values_all= $tabla->toarray('usuarios', TB_USER ,'user_id','CONCAT(username,\' -  \',user_fullname)','',false);
 
-
-//$user->values    = $tabla->toarray('doku_admins', TB_USER ,'user_id','username'," WHERE user_id IN (SELECT id_user FROM ".TB_ACL_USER_ROLES." WHERE id_role IN (SELECT role_id FROM ".TB_ACL_ROLES." WHERE role_name IN ('HulammWare')))",false);
-//OR
-//SELECT from area  ACL //add default area in install
-
 $user->multiselect = true;
 $user->editable  = true;
 $user->searchable      = true;

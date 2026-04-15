@@ -9,7 +9,7 @@ include( SCRIPT_DIR_MODULE.'/areas_acl.class.php' );
 
 // Obtener valores de los selectores (si fueron enviados)
 $selectedArea = $_ARGS['area'] ?? 'fac';
-$selectedApp = $_ARGS['app'] ?? 'hulamm_ware';
+$selectedApp = $_ARGS['app'] ?? 'erp';
 $selectedUser = $_ARGS['user'] ?? $_SESSION['userid'];
 
 ?>

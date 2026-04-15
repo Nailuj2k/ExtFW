@@ -222,7 +222,7 @@ p {
 
 
 @media screen and (min-width: 1200px){
-    .body-hulamm_ware .inner,
+
     .body-dbadmin .inner,
     .body-dani .inner,
     .body-erp .inner,
@@ -233,7 +233,7 @@ p {
     }
 }
 
-.body-hulamm_ware,
+
 .body-dbadmin,
 .body-dani,
 .body-erp,
@@ -249,7 +249,7 @@ p {
     grid-template-rows: auto 1fr auto;
 }
 
-.body-hulamm_ware>aside,
+
 .body-erp>aside,
 .body-dani>aside,
 .body-acl>aside,

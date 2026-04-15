@@ -736,24 +736,6 @@ border-top-left-radius:2px;border-top-right-radius:2px;border-bottom-right-radiu
 .file-mpg      { background: url('/_images_/filetypes/icon_video.png')  0 50% no-repeat;  padding-left: 20px; background-size: 15px; }
 a[href^="http"]      {}
 
-.hulamm_ware_box{background-color:white;outline:2px solid black;min-width:400px;/*min-height:300px;*/display:none;vertical-align:top;position:absolute;/*z-index:2;*/}
-.hulamm_ware_box .title-bar{background-color:black;color:white;padding:2px 3px;}
-.hulamm_ware_box td:first-child{cursor:pointer;}
-.hulamm-ware-table {display:inline-block;/*width:300px;*/}
-.hulamm-ware-table tr{}
-.hulamm-ware-table tr.active {background-color:#dbeaff;}
-.hulamm-ware-table th{}
-.hulamm-ware-table th:first-child{}
-
-
-.hulamm_ware_box#dialog-file-txt{position:absolute;top:0px;left:0px;right:0px;bottom:0px;background-color:#fcfcfc;}
-.hulamm_ware_box#dialog-file-txt p{margin:20px;}
-.hulamm_ware_box#dialog-file-txt #dialog-file-text{ overflow: auto; position:absolute; top:22px;left:0px;right:0px;bottom:0px;border:0px solid red;padding:10px;}
-
-
-.XXshadow{-webkit-box-shadow: 0px 1px 11px -3px rgba(0,0,0,0.55);-moz-box-shadow: 0px 1px 11px -3px rgba(0,0,0,0.55);box-shadow: 0px 1px 11px -3px rgba(0,0,0,0.55);}
-.hulamm_ware_box .close-box{/*position:absolute;top:3px;right:3px;color:white;cursor:pointer;*/}
-.hulamm_ware_box #users-reload{/*position:absolute;top:3px;right:30px;color:white;cursor:pointer;*/}
 
 .div_empty{display:none;}
 
