@@ -150,14 +150,8 @@ html,body {
    #menu .link {    /*color: black !important;*/}
 }
 
-
 body > div.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_{display:none;}
-/*
-a[href$=".pdf"] { 
-  background: url('https://gilfamily.es/_images_/filetypes/icon_pdf.png') 0 50% no-repeat; 
-  padding-left: 25px;
-}
-*/
+
 #item .page-news-content a{  color: #055e7e;}
 #item .page-news-content a:hover{  color: #e80000;}
 /* MIME TYPE ICONS */

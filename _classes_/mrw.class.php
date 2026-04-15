@@ -28,12 +28,12 @@ class WebServiceMRW{
 
     private $dbh;
     /*
-    Código de Franquicia: 02803
-    Código de Abonado: 005108
+    Código de Franquicia: 00000
+    Código de Abonado: 000000
     Código de Departamento: Vacío (en blanco)
-    Usuario MRW: 02803SHGILFAMILY
-    Contraseña MRW: RseSxHHTymS5!
-    Contraseña de Seguimiento: FK579F
+    Usuario MRW: ***********
+    Contraseña MRW: ***********
+    Contraseña de Seguimiento: *****
     */
 
     public function __construct()    {

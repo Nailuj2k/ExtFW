@@ -17,8 +17,6 @@ $tabla->perms =$_SESSION['page_files_perms'];
 include(SCRIPT_DIR_MODULES.'/control_panel/TPL_TABLE_TAGS.php');
 
 /***
-  // store.gilfamily OnInsert 
-
   function OnInsert($owner,&$result,&$post) { 
       $result['the_filename']=$post['NAME'].'.png';
       $post['NAME'] = trim(Str::sanitizeName($post['CAPTION']));

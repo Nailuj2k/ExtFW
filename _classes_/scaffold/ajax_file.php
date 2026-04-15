@@ -1,18 +1,9 @@
 <?php   
 
-    //include(SCRIPT_DIR_CLASSES.'/sys.class.php');
 
-    //Crypt::encDir(Crypt::md5_encrypt(download_link($row_press),'test'))
-    //https://gilsoundtrack.com/file/WGJsTAcnaCH9dP7N7rqio1h+H0rRP2IKxCHizvDcHwXYfrD3kZ2B5dAITTuYhpzmB3hP-06LnVUeOda3b793LIqSHQWYOPeU3gMe9uWzQG0Sxkj6EJg6eTtJGz4+NXP4XVBuPgL6KT9ygZ49u6vIagrGw12P97JSJK6bbauy46AaRK0KNWfT9Evdau-jLczuA744hIQcyYPWQUus7tIkww==
-    //https://gilsoundtrack.com/file/lnAWChxI-swtz9+L+h21SFuHm1lVrryZNqfrVLb9Y11pOV2jUUjmie5+aTQ3FEa2qAvsKAx2v0Hao1B7xEh3tVafAGON-zdqozBbA4T5fFC1WoIubfLM-Qa39BBigEKbHVM9XPNxdgLGD3-5rbaUL3A7NypSiynzP5HmaytgnJBeuJ35OKfwcyJnCUPcHjyN2Hmf6tu95WLn371ZHLVpcbQ+GZCLnosfncNx9QQnOv-swV2ZivsNnNa4Do3SxLZD=
-    //if($_SESSION['userid']==1){
-
-        //Vars::debug_var($_ARGS,'ARGS');
 
         if(OUTPUT=='file' && !isset($_ARGS["filename"]) && !isset($_ARGS["ext"] ) ) {
 
-            // Vars::debug_var($_SERVER['REQUEST_URI']);
-            //Vars::debug_var($_ARGS);
 
             if(SCRIPT_DIR){
                 $_ARGS = explode(  '/' , str_replace(SCRIPT_DIR.'/', '', $_SERVER['REQUEST_URI']) );

@@ -139,13 +139,7 @@
 }
 
 html,body {
-  /*  background: none; *//*url(media/items/images/home.jpg?ver=1.5);*/
-    /*
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    */
+
     -webkit-box-shadow:none;
     box-shadow: none;
 }
@@ -160,12 +154,7 @@ html,body {
 
 
 body > div.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_{display:none;}
-/*
-a[href$=".pdf"] { 
-  background: url('https://gilfamily.es/_images_/filetypes/icon_pdf.png') 0 50% no-repeat; 
-  padding-left: 25px;
-}
-*/
+
 #item .page-news-content a{  color: #055e7e;}
 #item .page-news-content a:hover{  color: #e80000;}
 /* MIME TYPE ICONS */
@@ -191,38 +180,12 @@ a[href$=".xls"]::after {
 }
 .bar1, .bar2, .bar3 {    background-color: black;}
 
-/***********
-#NOT_NEWS_FILES .cell_FILE_NAME{padding:0 !important;}
-#NOT_NEWS_FILES .cell_FILE_NAME img{position:relative;top:0px;left:0px;margin:0 important!; transition: 0.4s;}
-
-#NOT_NEWS_FILES .cell_FILE_NAME:hover img{position:absolute; z-index:10000000 !important; top:2px;left:340px;
-              padding: 2px 2px 2px 2px; 
-              width:200px; 
-              height:160px !important;
-              background-color:white;
-              border:3px solid white;
-              -moz-box-shadow:0 0 5px #d6d9da;-webkit-box-shadow:0 0 5px #d6d9da;box-shadow:0 0 5px #d6d9da;
-              }
-******/
-
 .__se__float-left{margin-right:10px;}
 .__se__float-right{margin-left:10px;}
 figcaption{background-color:#afa274;color:white;text-align:center;font-size:0.9em;}
 .page-news-content .title{padding:0px;font-family: Arial,helvetica;font-weight: 700;color: black;font-size:1.5em;line-height: 1.3em; margin: 10px 0 0 0;}
-/*
-https://gilfamily.es/media/NEWS/images/10/a03i1299edit.jpg?ver=b0b14761
-https://gilfamily.es/media/NEWS/images/10/a03i0061edit.jpg?ver=bedb69cd
-https://gilfamily.es/media/NEWS/images/10/a03i9873edit.jpg?ver=3e21a8f9
-*/
-
 
 .page-news-content img{max-width:100%;}
-
-
-
-
-
-
 
 #T-NOT_NEWS_FILES .div_item{ /*position: absolute;left:-9999px;top:-9999px;*/min-width:75px;min-height:75px;max-width:200px;display:inline-block;position:relative;vertical-align:top;
 	              box-shadow:0 0 0.8em rgba(0, 0, 0, 0.3);-moz-box-shadow:0 0 0.8em rgba(0, 0, 0, 0.3);-webkit-box-shadow:0 0 0.8em rgba(0, 0, 0, 0.3);}

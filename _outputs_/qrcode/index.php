@@ -13,7 +13,7 @@
 <?php
 //Vars::debug_var($_SERVER);
 
-$url = 'https://gilfamily.es'.dirname($_SERVER['REQUEST_URI']);
+$url = SCRIPT_HOST.dirname($_SERVER['REQUEST_URI']);
 
 ?>
 <div style="text-align:center;margin:20px auto;max-width:256px;">
