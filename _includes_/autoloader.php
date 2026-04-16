@@ -128,8 +128,11 @@ $classmap = [
     'SessionStorage'    => SCRIPT_DIR_CLASSES . '/storage/session.storage.class.php',        
     'StorageInterface'  => SCRIPT_DIR_CLASSES . '/storage/storage.interface.php',        
 
-    'EDIT_ware'         => SCRIPT_DIR_MODULES . '/edit/edit_ware.class.php'
+    'EDIT_ware'         => SCRIPT_DIR_MODULES . '/edit/edit_ware.class.php',
 
+    'TelegramStore'     => SCRIPT_DIR_MODULES . '/telegram/telegramstore.class.php',
+    'TelegramBot'       => SCRIPT_DIR_MODULES . '/telegram/telegram.class.php',
+    'TelegramAI'        => SCRIPT_DIR_MODULES . '/telegram/telegramai.class.php',
 
     /*
     '' => SCRIPT_DIR_CLASSES . '/.class.php',        

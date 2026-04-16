@@ -413,7 +413,7 @@
         define('KIMI_API_KEY'    , CFG::$vars['ai']['kimi'    ]['api_key']);
         define('OLLAMA_HOST'    , CFG::$vars['ai']['ollama'  ]['host'] ?? 'http://localhost:11434');
         define('OLLAMA_MODEL'   , CFG::$vars['ai']['ollama'  ]['model'] ?? 'gpt-oss:20b-cloud'); 
-        define('OLLAMA_API_KEY' , CFG::$vars['ai']['ollama'  ]['api_key'] ?? '052715d1d1e94f6e859b6b3e31a88fe9.1uxCp2CMs78Vlh15CCinrgdI') ;
+        define('OLLAMA_API_KEY' , CFG::$vars['ai']['ollama'  ]['api_key'] ?? '************************************') ; // sustituir por la clave real o dejar vacía para uso local sin autenticación
         // Test calling directly:
         // https://domain.net/edit/ajax/op=ai/service=claude/token=<TOKEN_FROM_SESSION>/question=hello
 

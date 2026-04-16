@@ -1,0 +1,23 @@
+#telegram-app {
+    max-width: 600px;
+    margin: 2em auto;
+}
+
+#telegram-app h2 {
+    margin-bottom: 1em;
+}
+
+#tg-link-steps {
+    background: #f5f5f5;
+    border-radius: 6px;
+    padding: 1em 1.5em;
+}
+
+#tg-link-steps ol {
+    margin: 0.5em 0;
+    padding-left: 1.5em;
+}
+
+#tg-link-steps li {
+    margin: 0.5em 0;
+}

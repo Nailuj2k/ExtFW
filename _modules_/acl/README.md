@@ -1,6 +1,10 @@
     
     Sistema de permisos
     
+
+    AreasACL es para cuando hay departamentos (ejemplo: áreas de informatica, administración, etc.) y aplicaciones y se necesita que usuarios de distintas areas tengan acceso con distintos permisos a lass apliacciones q estén permitidas en su area.
+    
+
     Los nombres de las tablas comienzan por CFG_
     
     Tenemos Aplicaciones y Áreas con la siguiente lógica:

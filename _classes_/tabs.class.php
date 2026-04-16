@@ -37,3 +37,39 @@ class Tabs{
     }  
 
 }
+
+
+
+/**
+ * 
+ *   Ejemplo de uso:
+ *   
+ *   $tab_user = new Tabs('tab_user');
+ *   
+ *   $tab_user->addTab('Archivos','tab_user_files');
+ *   $tab_user->addTab('Direcciones','tab_user_addresses');                         
+ *   $tab_user->addTab('Dispositivos','tab_user_keys');
+ *   
+ *   $tab_user->begin();
+ *   
+ *   $tab_user->beginTab('tab_user_files');
+ *       echo 'tab content';
+ *       Table::show_table('CLI_USER_FILES'); 
+ *   $tab_user->endTab();
+ *    
+ *   $tab_user->beginTab('tab_user_addresses');
+ *      echo 'tab content';
+ *      Table::show_table('CLI_USER_ADDRESSES');      
+ *   $tab_user->endTab();
+ *
+ *   $tab_user->beginTab('tab_user_keys');
+ *      echo 'tab content';
+ *      Table::show_table('CLI_USER_KEYS');      
+ *   $tab_user->endTab();
+ *
+ *   $tab_user->end();
+ * 
+ * 
+ * 
+ * 
+ */

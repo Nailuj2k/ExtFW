@@ -1,0 +1,10 @@
+{
+    "name": "Telegram",
+    "short_name": "Telegram",
+    "description": "Integración con Telegram Bot API",
+    "start_url": "/telegram",
+    "scope": "/telegram",
+    "display": "standalone",
+    "theme_color": "#2CA5E0",
+    "background_color": "#2CA5E0"
+}
