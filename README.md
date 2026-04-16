@@ -2,7 +2,9 @@
 
 **ExtFW** es un framework PHP modular y listo para producción, diseñado para el desarrollo rápido de aplicaciones web. Basado en el principio KISS, prioriza la productividad y una arquitectura clara sobre sistemas de enrutamiento complejos.
 
-Demo: https://queesbitcoin.net
+# Demos
+https://software.extralab.net 
+https://queesbitcoin.net
 
 > © 2010–2026 Nailuj2k — Todos los derechos reservados.
 
@@ -258,8 +260,8 @@ Desde el **Panel de Control > ZIP** se generan paquetes:
 | `extfw_base.zip` | Release completa (incrementa versión) |
 | `extfw_update.zip` | Solo archivos actualizados |
 | `extfw_installer.zip` | Instalador independiente |
-| `extfw_{modulo}.zip` | Módulo individual |
-| `extfw_{tema}.zip` | Tema individual |
+| `extfw_module_{modulo}.zip` | Módulo individual |
+| `extfw_theme_{tema}.zip` | Tema individual |
 | `extfw_vendor.X.Y.zip` | Dependencias por versión de PHP |
 
 Las instalaciones cliente pueden actualizarse desde **Panel de Control > Actualizaciones**, descargando e instalando el paquete automáticamente.
