@@ -1,0 +1,98 @@
+AddDefaultCharset utf-8
+
+Options -MultiViews +FollowSymlinks
+#php_value upload_max_filesize 20M
+#php_value short_open_tag on
+
+<FilesMatch "\.(tpl|bak|old|sql|env|ini|log|md|git)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<ifModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+</ifModule>
+
+# BEGIN Expire headers
+<ifModule mod_expires.c>
+    ExpiresActive On
+  
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Video
+    ExpiresByType video/webm "access plus 1 year"
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/mpeg "access plus 1 year"
+
+    # Fonts
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+
+    # CSS, JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+
+    # Others
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+
+    ExpiresByType text/html "access plus 600 seconds"
+    ExpiresByType application/xhtml+xml "access plus 600 seconds"
+</ifModule>
+# END Expire headers
+
+# BEGIN Cache-Control Headers
+<ifModule mod_headers.c>
+
+    # only for Apache > 2.2.4:
+    Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
+    # lower versions:
+    # Header set Set-Cookie HttpOnly;Secure
+
+    <filesMatch "\.(ttf|otf|eot|svg|woff|woff2)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </filesMatch>
+    <filesMatch "\.(ico|jpe?g|webp|svg|png|gif|json)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </filesMatch>
+    <filesMatch "\.(css)$">
+        Header set Cache-Control "public"
+    </filesMatch>
+    <filesMatch "\.(js)$">
+        Header set Cache-Control "private"
+    </filesMatch>
+
+</ifModule>
+# END Cache-Control Headers
+
+<IfModule mod_rewrite.c>
+ RewriteEngine on
+
+ RewriteCond %{HTTP_USER_AGENT} ^.*(Yandex).*$ [NC]
+ RewriteRule .* - [F,L]
+
+ RewriteCond %{HTTPS} off
+ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+ RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+ RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [R=301,QSA,NC,L]
+ 
+ #OLD RewriteRule ^([a-zA-Z_0-9,\?\%\#\&\+\_\-\=\/]*)/?$   index.php  [nc,l]
+ # Si el fichero o directorio solicitado no existe, se reescribe a index.php
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteRule ^(.*)$ index.php [L]
+
+</IfModule>
+
+ErrorDocument 404 /404

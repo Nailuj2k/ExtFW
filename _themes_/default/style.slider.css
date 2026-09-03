@@ -1,0 +1,91 @@
+body{
+   --slider-height:250px;
+}
+
+
+/* Hero Slider */
+.hero-slider {
+  margin: 0 var(--side-margin) 60px var(--side-margin);
+  position: relative;
+  width: auto;
+/*  aspect-ratio: 16/9;*/
+  height: var(--slider-height);
+  overflow: hidden;
+  background-color: #000;
+
+  max-width: inherit;
+  margin: 0 auto;
+
+}
+
+.hero-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1; /* Forces a stacking context so z-index: -1 children don't hide behind the slider background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Link area over the whole slide, avoiding the bottom indicator area */
+.slide-full-link {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 80px;
+  z-index: 10;
+}
+
+/* Slide Background Video/Image */
+.slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Overlay darker for text readability */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15); /* Slightly lighter since there is no text */
+  z-index: -1;
+}
+
+/* Indicators */
+.slider-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.indicator.active, .indicator:hover {
+  background: #fff;
+}

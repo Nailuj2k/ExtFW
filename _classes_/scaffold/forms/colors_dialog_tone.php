@@ -1,0 +1,171 @@
+<style>
+.grid-colors-tone{display:none;position: absolute;left:160px;top:-200px;width:610px; z-index:1000000;
+                  -moz-border-radius: 4px; border-radius: 4px;  
+                  -webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.6); -moz-box-shadow: 0 3px 20px rgba(0,0,0,0.6);box-shadow: 0 3px 20px rgba(0,0,0,0.6);
+                  background: -moz-linear-gradient(#fff, #ccc);
+                  background: -webkit-gradient(linear, right bottom, right top, color-stop(1, rgb(255,255,255)), color-stop(0.57,rgb(230,230,230)));
+                  border:1px solid #d9d9d9;padding:5px 0 5px 22px;background-color: #ffffff;
+-webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+       -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);	
+}
+.grid-colors-tone>div{width:25px;height: 60px;margin:0px;display: inline-block;} 
+.grid-colors-tone>div>div{font-size: .6em; width:60px;height: 60px;
+	-webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+       -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+   text-align: center;}
+.link-close-2{position:absolute; top:2px; left:5px; color:silver; cursor:pointer;font-size: 1.5em;font-weight:bolder;text-decoration: none;font-family: 'Webdings';text-decoration: none;}
+.link-close-2:hover{text-decoration: none;}
+</style>
+<div class="grid-colors grid-colors-tone"><a class="link-close-2" onclick="$('.grid-colors').hide('slow');"><i class="fa fa-close"> </i></a><!--                            
+--><div style="background-color:#CD5C5C;"><div>IndianRed</div></div><!--
+--><div style="background-color:#F08080;"><div>LightCoral</div></div><!--
+--><div style="background-color:#FA8072;"><div>Salmon</div></div><!--
+--><div style="background-color:#E9967A;"><div>DarkSalmon</div></div><!--
+--><div style="background-color:#FFA07A;"><div>LightSalmon</div></div><!--
+--><div style="background-color:#FF0000;"><div>Red</div></div><!--
+--><div style="background-color:#DC143C;"><div>Crimson</div></div><!--
+--><div style="background-color:#B22222;"><div>Firebrick</div></div><!--
+--><div style="background-color:#8B0000;"><div>DarkRed</div></div><!--
+--><br><!--
+--><div style="background-color:#FFC0CB;"><div>Pink</div></div><!--
+--><div style="background-color:#FFB6C1;"><div>LightPink</div></div><!--
+--><div style="background-color:#FF69B4;"><div>HotPink</div></div><!--
+--><div style="background-color:#FF1493;"><div>DeepPink</div></div><!--
+--><div style="background-color:#C71585;"><div>MediumVioletRed</div></div><!--
+--><div style="background-color:#DB7093;"><div>PaleVioletRed</div></div><!--
+--><br><!--
+--><div style="background-color:#FFA07A;"><div>LightSalmon</div></div><!--
+--><div style="background-color:#FF7F50;"><div>Coral</div></div><!--
+--><div style="background-color:#FF6347;"><div>Tomato</div></div><!--
+--><div style="background-color:#FF4500;"><div>OrangeRed</div></div><!--
+--><div style="background-color:#FF8C00;"><div>DarkOrange</div></div><!--
+--><div style="background-color:#FFA500;"><div>Orange</div></div><!--
+--><br><!--
+--><div style="background-color:#FFD700;"><div>Gold</div></div><!--
+--><div style="background-color:#FFFF00;"><div>Yellow</div></div><!--
+--><div style="background-color:#FFFFE0;"><div>LightYellow</div></div><!--
+--><div style="background-color:#FFFACD;"><div>LemonChiffon</div></div><!--
+--><div style="background-color:#FAFAD2;"><div>LightGoldenrodYellow</div></div><!--
+--><div style="background-color:#FFEFD5;"><div>PapayaWhip</div></div><!--
+--><div style="background-color:#FFE4B5;"><div>Moccasin</div></div><!--
+--><div style="background-color:#FFDAB9;"><div>PeachPuff</div></div><!--
+--><div style="background-color:#EEE8AA;"><div>PaleGoldenrod</div></div><!--
+--><div style="background-color:#F0E68C;"><div>Khaki</div></div><!--
+--><div style="background-color:#BDB76B;"><div>DarkKhaki</div></div><!--
+--><br><!--
+--><div style="background-color:#E6E6FA;"><div>Lavender</div></div><!--
+--><div style="background-color:#D8BFD8;"><div>Thistle</div></div><!--
+--><div style="background-color:#DDA0DD;"><div>Plum</div></div><!--
+--><div style="background-color:#EE82EE;"><div>Violet</div></div><!--
+--><div style="background-color:#DA70D6;"><div>Orchid</div></div><!--
+--><div style="background-color:#FF00FF;"><div>Fuchsia</div></div><!--
+--><div style="background-color:#FF00FF;"><div>Magenta</div></div><!--
+--><div style="background-color:#9370DB;"><div>MediumPurple</div></div><!--
+--><div style="background-color:#8A2BE2;"><div>BlueViolet</div></div><!--
+--><div style="background-color:#9400D3;"><div>DarkViolet</div></div><!--
+--><div style="background-color:#9932CC;"><div>DarkOrchid</div></div><!--
+--><div style="background-color:#8B008B;"><div>DarkMagenta</div></div><!--
+--><div style="background-color:#800080;"><div>Purple</div></div><!--
+--><div style="background-color:#4B0082;"><div>Indigo</div></div><!--
+--><div style="background-color:#483D8B;"><div>DarkSlateBlue</div></div><!--
+--><div style="background-color:#6A5ACD;"><div>SlateBlue</div></div><!--
+--><div style="background-color:#7B68EE;"><div>MediumSlateBlue</div></div><!--
+--><br><!--
+--><div style="background-color:#ADFF2F;"><div>GreenYellow</div></div><!--
+--><div style="background-color:#7FFF00;"><div>Chartreuse</div></div><!--
+--><div style="background-color:#7CFC00;"><div>LawnGreen</div></div><!--
+--><div style="background-color:#00FF00;"><div>Lime</div></div><!--
+--><div style="background-color:#32CD32;"><div>LimeGreen</div></div><!--
+--><div style="background-color:#98FB98;"><div>PaleGreen</div></div><!--
+--><div style="background-color:#90EE90;"><div>LightGreen</div></div><!--
+--><div style="background-color:#00FA9A;"><div>MediumSpringGreen</div></div><!--
+--><div style="background-color:#00FF7F;"><div>SpringGreen</div></div><!--
+--><div style="background-color:#3CB371;"><div>MediumSeaGreen</div></div><!--
+--><div style="background-color:#2E8B57;"><div>SeaGreen</div></div><!--
+--><div style="background-color:#228B22;"><div>ForestGreen</div></div><!--
+--><div style="background-color:#008000;"><div>Green</div></div><!--
+--><div style="background-color:#006400;"><div>DarkGreen</div></div><!--
+--><div style="background-color:#9ACD32;"><div>YellowGreen</div></div><!--
+--><div style="background-color:#6B8E23;"><div>OliveDrab</div></div><!--
+--><div style="background-color:#808000;"><div>Olive</div></div><!--
+--><div style="background-color:#556B2F;"><div>DarkOliveGreen</div></div><!--
+--><div style="background-color:#66CDAA;"><div>MediumAquamarine</div></div><!--
+--><div style="background-color:#8FBC8F;"><div>DarkSeaGreen</div></div><!--
+--><div style="background-color:#20B2AA;"><div>LightSeaGreen</div></div><!--
+--><div style="background-color:#008B8B;"><div>DarkCyan</div></div><!--
+--><div style="background-color:#008080;"><div>Teal</div></div><!--
+--><br><!--
+--><div style="background-color:#00FFFF;"><div>Aqua</div></div><!--
+--><div style="background-color:#00FFFF;"><div>Cyan</div></div><!--
+--><div style="background-color:#E0FFFF;"><div>LightCyan</div></div><!--
+--><div style="background-color:#AFEEEE;"><div>PaleTurquoise</div></div><!--
+--><div style="background-color:#7FFFD4;"><div>Aquamarine</div></div><!--
+--><div style="background-color:#40E0D0;"><div>Turquoise</div></div><!--
+--><div style="background-color:#48D1CC;"><div>MediumTurquoise</div></div><!--
+--><div style="background-color:#00CED1;"><div>DarkTurquoise</div></div><!--
+--><div style="background-color:#5F9EA0;"><div>CadetBlue</div></div><!--
+--><div style="background-color:#4682B4;"><div>SteelBlue</div></div><!--
+--><div style="background-color:#B0C4DE;"><div>LightSteelBlue</div></div><!--
+--><div style="background-color:#B0E0E6;"><div>PowderBlue</div></div><!--
+--><div style="background-color:#ADD8E6;"><div>LightBlue</div></div><!--
+--><div style="background-color:#87CEEB;"><div>SkyBlue</div></div><!--
+--><div style="background-color:#87CEFA;"><div>LightSkyBlue</div></div><!--
+--><div style="background-color:#00BFFF;"><div>DeepSkyBlue</div></div><!--
+--><div style="background-color:#1E90FF;"><div>DodgerBlue</div></div><!--
+--><div style="background-color:#6495ED;"><div>CornflowerBlue</div></div><!--
+--><div style="background-color:#4169E1;"><div>RoyalBlue</div></div><!--
+--><div style="background-color:#0000FF;"><div>Blue</div></div><!--
+--><div style="background-color:#0000CD;"><div>MediumBlue</div></div><!--
+--><div style="background-color:#00008B;"><div>DarkBlue</div></div><!--
+--><div style="background-color:#000080;"><div>Navy</div></div><!--
+--><div style="background-color:#191970;"><div>MidnightBlue</div></div><!--
+--><br><!--                          
+--><div style="background-color:#FFF8DC;"><div>Cornsilk</div></div><!--
+--><div style="background-color:#FFEBCD;"><div>BlanchedAlmond</div></div><!--
+--><div style="background-color:#FFE4C4;"><div>Bisque</div></div><!--
+--><div style="background-color:#FFDEAD;"><div>NavajoWhite</div></div><!--
+--><div style="background-color:#F5DEB3;"><div>Wheat</div></div><!--
+--><div style="background-color:#DEB887;"><div>BurlyWood</div></div><!--
+--><div style="background-color:#D2B48C;"><div>Tan</div></div><!--
+--><div style="background-color:#BC8F8F;"><div>RosyBrown</div></div><!--
+--><div style="background-color:#F4A460;"><div>SandyBrown</div></div><!--
+--><div style="background-color:#DAA520;"><div>Goldenrod</div></div><!--
+--><div style="background-color:#B8860B;"><div>DarkGoldenrod</div></div><!--
+--><div style="background-color:#CD853F;"><div>Peru</div></div><!--
+--><div style="background-color:#D2691E;"><div>Chocolate</div></div><!--
+--><div style="background-color:#8B4513;"><div>SaddleBrown</div></div><!--
+--><div style="background-color:#A0522D;"><div>Sienna</div></div><!--
+--><div style="background-color:#A52A2A;"><div>Brown</div></div><!--
+--><div style="background-color:#800000;"><div>Maroon</div></div><!--
+--><br><!--
+--><div style="background-color:#FFFFFF;"><div>White</div></div><!--
+--><div style="background-color:#FFFAFA;"><div>Snow</div></div><!--
+--><div style="background-color:#F0FFF0;"><div>Honeydew</div></div><!--
+--><div style="background-color:#F5FFFA;"><div>MintCream</div></div><!--
+--><div style="background-color:#FFF5EE;"><div>SeaShell</div></div><!--
+--><div style="background-color:#F5F5DC;"><div>Beige</div></div><!--
+--><div style="background-color:#FDF5E6;"><div>OldLace</div></div><!--
+--><div style="background-color:#FFFAF0;"><div>FloralWhite</div></div><!--
+--><div style="background-color:#FFFFF0;"><div>Ivory</div></div><!--
+--><div style="background-color:#FAEBD7;"><div>AntiqueWhite</div></div><!--
+--><div style="background-color:#FAF0E6;"><div>Linen</div></div><!--
+--><div style="background-color:#FFF0F5;"><div>LavenderBlush</div></div><!--
+--><div style="background-color:#FFE4E1;"><div>MistyRose</div></div><!--
+--><br><!--
+--><div style="background-color:#DCDCDC;"><div>Gainsboro</div></div><!--
+--><div style="background-color:#D3D3D3;"><div>LightGray</div></div><!--
+--><div style="background-color:#C0C0C0;"><div>Silver</div></div><!--
+--><div style="background-color:#A9A9A9;"><div>DarkGray</div></div><!--
+--><div style="background-color:#808080;"><div>Gray</div></div><!--
+--><div style="background-color:#696969;"><div>DimGray</div></div><!--
+--><div style="background-color:#778899;"><div>LightSlateGray</div></div><!--
+--><div style="background-color:#708090;"><div>SlateGray</div></div><!--
+--><div style="background-color:#2F4F4F;"><div>DarkSlateGray</div></div><!--
+--><div style="background-color:#000000;"><div>Black</div></div><!--
+--></div>

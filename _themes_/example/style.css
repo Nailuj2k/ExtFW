@@ -1,0 +1,243 @@
+/* ==========================================================================
+   Theme "example"
+   reset.css se carga antes y ya hace el reset: aqui solo tokens y layout.
+
+   Dark mode: mismo convenio que el theme default y noxtr ->
+   html[data-theme="dark"] / body.dark-theme, toggle #theme-toggle en #top,
+   preferencia en localStorage 'theme'. El pre-paint esta en index.php.
+
+   Los nombres de token son los de shadcn porque style.buttons.css (que este
+   theme carga desde /default) ya los consume. Cambiar solo los valores.
+   ========================================================================== */
+
+
+:root {
+    /* --- Semanticos: lo unico que cambia entre claro y oscuro --- */
+    --background:           #efefef;   /* fondo de pagina */
+    --card:                 #ffffff;   /* main, tarjetas */
+    --secondary:            #f4f4f4;   /* relleno suave: header */
+    --foreground:           #333333;
+    --muted:                #f4f4f4;   /* relleno, NO texto (convenio shadcn) */
+    --muted-foreground:     #6c757d;
+    --border:               #dedddd;
+    --shadow:               0 0 20px rgba(0,0,0,.1);
+    --link:                 #424b50;
+    --link-hover:           #bb3a56;
+
+    --card-foreground:      var(--foreground);
+    --secondary-foreground: var(--foreground);
+    --primary-foreground:   #ffffff;
+    --input:                var(--border);
+    --ring:                 var(--primary);
+    --radius:               8px;
+
+    /* --- Paleta fija: la consumen _js_/script.js y css de modulos --- */
+    --blue: #007bff;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --destructive: #dc3545;
+    --error: #a4000f;
+    --light: #f8f9fa;
+    --dark: #343a40;
+
+    --font-family-theme: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+    --font-family-sans-serif: var(--font-family-theme);
+    --font-family-monospace: Inconsolata, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-weight-default: 300;
+    --font-size-default: 14px;
+}
+
+/* Un solo bloque para todo el modo oscuro. color-scheme adapta de paso los
+   controles nativos, las scrollbars y el autofill del navegador. */
+html[data-theme="dark"],
+html[data-theme="dark"] body,
+body.dark-theme,
+body[data-theme="dark"] {
+    --background:       #15171a;
+    --card:             #1e2125;
+    --secondary:        #24282d;
+    --foreground:       #e6e6e6;
+    --muted:            #24282d;
+    --muted-foreground: #9aa0a6;
+    --border:           #333940;
+    --shadow:           0 0 20px rgba(0,0,0,.5);
+    --link:             #c9ced3;
+    --light:            #24282d;
+    --dark:             #e6e6e6;
+    --gray-dark:        #d4d4d4;
+
+    color-scheme: dark;
+}
+
+/* --------------------------------------------------------------- Layout -- */
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: var(--radius);
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-family-theme);
+    font-weight: var(--font-weight-default);
+    font-size: var(--font-size-default);
+    box-shadow: 0 0 0 1px var(--border), var(--shadow);
+}
+
+/* Barra unica y pegajosa: marca a la izquierda, menu a la derecha.
+   El fondo translucido + blur necesita que el header no sea opaco. */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 6;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .75rem 1.25rem;
+    padding: .75rem 1.5rem;
+    background-color: color-mix(in srgb, var(--card) 78%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+header .logo     {order:1;line-height:0;}
+header .logo img {height:36px;width:auto;}
+header h1        {order:2;margin:0;font-size:1.05rem;font-weight:600;letter-spacing:-.02em;}
+header .nav-wrap {order:3;flex:1;}
+header .nav-wrap > ul {display:flex;flex-wrap:wrap;align-items:center;}
+/* El carrito es el unico item que se va al extremo derecho. */
+header .nav-wrap > ul > li.header-button-cart {margin-left:auto;}
+
+main {
+    position: relative;
+    padding: 1rem;
+    background-color: var(--card);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+}
+
+footer {
+    padding: 1rem;
+    background-color: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 0 0 var(--radius) var(--radius);
+    text-align: center;
+}
+footer p {text-align:center;}
+
+@media screen and (min-width: 1200px) {
+    .body-dbadmin .inner, .body-dani .inner,
+    .body-erp .inner, .body-control_panel .inner {width:auto;}
+}
+
+/* ------------------------------------------------------------- Elementos -- */
+
+a {color:var(--link);text-decoration:none;transition:color .3s ease;}
+a:hover, a:active {color:var(--link-hover);text-decoration:underline;}
+
+h1, h2, h3, h4, h5, h6 {margin:1rem 0;font-weight:900;}
+
+ul, ol {list-style:none;padding-left:0;}
+
+p {margin-block:1lh;text-align:justify;hyphens:auto;hyphenate-limit-chars:7;}
+strong{font-weight:700;}
+
+.float-left   {float:left;margin:10px 10px 5px 0;}
+.float-right  {float:right;margin:10px 0 5px 10px;}
+.float-center {display:block;float:none;margin:10px auto 5px auto;}
+
+/* ------------------------------------------------------------------ Menu -- */
+
+.menu-simple ul               {list-style:none;margin:0;padding:0;}
+.menu-simple ul li            {position:relative;display:inline-block;padding:4px 10px;text-align:left;text-wrap-mode:nowrap;}
+.menu-simple ul li.has-childs::after {content:" +";}
+.menu-simple > ul > li        {margin:0 20px;padding:4px 0;}
+.menu-simple > ul > li:first-child {padding-left:0;}
+.menu-simple ul li > ul       {display:none;}
+.menu-simple ul li:hover > ul {position:absolute;top:100%;left:0;z-index:5;display:block;min-width:160px;
+                               padding:8px;background-color:var(--card);border:1px solid var(--border);
+                               border-radius:var(--radius);box-shadow:var(--shadow);}
+.menu-simple ul li:hover > ul li {display:block;}
+
+/* Subrayado que crece al pasar por encima, solo en el menu del header. */
+.nav-wrap > ul > li   {margin:0 0 0 1.25rem;padding:0;}
+.nav-wrap > ul > li > a {position:relative;display:inline-block;padding:.35rem 0;
+                         color:var(--muted-foreground);font-weight:500;}
+.nav-wrap > ul > li > a:hover {color:var(--foreground);text-decoration:none;}
+.nav-wrap > ul > li > a::after {content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+                                background-color:currentColor;transform:scaleX(0);transform-origin:right;
+                                transition:transform .25s ease;}
+.nav-wrap > ul > li > a:hover::after {transform:scaleX(1);transform-origin:left;}
+
+/* ------------------------------------------------------ Menu movil -- */
+
+.nav-button {display:none;order:4;width:26px;height:20px;margin-left:auto;}
+.nav-button a {position:relative;display:block;height:100%;}
+.nav-button span,
+.nav-button span::before,
+.nav-button span::after {content:"";position:absolute;left:0;width:26px;height:2px;border-radius:2px;
+                         background-color:var(--foreground);transition:transform .3s ease,opacity .3s ease;}
+.nav-button span         {top:9px;}
+.nav-button span::before {top:-8px;}
+.nav-button span::after  {top:8px;}
+.show_menu .nav-button span         {transform:rotate(45deg);}
+.show_menu .nav-button span::before {opacity:0;}
+.show_menu .nav-button span::after  {transform:translateY(-8px) rotate(-90deg);}
+
+/* El menu desplegado cuelga del header (que es sticky, asi que es el
+   contenedor del absolute). script.menu.js hace slideToggle y pone
+   display:block inline en el ul: por eso en movil es block, no flex. */
+@media (max-width: 768px) {
+    .nav-button {display:block;}
+    header .nav-wrap {flex:0 0 auto;margin-left:auto;}
+    header .nav-wrap > ul {position:absolute;top:100%;left:0;right:0;z-index:5;display:none;
+                           padding:0 1.5rem;background-color:var(--card);
+                           border:1px solid var(--border);border-top:0;
+                           border-radius:0 0 var(--radius) var(--radius);box-shadow:var(--shadow);}
+    header .nav-wrap ul li {display:block;width:100%;margin:0;padding:0;text-wrap-mode:wrap;}
+    header .nav-wrap ul li + li {border-top:1px solid var(--border);}
+    header .nav-wrap ul li a {display:block;padding:.7rem 0;}
+    header .nav-wrap > ul > li > a::after {display:none;}
+    header .nav-wrap > ul > li.header-button-cart {margin-left:0;}
+    /* Submenus en linea, sin popup flotante. */
+    header .nav-wrap ul li:hover > ul,
+    header .nav-wrap ul li > ul {position:static;min-width:0;padding:0 0 0 1rem;
+                                 border:0;border-radius:0;box-shadow:none;background:none;}
+}
+
+/* ------------------------------------------------------- Barra superior -- */
+
+#top {position:fixed;top:0;left:0;z-index:7;width:100%;height:24px;padding:0 16px;opacity:.15;
+      color:var(--foreground);background-color:rgb(186 186 192 / 34%);
+      backdrop-filter:saturate(250%) blur(20px);-webkit-backdrop-filter:saturate(250%) blur(20px);}
+#top:hover        {opacity:.95;}
+#top .inner       {line-height:18px;}
+#top .top-inner   {width:100%;max-width:980px;margin:0 auto;text-align:right;}
+#top #top-links   {position:absolute;top:0;right:6px;}
+#top #top-links a,
+#top #theme-toggle {display:inline-block;margin:4px 6px 0;color:var(--foreground);
+                    font-size:10px;text-transform:uppercase;text-decoration:none;}
+#top #search      {display:none;background-color:var(--card);border:1px solid var(--muted-foreground);}
+#top #search i    {margin:0 3px 0 6px;color:var(--muted-foreground);}
+#top #search input,
+#top input        {border:1px solid var(--border);}
+
+
+
+/*.header-button-cart{ position: absolute !important;  right: 20px;}*/

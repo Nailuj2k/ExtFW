@@ -1,0 +1,18 @@
+
+
+
+/* 
+Examples to not display some elements
+#breadcrumb{display:none;}
+#footer{display:none;}
+*/
+
+.body-comments #test_form>*{display:block; margin-bottom:5px;width:200px;}
+.body-comments #log{position:relative;width:auto;display:block;height:100px;border:1px solid navy;overflow-y:scroll;}
+.body-comments #log{/*scroll-behavior:smooth;*/ font-size: 8px;transition: border-bottom-color 0.3s ease,border-bottom-width 0.3s ease;}
+.body-comments #log p{font-size:8px;}
+.body-comments #log.new-message {  border-bottom-color: #ff6b35;  border-bottom-width: 3px;}
+
+ 
+
+   

@@ -1,0 +1,289 @@
+/* ==============================================
+   QUICK PREMIUM OVERRIDES FOR BACKEND
+   ============================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+body, input, textarea, select, button, .datatable-rows th, .datatable-rows td, .tb-title {
+    font-family: 'Inter', sans-serif !important;
+}
+body.body-control_panel {
+    background-color: #f7f7f7 !important;
+}
+
+/* Grid Rows */
+.datatable-rows {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: none !important;
+}
+.datatable-rows tr:hover td {
+    background-color: #f0f0f0 !important;
+}
+.datatable-rows tr.active td,
+.datatable-rows.active tr.active td {
+    background-color: #eaeaea !important;
+    color: #000 !important;
+    border-color: #ddd !important;
+}
+.datatable-rows th {
+    background-color: #111 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 12px 10px !important;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.datatable-rows td {
+    padding: 12px 8px !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    border-right: none !important;
+    color: #333 !important;
+}
+
+/* Forms */
+.form-fieldset, .r-tabs-panel fieldset, #form_configuration fieldset {
+    background: #fff !important;
+    border: 1px solid #eaeaea !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02) !important;
+    padding: 20px !important;
+}
+/* Espaciado de filas */
+.control-group {
+    margin-bottom: 15px !important;
+    min-height: 40px !important;
+    display: block !important;
+    clear: both !important;
+}
+
+/* Campos de formulario (Solo dentro de formularios, no en cabeceras de tablas) */
+.control-group input[type="text"], 
+.control-group input[type="password"], 
+.control-group textarea, 
+.control-group select {
+    border: 1px solid #ddd !important;
+    border-radius: 6px !important;
+    padding: 10px 14px !important;
+    background-color: #fbfbfb !important;
+    color: #444 !important;
+    transition: all 0.2s ease !important;
+    height: auto !important;
+}
+.control-group input[type="text"]:focus, 
+.control-group input[type="password"]:focus, 
+.control-group textarea:focus, 
+.control-group select:focus {
+    border-color: #111 !important;
+    background-color: #fff !important;
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.05) !important;
+    outline: none !important;
+}
+
+
+
+/* Action Buttons */
+.btn:not([class*="dialog"]):not([class*="close"]), .button:not([class*="dialog"]):not([class*="close"]), input[type="submit"], input[type="button"], button:not([class*="dialog"]):not([class*="close"]) {
+    background: #111 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 10px 18px !important;
+    text-transform: uppercase;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+.btn:hover, .button:hover, input[type="submit"]:hover, input[type="button"]:hover, button:hover {
+    background: #333 !important;
+}
+.tb-title {
+    color: #111 !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    padding-bottom: 15px !important;
+}
+
+/* ==============================================
+   1. INDEPENDENCIA DEL CONTENEDOR (100% WIDTH)
+   ============================================== */
+body.body-control_panel .site-wrapper,
+body.body-control_panel .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+/* ==============================================
+   2. TABS MODERNOS Y BOTONES DE GUARDADO STICKY
+   ============================================== */
+.r-tabs .r-tabs-nav {
+    margin-bottom: 20px !important;
+    border-bottom: 2px solid #eaeaea !important;
+    display: flex !important;
+    gap: 15px !important;
+    padding: 0 !important;
+}
+.r-tabs .r-tabs-nav .r-tabs-tab {
+    background: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.r-tabs .r-tabs-nav .r-tabs-tab a {
+    padding: 10px 20px !important;
+    color: #666 !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.2s ease;
+    display: block !important;
+}
+.r-tabs .r-tabs-nav .r-tabs-tab.r-tabs-state-active a {
+    color: #111 !important;
+    border-bottom-color: #111 !important;
+    background: transparent !important;
+}
+.r-tabs .r-tabs-panel {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+
+/* ==============================================
+   3. FORMULARIOS (RESET GRID)
+   ============================================== */
+.r-tabs-panel fieldset {
+    display: block !important;
+}
+
+.r-tabs-panel fieldset .control-group {
+    max-width: 100% !important;
+}
+
+.r-tabs-panel fieldset .control-group label {
+    font-weight: 600 !important;
+    color: #444 !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    text-align: left !important;
+    font-size: 13px !important;
+}
+
+.r-tabs-panel fieldset .control-group .controls {
+    width: 100% !important;
+    margin-left: 0 !important;
+    min-width: 0 !important;
+}
+
+.r-tabs-panel fieldset .control-group input[type="text"],
+.r-tabs-panel fieldset .control-group input[type="password"],
+.r-tabs-panel fieldset .control-group select {
+    width: 100%;
+    max-width: 100% !important;
+}
+
+/* Fix global para formularios clásicos (como configuration.php) que se invaden verticalmente */
+#form_configuration .control-group {
+    height: auto !important;
+    min-height: 45px !important;
+    margin-bottom: 10px !important;
+}
+#form_configuration .control-group label {
+    top: 10px !important;
+}
+#form_configuration .control-group .controls {
+    right: 20px !important;
+}
+
+/* Fix global para evitar que los campos con size="150" desborden la pantalla en cualquier pestaña */
+.st-tabs-panel input[type="text"],
+.st-tabs-panel input[type="password"],
+.st-tabs-panel select,
+.r-tabs-panel input[type="text"],
+.r-tabs-panel input[type="password"],
+.r-tabs-panel select {
+    max-width: 100% !important;
+}
+
+/* ==============================================
+   4. MEJORAS MENU LATERAL Y PESTAÑAS (ACTIVO)
+   ============================================== */
+/* Menú lateral (vertical) */
+.sidebar-menu li.active a,
+ul.menu li.active a,
+#tabs > ul > li.st-active > a,
+#tabs > ul > li.active > a {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-left: 4px solid #4a90e2 !important;
+    border-bottom: none !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+}
+
+/* Pestañas horizontales (Configuración, etc.) */
+.form-tabs:not(#tabs) > ul > li.st-active > a,
+.form-tabs:not(#tabs) > ul > li.active > a,
+.r-tabs-nav .r-tabs-state-active a,
+.st-tabs .r-tabs-nav .r-tabs-state-active a,
+.st-tabs-nav .r-tabs-state-active {
+    background: transparent !important;
+    border-left: none !important;
+    border-bottom: 3px solid #4a90e2 !important;
+    color: #4a90e2 !important;
+    font-weight: 600 !important;
+}
+.dropzone {
+    border: 2px dashed #ddd !important;
+    background: #fdfdfd !important;
+    border-radius: 12px !important;
+    padding: 40px !important;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.dropzone:hover {
+    border-color: #111 !important;
+    background: #fafafa !important;
+}
+.dropzone .dz-message {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 16px !important;
+    color: #666 !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+
+
+/* Forzar que los botones de la modal (Cerrar) siempre sean clickables y estén por encima */
+.modalformBox .ajax_container {
+    margin-bottom: 80px !important;
+}
+
+.modalformBox .dialog-buttons,
+.ui-dialog-buttonpane {
+    position: relative !important;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+}
+.modalformBox .dialog-buttons .btn,
+.modalformBox .dialog-buttons a,
+.ui-dialog-buttonpane button {
+    position: relative !important;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+}

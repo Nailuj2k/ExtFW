@@ -1,0 +1,152 @@
+/******************************
+.table-footer,
+.table-footer th{position: relative;}
+e2dedc
+
+.pagination{ position: absolute;top:1px;right:0px;display:inline-block;border:0px;border-bottom: 1px solid rgba(222, 222, 222, 0.69);}
+
+.pagination li, .pagination a {font-size: 12px;font-family: 'DsignesL', Arial,sans-serif;font-weight:100;}
+.pagination i  {font-weight:100;}
+
+.pagination ul {list-style-type: none; margin:0;padding:0;display:inline-block;}
+.pagination ul li{margin:0;padding:0;display: inline-block; max-height: 24px;}
+.pagination ul li a {text-decoration:none; padding-left: 6px; padding-right: 6px;
+	                  color:#666; cursor:pointer;background-color: #cccccc;vertical-align: middle;
+                      margin:0;
+                      min-width: 14px;
+                      display: block;
+                      text-align:center;
+	                  border-top: 0px solid #c7c7c7;
+                      border-bottom:0px solid #dddddd;
+                      border-right: 1px solid rgba(222, 222, 222, 0.69);
+                      background-image:    -moz-linear-gradient( rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 95%);
+                      background-image: -webkit-linear-gradient( rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 95%);
+                      background-image:         linear-gradient( rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 95%); }
+.pagination ul li i{}
+.pagination ul li:first-child a{border-left: 1px solid #c7c7c7;}
+.pagination ul li:last-child a{}
+ 
+.pagination a.nav_active{background-color: #71d4ff; color:white;text-shadow: 1px 1px 3px rgba(0, 44, 98, 1);
+                         background-image:    -moz-linear-gradient( rgba(255, 255, 255, 95%) 95%, rgba(255, 255, 255, 0.7) 0%);
+                         background-image: -webkit-linear-gradient( rgba(255, 255, 255, 95%) 95%, rgba(255, 255, 255, 0.7) 0%);
+                         background-image:         linear-gradient( rgba(255, 255, 255, 95%) 95%, rgba(255, 255, 255, 0.7) 0%); }
+.pagination a.btn-info         {color:#FFFFFF; background-color:#005c8c;}
+.pagination a.btn-info:hover   {color:#FFFFFF; background-color:#106c9c;}
+.pagination a.btn-danger       {color:#FFFFFF; background-color:#8d060f;}
+.pagination a.btn-danger:hover {color:#FFFFFF; background-color:#9d160f;}
+.pagination a.btn-success      {color:#FFFFFF; background-color:#419341;}
+.pagination a.btn-success:hover{color:#FFFFFF; background-color:#51a351;}
+
+.pagination a.nav_firstlast_on:hover,
+.pagination a.nav_prevnext_on:hover,
+.pagination a.nav_link:hover{color:white;text-shadow: 1px 1px 2px #000;}
+
+.pagination a.nav_firstlast_off i,
+.pagination a.nav_prevnext_off i{color:#c9c9c9;}
+
+.search-form-input{position: absolute;top:0px;left:4px;display:inline-block;margin:0; width:55px;-webkit-transition: all 1s ease 0s;-moz-transition: all 1s ease 0s;-o-transition: all 1s ease 0s;transition: all 1s ease 0s;}
+.search-form-input:hover,
+.search-form-input.search-active{width:180px;}
+.search-form-input.search-active input{background-color: #FFDDDD;color:#333333; border: 1px solid #A5D0ED;}
+.search-form-input input{border: 1px solid #cccccc;height: 20px;padding:0 2px;width:100%;border-radius:4px;font-size:12px;}
+.search-form-input .input-icon-reset    {position:absolute;z-index:3; top:5px; right:2px;text-decoration:none;}
+.search-form-input .input-icon-reset i  {font-size:1.3em; color:#ffc4c4;cursor:pointer;text-decoration:none;}
+.search-form-input .input-icon-reset i:hover{ color:#ffbbbb;} 
+.search-form-input.search-active .input-icon-reset i{color:#df0000;}
+.search-form-input.search-active .input-icon-reset i:hover{color:#ff8487;}
+
+
+.estrello_wrap .pagination {background:#e3e3e3;border-radius:3px; border-top:1px solid #fff;border-bottom:1px solid #404040; padding:4px;}
+.estrello_wrap .pagination li{}
+
+
+***************/
+
+
+
+
+
+
+
+.table-footer,
+.table-footer th{/*max-height: 22px;*/position: relative;border-right:1px solid #ccc;}
+
+/*
+tfoot tr{ background-color: transparent;height: 30px;}
+
+tfoot tr,
+tfoot tr th,
+tfoot tr th>div { margin:-1px 0 0 0;padding:0;}
+*/
+
+.pagination{/* position: absolute;top:1px;right:4px;display:inline-block;border:0px;*/min-height: 28px;text-align: right;}
+
+.pagination li, .pagination a {font-size: 12px;/*font-family: 'DsignesL', Arial,sans-serif;*/font-family:Montserrat,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;font-weight:300;}
+.pagination i  {/*font-size: 12px;*/font-weight:100;}
+
+.pagination ul {list-style-type: none; margin:0;padding:0;display:inline-block;border:0px solid green;}
+.pagination ul li{margin:0;padding:0;display: inline-block;border:0px solid orange;}
+.pagination ul li a {
+    text-decoration: none;
+    padding: 0 6px;
+    color: #666;
+    cursor: pointer;
+    vertical-align: bottom;
+    margin: 0;
+    min-width: 22px;
+    line-height: 24px;
+    height: 28px;
+    display: inline-block;
+    text-align: center; 
+    align-content: center;
+    /* border-top: 3px solid transparent !important; */
+    /* border-bottom: 1px solid transparent !important; */
+    /* border-right: 1px solid transparent !important; */
+    /* background-image: none !important; */
+    /* background-image: none !important; */
+    /* background-image: none !important; */
+}
+
+.pagination ul li sppan{margin:0;padding:0;}
+.pagination ul li i{}
+.pagination ul li:first-child a{/*border-radius:4px 0 0 4px;*//*border-left: 1px solid #c7c7c7;*/}
+.pagination ul li:last-child a{/*border-radius:0 4px 4px 0;*/}
+.pagination a.nav_active{background-color:#71d4ff;color:white;text-shadow: 1px 1px 3px rgba(0, 44, 98, 1);
+                      /* background-image:    -moz-linear-gradient( rgba(255, 255, 255, 95%) 95%, rgba(255, 255, 255, 0.7) 0%);
+                         background-image: -webkit-linear-gradient( rgba(255, 255, 255, 95%) 95%, rgba(255, 255, 255, 0.7) 0%);
+                         background-image:         linear-gradient( rgba(255, 255, 255, 95%) 95%, rgba(255, 255, 255, 0.7) 0%);*/ }
+.pagination a.btn-info         {color:#FFFFFF; background-color:#0078ad;/*#005c8c;*/}
+.pagination a.btn-info:hover   {color:#FFFFFF; background-color:#466de2;}
+.pagination a.btn-danger       {color:#FFFFFF; background-color:var(--danger); /*#8d060f;*/}
+.pagination a.btn-danger:hover {color:#FFFFFF; background-color:#9d160f;}
+.pagination a.btn-success      {color:#FFFFFF; background-color:var(--success);/*#419341;*/}
+.pagination a.btn-success:hover{color:#FFFFFF; background-color:#51a351;}
+
+.pagination a.btn-csv       {color:#FFFFFF; background-color:#3771c8;}
+
+.pagination a.nav_link_aux{padding:0 10px;}
+
+.NOpagination a.nav_link_aux:hover,
+.pagination a.nav_firstlast_on:hover,
+.pagination a.nav_prevnext_on:hover,
+.pagination a.nav_link:hover{color:white;text-shadow: 1px 1px 2px #000;background-color:#e2e2e2;}
+
+.pagination a.nav_firstlast_off i,
+.pagination a.nav_prevnext_off i{color:#c9c9c9;}
+
+
+.search-form-input{position: absolute;top:3px;left:3px;display:inline-block; margin:0 !important;padding:0px !important; width:85px;-webkit-transition: all 1s ease 0s;-moz-transition: all 1s ease 0s;-o-transition: all 1s ease 0s;transition: all 1s ease 0s;}
+.search-form-input:hover,
+.search-form-input.search-active{width:180px;}
+.search-form-input.search-active input{background-color: #FFDDDD;color:#333333; border: 1px solid #A5D0ED;}
+.search-form-input input{border: 1px solid #cccccc;height: 22px;padding:2px 2px;width:100%;/*border-radius:4px;*/font-size:12px;    outline: none;}
+.search-form-input .input-icon-reset    {position:absolute; top:3px; right:4px;text-decoration:none;} /*ADD 20141121*/
+.search-form-input .input-icon-reset i  {vertical-align:middle;font-size:1.3em; color:#ffc4c4;cursor:pointer;text-decoration:none;} /*ADD 20141121*/
+.search-form-input .input-icon-reset i:hover{ color:#ff0000;} /*ADD 20141121*/
+.search-form-input.search-active .input-icon-reset i{color:#df0000;}
+.search-form-input.search-active .input-icon-reset i:hover{color:#ff8487;}
+
+.pagination .input_page_num {position: relative;border: 1px solid silver;top: -1px !important;width: 60px;height:25px;margin-right: 1px;display:inline-block;padding-left:4px;}
+
+.estrello_wrap .pagination {background:#e3e3e3;/*border-radius:3px;*/ border-top:1px solid #fff;border-bottom:1px solid #404040; padding:4px;}
+.estrello_wrap .pagination li{}

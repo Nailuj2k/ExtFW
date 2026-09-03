@@ -1,0 +1,41 @@
+
+
+
+
+ /* Contenedor centrado */
+    .dropzone-container {
+      /*max-width: 600px;*/
+      margin: 0 auto;
+      background: #fff;
+      /*
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      */
+      padding: 30px;
+
+      height:100%;
+    }
+
+    /* Personalizar un poco la zona de Dropzone */
+    .dropzone {
+      border: 2px dashed #0087F7;
+      border-radius: 6px;
+      background: #fafafa;
+    }
+
+    /* Cambiar color al arrastrar archivos */
+    .dropzone.dz-drag-hover {
+      background: #e6f7ff;
+      border-color: #1e90ff;
+    }
+
+    /* Texto central dentro de Dropzone */
+    .dropzone .dz-message {
+      font-size: 1.2em;
+      color: #555;
+    }    
+
+
+
+.dropzone .dz-preview .dz-image{width:140px;height:140px;border-radius:8px;border: 1px solid #e3e3e3; box-shadow: 1px 2px 7px 0px #cbcbcb;}
+.dropzone .dz-preview .dz-image img{width:140px;height:140px;}

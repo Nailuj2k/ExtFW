@@ -1,0 +1,82 @@
+            #epub-reader {display:none;position:fixed;top:0px;left:0px;right:0px;bottom: 0px;z-index:10;background-color:#353535de;}
+            #epub-reader span{color:#666;vertical-align: top;z-index:1;position:relative;display:inline-block;}
+            #epub-reader span#title{}
+            #epub-reader #epub-cover{display:inline-block;position:absolute;top:2px;left:2px; max-width:30px;max-height:30px;padding:0px;z-index:1;}
+            #epub-reader #epub-cover img{max-width:30px;max-height:30px;}
+            #prev{left:20px}
+            #next{right:20px}
+            #epub-reader #epub_viewer_close{z-index:1;}
+            #epub-reader #epub-toolbar{position:fixed;top:4px;right:4px;}
+            #epub-reader #epub-toolbar.squared .fa{cursor:pointer;font-size: 13px;margin: 0px 1px;border: 1px solid lightslategray;padding: 3px 9px;border-radius:3px;}
+            #epub-reader #epub-toolbar.rounded .fa{cursor:pointer;font-size: 16px;margin: 0px 1px;border: 1px solid lightslategray;padding: 0px;width:22px;border-radius:50%;line-height:1.3em;}
+            #epub-reader #epub-toolbar .fa:hover{color:#ff9999;}
+            @media screen and (min-width: 900px){
+                #epub-reader #epub-title{margin-top:0px;margin-left:25px;}
+                #epub-reader span{line-height: 2em;}
+            }
+            @media screen and (max-width: 900px){
+                #epub-reader #epub-title{margin-top:30px;}
+                #epub-reader span{line-height: 1em;}
+            }
+            @media screen and (min-width: 600px){
+             /*   #epub-reader #epub-title{margin-top:30px;}*/
+                #epub-reader span{color:#fffcfc; margin: 0 5px;}
+                #reader{position: absolute; top: 50%;left: 50%;-ms-transform: translateY(-50%) translateX(-50%);transform: translateY(-50%) translateX(-50%);}
+                .arrow{top:50%;margin-top:-32px;padding:0 10px;}
+                #area{width:580px;margin:0 auto}
+            }
+            @media screen and (max-width: 600px){
+               /* #epub-reader #epub-title{margin-top:30px;}*/
+                #epub-reader span{color:#666; margin-left: 5px;}
+                #reader{position:fixed;top:0px;left:0px;right:0px;bottom: 0px;}
+                #area{width:400px;margin:0 auto}
+                .arrow{bottom:10px;margin-top:-32px;}
+            }
+            @media screen and (max-width: 410px){
+                #area{width:340px;margin:0 auto}
+                .arrow{bottom:40px;margin-top:-32px;}
+            }
+            @media screen and (max-width: 360px){
+                #area{width:340px;margin:0 auto}
+                .arrow{bottom:10px;margin-top:-32px;}
+            }
+            .arrow:hover{color:#777}
+            .arrow:active{color:#000}
+            .arrow{position:absolute;margin-top:-32px;font-size:64px;color:#E2E2E2;font-family:arial, sans-serif;font-weight:bold;cursor:pointer;z-index:1;-webkit-user-select:none;-moz-user-select:none;user-select:none}
+            /** 
+            #reader{overflow:hidden;border:1px solid #ccc; margin:0 auto;padding:50px 0px;border-radius: 4px; background-color: ghostwhite;
+            -moz-box-shadow:inset 10px 0 20px rgba(0,0,0,0.1);-webkit-box-shadow:inset 10px 0 20px rgba(0,0,0,0.1);box-shadow:inset 10px 0 20px rgba(0,0,0,0.1);}
+            .dark{background-color:black !important;border:1px solid #550f22 !important;}
+            .auto{background-color:antiquewhite !important;border:1px solid #550f22 !important;}
+             */
+            #reader{overflow:hidden;border:1px solid #ccc; margin:0 auto;padding:50px 0px;border-radius: 4px; }
+            
+            #reader.paper0{background-color: ghostwhite; -moz-box-shadow:inset 10px 0 20px rgba(0,0,0,0.1);-webkit-box-shadow:inset 10px 0 20px rgba(0,0,0,0.1);box-shadow:inset 10px 0 20px rgba(0,0,0,0.1);}
+            #reader.paper1{background-color:#fcfcfa; background-image:  url('paper.jpg');  background-repeat: repeat;-moz-box-shadow:inset 10px 0 20px rgba(0,0,0,0.1);-webkit-box-shadow:inset 10px 0 20px rgba(0,0,0,0.1);box-shadow:inset 10px 0 20px rgba(0,0,0,0.1);}
+            #reader.paper{background-color: #21201e !important; background-image: url(paper.jpg);background-blend-mode: hard-light;background-repeat: repeat;}
+
+            .dark{border:1px solid #550f22 !important;background-color: #000000ee;border-radius: 4px;background-image: url(paper.jpg);background-blend-mode: darken; background-repeat: repeat;}
+
+            .auto0{background-color:antiquewhite !important;border:1px solid #550f22 !important;}
+            .auto{background-color:antiquewhite !important;border:1px solid #550f22 !important;background-image: url(paper.jpg);background-blend-mode: multiply;background-repeat: repeat;
+                                     -moz-box-shadow:inset 0px 0px 20px rgb(120 120 74 / 57%);-webkit-box-shadow:inset 0px 0px 20px rgb(120 120 74 / 57%);box-shadow:inset 0px 0px 20px rgb(120 120 74 / 57%);}
+
+
+
+            .dark *{color:white !important;}
+            #epub-status{border:0px solid red;text-align:center;position:absolute;left:85px;right:85px;bottom:2px;}
+            #epub-status span{font-size:1em;color:#bbb;font-family:"IM Fell English",Georgia, serif;line-height:1em;margin:0 3px;vertical-align:baseline;}
+            .dark #epub-status span{color:#666;}
+            .auto #epub-status span{color:#8b8282;}
+            #epub-status #epub-page-number{font-size:1.3em;}
+            #epub-status #epub-total-pages{font-size:1.3em;}
+            #epub-status #epub-progress{margin-left:20px;font-size: 1.3em;}
+
+            #select-font-family{position:absolute;top:20px;left:0px;}
+
+            #toc{position:absolute;top:60px;left:12px;right:12px;bottom:65px;overflow: auto;z-index:1;background-color: #171717;border-radius: 3px;}
+            #toc>ul {list-style: none;padding: 0;background-color: #171717;margin-left:15px;text-align:left;}
+            #toc>ul>li {padding: 2px;display: block;margin-left:0px;}
+            #toc>ul ul{margin-left:15px;padding:0;}
+            #toc a {border-bottom: 2px solid #171717;text-decoration: none;color: #9e9ea1;display: inline-block;}
+            #toc a:hover {border-bottom: 2px solid #ffffff;color: #ffffff;display: inline-block;}
