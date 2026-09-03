@@ -972,11 +972,22 @@
                 if (typeof Noxtr !== 'undefined' && Noxtr.logout) {
                     try { Noxtr.logout(); } catch(e) { console.warn('Noxtr logout error:', e); }
                 } else {
-                    // Noxtr not loaded on this page — clean localStorage only
-                    // Note: IndexedDB keys are preserved (keyed by userId, restored on next login)
+                    // Noxtr no suele estar cargado en /login/logout. Limpiar el mismo estado
+                    // persistente que Noxtr.logout y publicar una señal para las demás pestañas.
+                    // IndexedDB se conserva: pertenece al login y no debe borrarse al salir.
                     try { localStorage.removeItem('noxtr_npub'); } catch(e) {}
                     try { localStorage.removeItem('noxtr_nip46'); } catch(e) {}
+                    try { localStorage.removeItem('noxtr_bunker'); } catch(e) {}
+                    try { localStorage.removeItem('noxtr_dm_plain'); } catch(e) {}
+                    try { localStorage.setItem('noxtr_logout_at', String(Date.now())); } catch(e) {}
                 }
+                // sessionStorage no se comparte entre pestañas. Esta marca cubre la pestaña
+                // actual y, en particular, una vuelta atrás restaurada desde bfcache.
+                try {
+                    sessionStorage.setItem('noxtr_logged_out', '1');
+                    sessionStorage.removeItem('noxtr_session_uid');
+                    sessionStorage.removeItem('noxtr_autologin_tried');
+                } catch(e) {}
 
                 //if (window.location.href.indexOf('/logout') > -1) {
                 //    logoutFromGoogle();
