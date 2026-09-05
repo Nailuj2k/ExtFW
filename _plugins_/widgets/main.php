@@ -120,7 +120,7 @@
                 .zap-generate{width:100%;margin-top:12px;padding:10px;background:#f7931a;color:#fff;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:14px}
                 .zap-generate:disabled{opacity:.6;cursor:wait}
                 .zap-qr{text-align:center;margin:14px 0;background:#fff;padding:8px;border-radius:6px}
-                .zap-qr img{display:inline-block;max-width:100%;height:auto}
+                .zap-qr img{display:inline-block;max-width:100%;height:auto;margin: auto;}
                 .zap-bolt11{font:11px/1.3 monospace;word-break:break-all;background:#f5f5f5;padding:8px;border-radius:4px;max-height:90px;overflow-y:auto;color:#333}
                 .zap-actions{display:flex;gap:6px;margin-top:8px}
                 .zap-actions a,.zap-actions button{flex:1;padding:8px;text-align:center;background:#333;color:#fff;border:none;border-radius:4px;cursor:pointer;text-decoration:none;font-size:13px}

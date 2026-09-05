@@ -15,7 +15,6 @@
                     
                         if (MODULE_SHOP)  {
                             
-                            if(CFG::$vars['shop']['enabled']) include(SCRIPT_DIR_MODULES.'/'.MODULE_SHOP.'/menu_categories.php'); 
         
                             $more_items_id++;
                             $more_items[$more_items_id]['id']=$more_items_id; //+$row['ID'];

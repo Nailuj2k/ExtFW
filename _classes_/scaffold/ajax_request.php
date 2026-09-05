@@ -248,8 +248,10 @@ if ($_op_=='list'){  // echo select values
 }else if ($_op_=='search' && $table_name){
   
     $result = array();
-    if($_ARGS['searchstring']){  //$searchstring = $_ARGS['searchstring'];
-        $_SESSION['_CACHE'][$table_name]['searchstring'] = $_ARGS['searchstring'];
+    $searchstring = trim(preg_replace('/\s+/u', ' ', (string)($_ARGS['searchstring'] ?? '')));
+    $searchstring = function_exists('mb_substr') ? mb_substr($searchstring, 0, 120) : substr($searchstring, 0, 120);
+    if($searchstring !== ''){
+        $_SESSION['_CACHE'][$table_name]['searchstring'] = $searchstring;
         $result['msg']='Búsqueda: '.$_SESSION['_CACHE'][$table_name]['searchstring'];
     }else{
         $_SESSION['_CACHE'][$table_name]['searchstring'] = false;
@@ -592,4 +594,3 @@ if($_ARGS['debug']??false){
   ?></pre><?php 
 
 }
-

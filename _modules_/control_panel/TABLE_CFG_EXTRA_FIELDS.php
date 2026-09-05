@@ -16,8 +16,6 @@ $tb_name->label     = 'Tabla';
 $tb_name->type      = 'select';
 $tb_name->values    =  array('CLI_PAGES'=>'Páginas','CLI_USER'=>'Usuarios','CLI_PRODUCTS'=>'Productos','ACL_ROLES'=>'Roles');
 
-if(defined('MODULE_WINES')) $tb_name->values['CLI_BODEGAS']='Bodegas';
-
 $tb_name->values_all=  $tb_name->values;
 $tb_name->editable  =  true; 
 $tb_name->len       =  20; 

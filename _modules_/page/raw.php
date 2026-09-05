@@ -1,5 +1,6 @@
 <?php
 
+require_once SCRIPT_DIR_CLASSES . '/btcpay_lightning.class.php';
 
 $writeWebhookLog = function (string $prefix, string $content = '') { //use ($logDir) {
     
@@ -166,6 +167,15 @@ $getLnurlInvoice = function($lnAddress, $amountSats) use ($writeWebhookLog) {
 };
 
 $payLnInvoice = function($bolt11) use ($writeWebhookLog) {
+
+    $lightningStatus = BtcpayLightning::status(BtcpayLightning::configFromGlobals());
+    if (!$lightningStatus['available']) {
+        $writeWebhookLog(
+            'lnpay_LIGHTNING_UNAVAILABLE',
+            BtcpayLightning::unavailableMessage($lightningStatus)
+        );
+        return false;
+    }
 
     $url =  CFG::$vars['btcpay']['url'].'/api/v1/stores/'.CFG::$vars['btcpay']['store_id'].'/lightning/BTC/invoices/pay';
     

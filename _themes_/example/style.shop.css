@@ -63,7 +63,9 @@
         max-width:1180px;margin:20px auto;text-align:left;}
 
 #items .item {position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--panel);
-              border:1px solid var(--line);border-radius:var(--radius);transition:transform .15s ease,box-shadow .15s ease;}
+              border:1px solid var(--line);border-radius:var(--radius);transition:transform .15s ease,box-shadow .15s ease;
+                max-width: 350px;
+            }
 #items .item:hover {transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.12);}
 
 #items .image     {position:relative;aspect-ratio:1/1;background:var(--surface);}

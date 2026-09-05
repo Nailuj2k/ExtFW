@@ -503,7 +503,9 @@ class Str{
         $ascan = explode( " ", $scan );
         for ( $i=0; $i <= count($ascan)-1; $i++ ) {
         if(strlen($ascan[$i])>2){
-            $scani=self::word2regexp($ascan[$i]);
+            // El texto de búsqueda no es una expresión regular. Escaparlo
+            // evita patrones inválidos y metacaracteres con efectos inesperados.
+            $scani=self::word2regexp(preg_quote($ascan[$i], '~'));
             $text = preg_replace('~'.$scani.'(?!(?>[^<]*(?:<(?!/?a\b)[^<]*)*)</a>)~i', '<span class="'.$clases[$n].'">${0}</span>', $text);
             $n++;
             if($n>4) $n=0;

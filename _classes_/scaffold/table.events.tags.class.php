@@ -124,8 +124,7 @@
   function OnDrawRow($owner,&$row,&$class){
     if(!$this->tb_tags_caption) $this->tb_tags_caption = $this->tb_tags_name;
     $sql_ntags = 'SELECT COUNT('.$this->tb_items_tags_tag.') FROM '.$this->tb_items_tags
-               .' WHERE '.$this->tb_items_tags_tag.' IN ' //  $row[$this->tb_items_tags_pk] 
-               .'(SELECT '.$this->tb_tags_pk.' FROM '.$this->tb_tags.' WHERE '.$this->tb_items_tags_item.' = '.$this->prepareId($row[$owner->pk->fieldname]).')'; 
+               .' WHERE '.$this->tb_items_tags_item.' = '.$this->prepareId($row[$owner->pk->fieldname]);
     $ntags = $owner->recordCount($sql_ntags); 
     $row['A_TAG_NAMES'] = array();
     $row['A_TAG_LABELS'] = array();
@@ -158,7 +157,8 @@
   function OnAfterInsert($owner,&$result,&$post){
     //parent::OnAfterInsert($owner,$result,$post);
     if($result['error']==0 && $result['last_insert_id']){
-     // $post[$owner->pk->fieldname] = $result['last_insert_id'];
+      // En un alta el formulario todavía no contiene la PK autogenerada.
+      $post[$owner->pk->fieldname] = $result['last_insert_id'];
       $this->updateTags($owner,$result,$post);
     }
   }

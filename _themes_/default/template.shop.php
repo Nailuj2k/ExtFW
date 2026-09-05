@@ -28,6 +28,7 @@ $shop_list_item = '
     </div>'
     .(CFG::$vars['shop']['options']['animation']?'<div class="image" style="visibility:hidden;"><img class="img_mini" src="[THUMB]"></div>':'').
     '<div class="datos">
+        <span class="shop-product-tags">[TAG_LABELS]</span>
         <span class="item_id id" style="display:none;">[ID]</span>
         <span class="item_name xxname">[NAME]</span>
         <span class="desc">[DESCRIPTION]</span>
@@ -56,6 +57,7 @@ $shop_list_item_no_stock = '
     <div class="image"><img class="item_thumb thumb" src="[IMAGE]" alt="[NAME]"></div>
     <div class="stock">'.t('OUT_OF_STOCK').'</div>
     <div class="datos">
+        <span class="shop-product-tags">[TAG_LABELS]</span>
         <span class="item_id id" style="display:none;">[ID]</span>
         <span class="item_name name">[NAME]</span>
         <span class="desc">[DESCRIPTION]</span>

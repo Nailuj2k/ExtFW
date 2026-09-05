@@ -34,7 +34,7 @@
  * PLACEHOLDERS disponibles
  * ---------------------------------------------------------------------
  * [KEY] [ID] [NAME] [DESCRIPTION] [PRICE] [COIN] [LINK] [IMAGE] [THUMB]
- * [CLASSES] [TAGS] [PAGE] [STYLE] [TOKEN] [IMAGES]
+ * [CLASSES] [TAGS] [TAG_LABELS] [PAGE] [STYLE] [TOKEN] [IMAGES]
  *
  * [IMAGES] es un JSON con todas las imagenes del producto. Este tema no lo
  * usa (una imagen por card); ver _themes_/default para un slider que si.
@@ -57,6 +57,7 @@ $shop_list_item = '
 <div class="jxCart_shelf_item item [CLASSES] page-[PAGE]" id="item-[KEY]" data-item-link="[LINK]" style="[STYLE]">
     <div class="image"><img class="item_thumb" src="[IMAGE]" alt="[NAME]"></div>
     <div class="datos">
+        <span class="shop-product-tags">[TAG_LABELS]</span>
         <span class="item_id" style="display:none">[ID]</span>
         <span class="item_name">[NAME]</span>
         <span class="desc">[DESCRIPTION]</span>
@@ -78,6 +79,7 @@ $shop_list_item_no_stock = '
         <span class="stock">'.t('OUT_OF_STOCK').'</span>
     </div>
     <div class="datos">
+        <span class="shop-product-tags">[TAG_LABELS]</span>
         <span class="item_id" style="display:none">[ID]</span>
         <span class="item_name">[NAME]</span>
         <span class="desc">[DESCRIPTION]</span>

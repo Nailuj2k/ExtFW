@@ -1,0 +1,9 @@
+.cell_TO_URL {
+
+/*  max-width: 200px; */   
+  white-space: nowrap;   
+  overflow: hidden;      
+  text-overflow: ellipsis;
+
+
+}

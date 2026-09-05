@@ -1607,6 +1607,12 @@
             if($result['error']==0){
               $_SESSION['_CACHE'][$this->tablename]['filter'] = $post;
               $this->filterstring = $this->filter2string($post);
+              // Algunas tablas necesitan completar el filtro con relaciones que
+              // no son columnas propias (por ejemplo, etiquetas N:N). El hook es
+              // opcional para no ampliar iEvents ni romper eventos existentes.
+              if($this->events && method_exists($this->events, 'OnAfterFilter')){
+                $this->events->OnAfterFilter($this,$result,$post,$this->filterstring,$this->strfilter);
+              }
             }
             $_SESSION['_CACHE'][$this->tablename]['filterstring'] = $this->filterstring ? $this->filterstring : '';  //$this->filterstring;
             $_SESSION['_CACHE'][$this->tablename]['strfilter'] = $this->strfilter ? $this->strfilter : '';  //$this->filterstring;
@@ -1835,7 +1841,7 @@
        //$html .= ' onfocus="form_search_focus = true;" onblur="form_search_focus = false;"';
        if ($table) $html .= ' table="'.$table.'"';
        if ($table) $html .= ' row="'.$idparent.'"';
-       if ($this->searchstring) $html .= ' value="'.$this->searchstring.'"';
+       if ($this->searchstring) $html .= ' value="'.htmlspecialchars((string)$this->searchstring, ENT_QUOTES, 'UTF-8').'"';
        $html .= '/>'; 
        $html .= '<a class="input-icon-reset" table="'.$this->tablename.'"><i class="fa fa-remove"> </i></a>';
        $html .= '</div>';
@@ -1884,6 +1890,7 @@
           $filterConditions = array();
           foreach ($words as $word) {
             if(strlen($word)>2){
+              $safeWord = self::escape($word);
               $colConditions=array();
                foreach ($this->cols as $col) {
                 if($col->searchable) {
@@ -1892,9 +1899,9 @@
                     if($tmpCond) $colConditions[] = " {$col->fieldname} =  '".$tmpCond."' ";
                   }else{
                     if($this->driver=='oracle') //$filterConditions[] = " {$col->fieldname} LIKE '%{$word}%' ";
-                      $colConditions[] = " translate(upper({$col->fieldname}), 'ÁÉÍÓÚÄËÏÖÜÀÈÌÒÙÂÊÎÔÛ', 'AEIOUAEIOUAEIOUAEIOU') LIKE translate(upper('%{$word}%'), 'ÁÉÍÓÚÄËÏÖÜÀÈÌÒÙÂÊÎÔÛ', 'AEIOUAEIOUAEIOUAEIOU') ";
+                      $colConditions[] = " translate(upper({$col->fieldname}), 'ÁÉÍÓÚÄËÏÖÜÀÈÌÒÙÂÊÎÔÛ', 'AEIOUAEIOUAEIOUAEIOU') LIKE translate(upper('%{$safeWord}%'), 'ÁÉÍÓÚÄËÏÖÜÀÈÌÒÙÂÊÎÔÛ', 'AEIOUAEIOUAEIOUAEIOU') ";
                     else
-                      $colConditions[] = " {$col->fieldname} LIKE '%{$word}%' ";
+                      $colConditions[] = " {$col->fieldname} LIKE '%{$safeWord}%' ";
                   }
                 }
               }
@@ -2075,7 +2082,7 @@
           $this->showtitle = true;
           //if(!$_SESSION['_CACHE'][$this->tablename]['strfilter']) $_SESSION['_CACHE'][$this->tablename]['strfilter'] = $this->filter;
             $strf  = $this->searchstring 
-                   ? '<span style="color:#1c74a4;font-weight:300;"><i class="fa fa-search"></i> Búsqueda:</span> '.$this->searchstring 
+                   ? '<span style="color:#1c74a4;font-weight:300;"><i class="fa fa-search"></i> Búsqueda:</span> '.htmlspecialchars((string)$this->searchstring, ENT_QUOTES, 'UTF-8')
                    : ($this->filter       ? '<span style="color:#1c74a4;font-weight:300;margin-left:20px;"><i class="fa fa-filter"></i> Filtro:</span><span title="'.$this->filter.'"> '.(Str::limit_text($this->filter,40)).'</span>' : ''); 
             //$this->title .= '<span class="filter_info"  style="font-size:0.9em;color:#1c74a4;" title="Filtro: '.$this->filter.'"><i class="fa fa-filter"></i>&nbsp;&nbsp;&nbsp;&nbsp; Filtro: '.Str::limit_text($this->filter,140).' </span> ';
             $this->title .= '<span  class="filter_info" style="font-size:0.8em;color:red;margin-right:10px;font-weight:500;">'.$strf.'</span>';
